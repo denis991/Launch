@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Resumes() {
+function Cvs() {
   return (
     <div>
-      resume
+      резюме
     </div>
   );
 }
 
-export default Resumes;
+export default Cvs;
