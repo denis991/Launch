@@ -6,6 +6,7 @@ function Vacancies() {
   const [langProg, setLangProg] = useState('');
   const [levelVacancies, setLevelVacancies] = useState('');
   const [adVacancies, setAdVacancies] = useState([{
+    url: '/vacancies/576',
     level: 'Джуниор',
     leng: 'Ruby-разработчик',
     salary: 'от 40 000 до 60 000 ₽ (На руки)',
@@ -33,7 +34,7 @@ function Vacancies() {
             <div className="card-body">
               <div className="small text-muted">около 5 часов</div>
               <h5 className="card-title">
-                <a href="/vacancies/576">
+                <a href={el.url}>
                   <span className="me-2">{el.level}</span>
                   <span className="me-2">{el.leng}</span>
                   <span className="small me-2">{el.salary}</span>

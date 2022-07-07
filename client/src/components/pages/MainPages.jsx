@@ -7,7 +7,7 @@ function MainPages() {
   return (
     <Routes>
       <Route path="/" element={<Vacancies />} />
-      <Route path="/Cvs" element={<Cvs />} />
+      <Route path="/cvs" element={<Cvs />} />
       <Route path="/users/sign_in" element={<p>/users/sign_in</p>} />
       <Route path="/users/sign_up" element={<p>/users/sign_up</p>} />
       <Route path="/users" element={<p>users</p>} />
