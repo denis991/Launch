@@ -4,39 +4,47 @@ import classes from './InputLang.module.css';
 function InputLang({ langProg, setLangProg }) {
   return (
     <div className={classes.viewport}>
-      <select value={langProg} onChange={(e) => setLangProg(e.target.value)} id="cities">
-
-        <option value="AspectC++">AspectC++</option>
-        <option value="AspectJ">AspectJ</option>
-        <option value="Basic">Basic</option>
-        <option value="Pascal">Pascal</option>
-        <option value="Shell">Shell</option>
-        <option value="PHP">PHP</option>
-        <option value="Limbo">Limbo</option>
-        <option value="C++">C++</option>
-        <option value="C#">C#</option>
-        <option value="Object Pascal">Object Pascal</option>
-        <option value="Dylan">Dylan</option>
-        <option value="Haxe">Haxe</option>
-        <option value="Io">Io</option>
-        <option value="Java">Java</option>
-        <option value="JavaScript">JavaScript</option>
-        <option value="MC#">MC#</option>
-        <option value="Object Pascal">Object Pascal</option>
-        <option value="Objective-C">Objective-C</option>
-        <option value="Perl">Perl</option>
-        <option value="Python">Python</option>
-        <option value="Ruby">Ruby</option>
-        <option value="Self">Self</option>
-        <option value="Simula">Simula</option>
-        <option value="Smalltalk">Smalltalk</option>
-        <option value="Swift">Swift</option>
-        <option value="Clean">Clean</option>
-        <option value="Elm">Elm</option>
-        <option value="Erlang">Erlang</option>
-        <option value="F#">F#</option>
-        <option value="Mathematica">Mathematica</option>
-        <option value="Scheme">Scheme</option>
+      <select value={langProg} onChange={(e) => setLangProg(e.target.value)} id="nameInputLang">
+        <option value="yii2">Yii2</option>
+        <option value="devops">DevOps</option>
+        <option value="c++">C++</option>
+        <option value="ios">iOS</option>
+        <option value="laravel">Laravel</option>
+        <option value="java">Java</option>
+        <option value="kotlin">kotlin</option>
+        <option value="ruby">Ruby</option>
+        <option value="python">Python</option>
+        <option value="js">js</option>
+        <option value="sql">SQL</option>
+        <option value="backend">backend</option>
+        <option value="fullstack">Fullstack</option>
+        <option value="angular">angular</option>
+        <option value="react">React</option>
+        <option value="django">Django</option>
+        <option value="html">HTML</option>
+        <option value="nodejs">nodejs</option>
+        <option value="rails">Rails</option>
+        <option value="css">CSS</option>
+        <option value="go">Go</option>
+        <option value="web">web</option>
+        <option value="c#">C#</option>
+        <option value="flask">Flask</option>
+        <option value="vue">Vue</option>
+        <option value="yii">Yii</option>
+        <option value="redis">Redis</option>
+        <option value="вёрстка">вёрстка</option>
+        <option value="typescript">Typescript</option>
+        <option value="ruby on rails">Ruby On Rails</option>
+        <option value="clojure">clojure</option>
+        <option value="frontend">frontend</option>
+        <option value="golang">GoLang</option>
+        <option value="javascript">javascript</option>
+        <option value="postgresql">PostgreSQL</option>
+        <option value="ror">RoR</option>
+        <option value="spring">Spring</option>
+        <option value="docker">Docker</option>
+        <option value="node.js">node.js</option>
+        <option value="php">php</option>
       </select>
     </div>
   );
