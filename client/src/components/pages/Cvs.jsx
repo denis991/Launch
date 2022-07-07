@@ -3,7 +3,10 @@ import React from 'react';
 function Cvs() {
   return (
     <div>
-      резюме
+      <p>
+        резюме соискателей
+      </p>
+
     </div>
   );
 }
