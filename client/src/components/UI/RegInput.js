@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const RegInput = () => {
+function RegInput() {
   return (
     <div>RegInput</div>
-  )
+  );
 }
 
-export default RegInput
+export default RegInput;
