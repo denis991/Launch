@@ -1,0 +1,52 @@
+.navbar {
+  position: fixed;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 100%;
+  height: 50px;
+  background-color: rgb(57, 86, 254);
+
+}
+.links {
+  display: flex;
+  justify-content: center;
+}
+.link {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 15px 5px;
+  text-decoration: none;
+  color: white;
+}
+.burger-btn {
+  width: 30px;
+  height: 30px;
+  margin-left: 30px;
+  position: relative;
+  right: 730px;
+  top: 8px;
+}
+.burger-btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 30px;
+  background-color: white;
+  height: 3px;
+}
+.burger-btn span {
+  content: '';
+  position: absolute;
+  top: 13px;
+  width: 30px;
+  background-color: white;
+  height: 3px;
+}
+.burger-btn:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 30px;
+  background-color: white;
+  height: 3px;
+}
