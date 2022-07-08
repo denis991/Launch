@@ -8,7 +8,6 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
   ],
-  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -18,7 +17,6 @@ module.exports = {
   },
   plugins: [
     'react',
-    '@typescript-eslint',
   ],
   rules: {
   },
