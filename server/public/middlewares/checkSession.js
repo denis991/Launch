@@ -4,6 +4,6 @@ const checkSession = (req, res, next) => {
     return next();
   }
   next();
-}
+};
 
-module.exports = { checkSession };
+module.exports = checkSession;
