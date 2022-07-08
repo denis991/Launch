@@ -4,11 +4,11 @@ export const getSkill = (data) => ({
   type: GET_SKILLS,
   payload: data,
 });
-export const clearFavor = () => ({
+export const clearSkill = () => ({
   type: 'GET_SKILLS',
 });
 
-export const getFavorThunk = () => async (dispatch) => {
+export const getSkillThunk = () => async (dispatch) => {
   try {
     dispatch(getSkill({}));
     const response = await fetch('/skills');

@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getSkill, getSkillThunk } from '../../../redux/actions/skillsActions';
 import './InputLang.css';
 
 function InputLang({ langProg, setLangProg }) {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getSkill({}));
+    dispatch(getSkillThunk());
+  }, []);
   return (
     <label htmlFor="inputLang" className="viewport">
       <select className="xz" id="inputLang" value={langProg} onChange={(e) => setLangProg(e.target.value)}>
