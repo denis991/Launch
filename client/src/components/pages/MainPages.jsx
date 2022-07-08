@@ -1,13 +1,15 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Cvs from './Cvs';
+import SignIn from './Forms/SignIn/SignIn';
+import SignUp from './Forms/SignUp/SignUp';
 
 function MainPages() {
   return (
     <Routes>
       <Route path="/" element={<Cvs />} />
-      <Route path="/users/sign_in" element={<p>/users/sign_in</p>} />
-      <Route path="/users/sign_up" element={<p>/users/sign_up</p>} />
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signup" element={<SignUp />} />
       <Route path="/users" element={<p>users</p>} />
       <Route path="/users/:id" element={<p>users/:id</p>} />
       <Route path="/resumes" element={<p>resumes</p>} />
