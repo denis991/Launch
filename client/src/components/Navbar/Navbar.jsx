@@ -6,6 +6,7 @@ import './Navbar.css';
 
 function Navbar() {
   const title = 'Launch';
+  const [user, setUset] = useState({});
   const [menuActive, setMenuActive] = useState(false);
   const items = [{ value: 'Резюме', href: '/signin', icon: '/img/time.svg' }, { value: 'Вакансии', href: '/main', icon: '/img/Mac.svg' }, { value: 'Рейтинг', href: '/rating', icon: '/img/Mony.svg' }, { value: 'Релокация', href: '/reloc', icon: '/img/Mony.svg' }, { value: 'Новости', href: '/news', icon: '/img/Mony.svg' }];
 
