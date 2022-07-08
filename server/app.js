@@ -12,7 +12,10 @@ const app = express();
 app.use(cors());
 const PORT = process.env.DB_PORT;
 
-// const mainPageRouter = require('./routes/main');
+const mainPageRouter = require('./routes/mainPage');
+const usersRouter = require('./routes/users');
+const cvsRouter = require('./routes/cvs');
+const accountRouter = require('./routes/account');
 // const authRouter = require('./routes/auth');
 // const userRouter = require('./routes/user');
 
@@ -35,6 +38,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use('/', mainPageRouter);
+app.use('/users', usersRouter);
+app.use('/cvs', cvsRouter);
+app.use('/account', accountRouter);
 
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);
