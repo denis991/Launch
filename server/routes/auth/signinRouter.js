@@ -3,7 +3,7 @@ const { Users } = require('../../db/models');
 const Bcrypt = require('../../public/middlewares/bcrypt');
 const { checkSession } = require('../../public/middlewares/checkSession');
 
-router.route('/').post(async (req, res) => {
+router.route('/').post(checkSession, async (req, res) => {
   try {
     const { email, password } = req.body;
     const result = await Users.findOne({ where: { email } });
