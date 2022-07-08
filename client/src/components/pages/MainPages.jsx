@@ -8,7 +8,7 @@ import SignUp from './Forms/SignUp/SignUp';
 function MainPages() {
   return (
     <Routes>
-      <Route path="/" element={<Cvs />} />
+      <Route path="/cvs" element={<Cvs />} />
       <Route path="/" element={<Vacancies />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
