@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { singUp } from '../../../../config/endPoints';
+import { signUp } from '../../../../redux/actions/userAction';
 import './SignUp.css';
 
 function SignUp() {
@@ -17,10 +17,9 @@ function SignUp() {
   };
 
   const dispatch = useDispatch();
-
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(singUp(userSignUp, navigate));
+    dispatch(signUp(userSignUp, navigate));
   };
 
   return (
