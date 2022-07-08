@@ -1,0 +1,44 @@
+.menu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 50px;
+  left: 0;
+  transform: translateX(-100%);
+  transition: all 0.2s;
+
+}
+.menu.active{
+  transform: translateX(0)
+}
+.menu_content{
+  width: 15vw;
+  height: 30vh;
+  background-color: rgb(119, 119, 119);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0px 25px 25px 0px;
+  transition: all 0.4s;
+}
+.header {
+width: 100%;
+text-align: center;
+padding: 10px 0px 10px 0px;
+font-size: 1.5em;
+color: white;
+border-bottom: 2px solid white;
+}
+ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  text-align: center;
+  position: relative;
+
+}
+.material-icons {
+  color: white;
+}
