@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { signIn } from '../../../../config/endPoints';
+import { signIn } from '../../../../redux/actions/userAction';
+
 import './SignIn.css';
 
 function SignIn() {
@@ -19,7 +20,7 @@ function SignIn() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(signIn)(userSignIn, navigate, from);
+    dispatch(signIn(userSignIn, navigate,));
   };
 
   return (
