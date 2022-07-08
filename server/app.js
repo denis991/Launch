@@ -11,10 +11,9 @@ const PORT = process.env.DB_PORT;
 
 const mainPageRouter = require('./routes/mainPage');
 const usersRouter = require('./routes/users');
-const cvsRouter = require('./routes/cvs');
+const cvsRouter = require('./routes/CVs');
 const accountRouter = require('./routes/account');
-// const authRouter = require('./routes/auth');
-// const userRouter = require('./routes/user');
+const notificationsRouter = require('./routes/notifications');
 
 const sessionConfig = {
   name: 'sID',
@@ -35,6 +34,7 @@ app.use('/', mainPageRouter);
 app.use('/users', usersRouter);
 app.use('/cvs', cvsRouter);
 app.use('/account', accountRouter);
+app.use('/notifications', notificationsRouter);
 
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);

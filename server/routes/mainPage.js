@@ -11,4 +11,19 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/vacancies/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const vacancy = await Vacancies.findOne({
+      where: {
+        id,
+      },
+    });
+    res.json(vacancy);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(404);
+  }
+});
+
 module.exports = router;

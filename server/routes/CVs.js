@@ -1,9 +1,10 @@
 const router = require('express').Router();
-const { CVS } = require('../db/models');
+const { CVs, CVComms } = require('../db/models');
 
+// все резюме
 router.get('/', async (req, res) => {
   try {
-    const allCVS = await CVS.findAll();
+    const allCVS = await CVs.findAll();
     res.json(allCVS);
   } catch (err) {
     console.log(err);
@@ -11,15 +12,22 @@ router.get('/', async (req, res) => {
   }
 });
 
+// конкретное резюме с комментариями
 router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const cv = await CVS.findOne({
+    const cv = await CVs.findOne({
       where: {
         id,
       },
     });
-    res.json(cv);
+
+    const comments = await CVComms.findOne({
+      where: {
+        id,
+      },
+    });
+    res.json({ cv, comments });
   } catch (err) {
     console.log(err);
     res.sendStatus(404);
