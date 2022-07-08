@@ -1,5 +1,6 @@
 const express = require('express');
 const logger = require('morgan');
+const cors = require('cors');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
@@ -7,6 +8,8 @@ const FileStore = require('session-file-store')(session);
 require('dotenv').config();
 
 const app = express();
+
+app.use(cors());
 const PORT = process.env.DB_PORT;
 
 // const mainPageRouter = require('./routes/main');
@@ -14,9 +17,14 @@ const PORT = process.env.DB_PORT;
 // const userRouter = require('./routes/user');
 
 const sessionConfig = {
-  name: 'sID',
-  store: new FileStore({}),
-  secret: 'secret',
+  name: 'wannalaunch',
+  store: new FileStore(),
+  secret: 'thisissecured',
+  cookie: {
+    secure: false,
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 24,
+  },
   resave: true,
   saveUninitialized: false,
 };
