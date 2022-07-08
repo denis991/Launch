@@ -23,7 +23,7 @@ function SignUp() {
   };
 
   return (
-    <div className="d-flex justify-content-center">
+    <div style={{ paddingTop: '60px' }} className="d-flex justify-content-center">
       <form onSubmit={submitHandler} className="d-flex flex-column align-items-center bg-light text-dark p-3 border rounded-3">
         <legend className="text-center mb-4">User Sign Up</legend>
         <div className="mb-3">
