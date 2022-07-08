@@ -6,6 +6,7 @@
   left: 0px;
   transform: translateX(-100%);
   transition: all 0.2s;
+  z-index: 50;
 
 
 }
@@ -13,6 +14,7 @@
   transform: translateX(0)
 }
 .menu_content{
+  font-size: 18px;
   width: 15vw;
   height: 46vh;
   background-color: #64B5F6;
@@ -26,10 +28,12 @@
 }
 .header {
 width: 100%;
+height: 40px;
 text-align: center;
 padding: 10px 0px 10px 0px;
 font-size: 1.5em;
 color: black;
+margin-top: 13px;
 border-bottom: 2px solid black;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

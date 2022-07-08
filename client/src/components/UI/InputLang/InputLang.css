@@ -1,14 +1,10 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-html {
-  font-size: 62.5%;
-}
 .viewport {
-  position: relative;
-  overflow: hidden;
+  display: flex;
 }
+.xz {
+  display: flex;
+}
+
 .wrap {
   position: relative;
   width: 300vw;
@@ -20,19 +16,6 @@ html {
   width: 100vw;
   height: auto;
   float: left;
-}
-
-#pic1:checked ~ .wrap {
-  left: 0;
-  transition: 2s linear;
-}
-#pic2:checked ~ .wrap {
-  left: -100vw;
-  transition: 2s linear;
-}
-#pic3:checked ~ .wrap {
-  left: -200vw;
-  transition: 2s linear;
 }
 
 .arrow label {

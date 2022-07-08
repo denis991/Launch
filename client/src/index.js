@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 
 import App from './App';
+import './normalize.css';
 
 import store from './redux/store';
 
