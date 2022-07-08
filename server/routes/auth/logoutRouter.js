@@ -11,3 +11,4 @@ router.route('/')
       res.json(error);
     }
   });
+module.exports = router;
