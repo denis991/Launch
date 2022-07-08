@@ -1,0 +1,29 @@
+.vac {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 55px;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  background-color: #64B5F6;
+  border: 2px solid black;
+  width: 30%;
+  
+}
+.city {
+  width: 30%;
+}
+.vacation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sp {
+  margin: 10px;
+}
+.bd {
+  margin: 17px;
+}

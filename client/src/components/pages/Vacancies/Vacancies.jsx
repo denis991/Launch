@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import InputLang from '../UI/InputLang/InputLang';
-import InputLevel from '../UI/InputLevel/InputLevel';
+import InputLang from '../../UI/InputLang/InputLang';
+import InputLevel from '../../UI/InputLevel/InputLevel';
+import './Vacancies.css';
 
 function Vacancies() {
   const [langProg, setLangProg] = useState('');
@@ -16,46 +17,49 @@ function Vacancies() {
   }]);
 
   return (
-    <>
+    <div className="vac">
       <h1>
         Вакансии для разработчиков
       </h1>
       <div>
+        <input style={{ width: '30%' }} type="text" placeholder="Город" name="city" />
+        <input className="btn" type="submit" value="Найти" data-disable-with="Найти" />
+      </div>
+      <div className="input">
         <InputLevel levelVacancies={levelVacancies} setLevelVacancies={setLevelVacancies} />
         <InputLang langProg={langProg} setLangProg={setLangProg} />
-        <input placeholder="Город" type="text" name="web_vacancies_search_form[city]" id="web_vacancies_search_form_city" />
-        <input type="submit" name="commit" value="Найти" data-disable-with="Найти" />
       </div>
       { adVacancies.map((el) => (
 
         <div>
-          <div className="card mb-3 border-0">
-            <div className="card-body">
-              <div className="small text-muted">около 5 часов</div>
-              <h5 className="card-title">
+          <div className="vacation">
+            <div>
+              <div>{}</div>
+              <h5>
                 <a href={el.url}>
-                  <span className="me-2">{el.level}</span>
-                  <span className="me-2">{el.leng}</span>
-                  <span className="small me-2">{el.salary}</span>
-                  <span className="me-2">
-                    <span className="me-2">-</span>
+                  <span className="sp">{el.level}</span>
+                  <span className="sp">{el.leng}</span>
+                  <span className="sp">{el.salary}</span>
+                  <span>
+                    <span>-</span>
                     {el.company}
                     {' '}
                   </span>
                 </a>
               </h5>
-              <div className="card-text mb-2">
+              <div className="opisanie">
                 {el.body}
-
-                <div className="fw-bold mt-1">{el.dialect}</div>
+              </div>
+              <div className="bd">
+                {el.dialect}
               </div>
             </div>
 
           </div>
         </div>
       ))}
+    </div>
 
-    </>
   );
 }
 

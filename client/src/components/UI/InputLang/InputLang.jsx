@@ -1,10 +1,11 @@
 import React from 'react';
-import classes from './InputLang.module.css';
+import './InputLang.css';
 
 function InputLang({ langProg, setLangProg }) {
   return (
-    <div className={classes.viewport}>
-      <select value={langProg} onChange={(e) => setLangProg(e.target.value)} id="nameInputLang">
+    <label htmlFor="inputLang" className="viewport">
+      <select className="xz" id="inputLang" value={langProg} onChange={(e) => setLangProg(e.target.value)}>
+        {/* {skills.map((skill) => (<option value={skill.skill}>{skill.skill}</option>))} */}
         <option value="yii2">Yii2</option>
         <option value="devops">DevOps</option>
         <option value="c++">C++</option>
@@ -46,7 +47,7 @@ function InputLang({ langProg, setLangProg }) {
         <option value="node.js">node.js</option>
         <option value="php">php</option>
       </select>
-    </div>
+    </label>
   );
 }
 
