@@ -6,7 +6,7 @@ import './Navbar.css';
 function Navbar() {
   const title = 'SOCITE';
   const [menuActive, setMenuActive] = useState(false);
-  const items = [{ value: 'Резюме', href: '/', icon: '/img/time.svg' }, { value: 'Вакансии', href: '/main', icon: '/img/Mac.svg' }, { value: 'Рейтинг', href: '/xyi', icon: '/img/Mony.svg' }, { value: 'Релокация', href: '/xyi', icon: '/img/Mony.svg' }, { value: 'Новости', href: '/xyi', icon: '/img/Mony.svg' }];
+  const items = [{ value: 'Резюме', href: '/cvs', icon: '/img/time.svg' }, { value: 'Вакансии', href: '/main', icon: '/img/Mac.svg' }, { value: 'Рейтинг', href: '/xyi', icon: '/img/Mony.svg' }, { value: 'Релокация', href: '/xyi', icon: '/img/Mony.svg' }, { value: 'Новости', href: '/xyi', icon: '/img/Mony.svg' }];
   return (
     <div className="navbar">
       <div className="links">

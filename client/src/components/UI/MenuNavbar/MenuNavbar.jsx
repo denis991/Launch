@@ -1,5 +1,6 @@
 import React from 'react';
 import './MenuNavbar.css';
+import { Link } from 'react-router-dom';
 
 function MenuNavbar({
   header, items, active, setActive,
@@ -13,7 +14,9 @@ function MenuNavbar({
         <ul>
           {items.map((item) => (
             <li>
-              <a href={item.href}>{item.value}</a>
+              <Link to={item.href}>
+                {item.value}
+              </Link>
               <span className="material-icons">
                 <img className="icon" src={item.icon} alt="time" />
               </span>
