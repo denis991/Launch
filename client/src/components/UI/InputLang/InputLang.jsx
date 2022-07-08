@@ -12,7 +12,7 @@ function InputLang({ langProg, setLangProg }) {
   }, []);
   return (
     <label htmlFor="inputLang" className="viewport">
-      <select className="xz" id="inputLang" value={langProg} onChange={(e) => setLangProg(e.target.value)}>
+      <select className="xz" onClick={() => dispatch(getSkillThunk())} id="inputLang" value={langProg} onChange={(e) => setLangProg(e.target.value)}>
         {/* {skills.map((skill) => (<option value={skill.skill}>{skill.skill}</option>))} */}
         <option value="yii2">Yii2</option>
         <option value="devops">DevOps</option>
