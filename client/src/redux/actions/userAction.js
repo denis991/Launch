@@ -7,18 +7,6 @@ export const setUser = (user) => ({
   payload: user,
 });
 
-export const getUserFormServer = (id) => async (dispatch) => {
-  dispatch(enableLoader);
-  const response = await fetch(endPoint.getUser(id), {
-    credentials: 'include',
-  });
-  if (response.status === 200) {
-    const currentUser = await response.json();
-    dispatch(setUser(currentUser));
-  }
-  dispatch(disableLoader());
-};
-
 export const signUp = (payload, navigate) => async (dispatch) => {
   dispatch(enableLoader());
   const response = await fetch(endPoint.singUp(), {
@@ -26,7 +14,7 @@ export const signUp = (payload, navigate) => async (dispatch) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    credentials: 'include',
+
     body: JSON.stringify(payload),
   });
   if (response.status === 200) {
@@ -46,7 +34,6 @@ export const signIn = (payload, navigate) => async (dispatch) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    credentials: 'include',
     body: JSON.stringify(payload),
   });
   if (response.status === 200) {
@@ -65,7 +52,6 @@ export const deleteUser = () => ({
 
 export const singOut = () => async (dispatch) => {
   const response = await fetch(endPoint.signOut(), {
-    credentials: 'include',
   });
   if (response.status === 200) {
     dispatch(deleteUser());
