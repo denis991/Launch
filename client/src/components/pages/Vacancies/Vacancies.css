@@ -1,0 +1,18 @@
+.vac {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 55px;
+}
+.input {
+  display: flex;
+  
+  flex-direction: column;
+  background-color: #64B5F6;
+  border: 2px solid black;
+  width: 30%;
+  
+}
+.city {
+  width: 30%;
+}

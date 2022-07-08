@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Cvs from './Cvs';
-import Vacancies from './Vacancies';
+import Vacancies from './Vacancies/Vacancies';
 
 function MainPages() {
   return (
