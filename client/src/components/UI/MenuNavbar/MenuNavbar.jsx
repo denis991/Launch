@@ -14,7 +14,9 @@ function MenuNavbar({
           {items.map((item) => (
             <li>
               <a href={item.href}>{item.value}</a>
-              <span className="material-icons">{item.icon}</span>
+              <span className="material-icons">
+                <img className="icon" src={item.icon} alt="time" />
+              </span>
             </li>
           ))}
         </ul>
