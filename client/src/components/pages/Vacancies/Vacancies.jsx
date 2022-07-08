@@ -32,14 +32,14 @@ function Vacancies() {
       { adVacancies.map((el) => (
 
         <div>
-          <div>
+          <div className="vacation">
             <div>
-              <div>около 5 часов</div>
+              <div>{}</div>
               <h5>
                 <a href={el.url}>
-                  <span>{el.level}</span>
-                  <span>{el.leng}</span>
-                  <span>{el.salary}</span>
+                  <span className="sp">{el.level}</span>
+                  <span className="sp">{el.leng}</span>
+                  <span className="sp">{el.salary}</span>
                   <span>
                     <span>-</span>
                     {el.company}
@@ -47,10 +47,11 @@ function Vacancies() {
                   </span>
                 </a>
               </h5>
-              <div>
+              <div className="opisanie">
                 {el.body}
-
-                <div>{el.dialect}</div>
+              </div>
+              <div className="bd">
+                {el.dialect}
               </div>
             </div>
 
