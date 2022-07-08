@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import MenuNavbar from '../UI/MenuNavbar/MenuNavbar';
+import MenuNavbar from '../UI/MenuNavbar/MenuNavbar';
 import './Navbar.css';
-// import list from '../../../public/img/Tilda_Icons_3st_round-the-clock.svg';
 
 function Navbar() {
   const title = 'SOCITE';
   const [menuActive, setMenuActive] = useState(false);
-  const items = [{ value: 'Главная', href: '/', icon: '' }, { value: 'Создать резюме', href: '/main', icon: 'anchor' }, { value: 'Создать вакансию', href: '/xyi', icon: 'anchor' }];
+  const items = [{ value: 'Резюме', href: '/', icon: '/img/time.svg' }, { value: 'Вакансии', href: '/main', icon: '/img/Mac.svg' }, { value: 'Рейтинг', href: '/xyi', icon: '/img/Mony.svg' }, { value: 'Релокация', href: '/xyi', icon: '/img/Mony.svg' }, { value: 'Новости', href: '/xyi', icon: '/img/Mony.svg' }];
   return (
     <div className="navbar">
       <div className="links">
