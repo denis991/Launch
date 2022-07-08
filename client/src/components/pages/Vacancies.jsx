@@ -26,7 +26,6 @@ function Vacancies() {
         <input placeholder="Город" type="text" name="web_vacancies_search_form[city]" id="web_vacancies_search_form_city" />
         <input type="submit" name="commit" value="Найти" data-disable-with="Найти" />
       </div>
-      {/* kard */}
       { adVacancies.map((el) => (
 
         <div>

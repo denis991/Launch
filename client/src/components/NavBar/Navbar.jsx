@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import MenuNavbar from '../UI/MenuNavbar/MenuNavbar';
+import MenuNavbar from '../UI/MenuNavbar/MenuNavbar';
 import './Navbar.css';
 // import list from '../../../public/img/Tilda_Icons_3st_round-the-clock.svg';
 
