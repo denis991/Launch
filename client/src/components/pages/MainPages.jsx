@@ -2,14 +2,17 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Cvs from './Cvs';
 import Vacancies from './Vacancies/Vacancies';
+import SignIn from './Forms/SignIn/SignIn';
+import SignUp from './Forms/SignUp/SignUp';
+import AddCV from './Forms/AddCV/AddCV';
 
 function MainPages() {
   return (
     <Routes>
       <Route path="/" element={<Vacancies />} />
       <Route path="/cvs" element={<Cvs />} />
-      <Route path="/users/sign_in" element={<p>/users/sign_in</p>} />
-      <Route path="/users/sign_up" element={<p>/users/sign_up</p>} />
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signup" element={<SignUp />} />
       <Route path="/users" element={<p>users</p>} />
       <Route path="/users/:id" element={<p>users/:id</p>} />
       <Route path="/resumes" element={<p>resumes</p>} />
@@ -22,7 +25,7 @@ function MainPages() {
       <Route path="/account/vacancies/:id" element={<p>account/vacancies/:id</p>} />
       <Route path="/account/profile/edit" element={<p>account/profile/edit</p>} />
       <Route path="/*" element={<p>ERROR</p>} />
-
+      <Route path="/account/cvs/new" element={<AddCV />} />
     </Routes>
   );
 }
