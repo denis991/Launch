@@ -8,7 +8,7 @@ function SignUp() {
   const [userSignUp, setUserSignUp] = useState({
     email: '',
     password: '',
-    userName: '',
+    name: '',
   });
 
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ function SignUp() {
   };
 
   return (
-    <div className="d-flex justify-content-center">
+    <div style={{ paddingTop: '60px' }} className="d-flex justify-content-center">
       <form onSubmit={submitHandler} className="d-flex flex-column align-items-center bg-light text-dark p-3 border rounded-3">
         <legend className="text-center mb-4">User Sign Up</legend>
         <div className="mb-3">
@@ -31,7 +31,7 @@ function SignUp() {
         </div>
 
         <div className="mb-3">
-          <input onChange={changeHandler} className="form-control" value={userSignUp.userName} type="text" name="userName" placeholder="Name" />
+          <input onChange={changeHandler} className="form-control" value={userSignUp.name} type="text" name="name" placeholder="Name" />
         </div>
 
         <div className="mb-3">

@@ -9,7 +9,7 @@ export const setUser = (user) => ({
 
 export const signUp = (payload, navigate) => async (dispatch) => {
   dispatch(enableLoader());
-  const response = await fetch(endPoint.singUp(), {
+  const response = await fetch(endPoint.signUp(), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ export const signUp = (payload, navigate) => async (dispatch) => {
   if (response.status === 200) {
     const user = await response.json();
     dispatch(setUser(user));
-    navigate('/');
+    navigate('/signin');
   } else {
     navigate('/signup');
   }
@@ -28,6 +28,7 @@ export const signUp = (payload, navigate) => async (dispatch) => {
 };
 
 export const signIn = (payload, navigate) => async (dispatch) => {
+  console.log(payload);
   dispatch(enableLoader());
   const response = await fetch(endPoint.signIn(), {
     method: 'POST',
@@ -50,7 +51,7 @@ export const deleteUser = () => ({
   type: DELETE_USER,
 });
 
-export const singOut = () => async (dispatch) => {
+export const signOut = () => async (dispatch) => {
   const response = await fetch(endPoint.signOut(), {
   });
   if (response.status === 200) {

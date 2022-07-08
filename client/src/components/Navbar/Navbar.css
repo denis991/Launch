@@ -9,7 +9,7 @@
 }
 .links {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 .link {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -22,9 +22,8 @@
 .burger-btn {
   width: 30px;
   height: 30px;
-  margin-left: 30px;
   position: relative;
-  right: 730px;
+  /* right: 730px; */
   top: 8px;
 }
 .burger-btn:before {
@@ -50,4 +49,15 @@
   width: 30px;
   background-color: white;
   height: 3px;
+}
+.reg {
+  position: relative;
+  /* right: -46%; */
+  padding: 25px;
+  font-size: 20px;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.linki {
+  padding-top: 25px;
 }
