@@ -9,7 +9,6 @@
   position: relative;
   width: 300vw;
   overflow: hidden;
-  
 }
 .wrap img {
   display: inline-block;
@@ -19,7 +18,7 @@
 }
 
 .arrow label {
-  display: none;/*Не показывай*/
+  display: none; /*Не показывай*/
   width: 2rem;
   height: 2rem;
   border-top: 1rem solid #000;

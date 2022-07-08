@@ -5,15 +5,26 @@ import './InputLang.css';
 
 function InputLang({ langProg, setLangProg }) {
   const dispatch = useDispatch();
+  const skills = useSelector((state) => state.skills);
 
+  console.log(skills.lenght);
   useEffect(() => {
     dispatch(getSkill({}));
     dispatch(getSkillThunk());
   }, []);
   return (
     <label htmlFor="inputLang" className="viewport">
-      <select className="xz" onClick={() => dispatch(getSkillThunk())} id="inputLang" value={langProg} onChange={(e) => setLangProg(e.target.value)}>
-        {/* {skills.map((skill) => (<option value={skill.skill}>{skill.skill}</option>))} */}
+      <select
+        className="xz"
+        onClick={() => dispatch(getSkillThunk())}
+        id="inputLang"
+        value={langProg}
+        onChange={(e) => setLangProg(e.target.value)}
+      >
+        {skills.lenght > 1
+        && skills.map((skill) => (
+          <option kay={Date.now() + Math.random()} value={skill.skill}>{skill.skill}</option>
+        ))}
         <option value="yii2">Yii2</option>
         <option value="devops">DevOps</option>
         <option value="c++">C++</option>
