@@ -16,8 +16,10 @@ const mainPageRouter = require('./routes/mainPage');
 const usersRouter = require('./routes/users');
 const cvsRouter = require('./routes/cvs');
 const accountRouter = require('./routes/account');
-// const authRouter = require('./routes/auth');
-// const userRouter = require('./routes/user');
+const authRouter = require('./routes/auth/authRouter');
+const signupRouter = require('./routes/auth/signupRouter');
+const signinRouter = require('./routes/auth/signinRouter');
+const logoutRouter = require('./routes/auth/logoutRouter');
 
 const sessionConfig = {
   name: 'wannalaunch',
@@ -40,6 +42,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use('/', mainPageRouter);
+app.use('/auth', authRouter);
+app.use('/signup', signupRouter);
+app.use('/signin', signinRouter);
+app.use('/logout', logoutRouter);
 app.use('/users', usersRouter);
 app.use('/cvs', cvsRouter);
 app.use('/account', accountRouter);
