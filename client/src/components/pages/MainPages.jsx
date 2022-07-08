@@ -4,12 +4,13 @@ import Cvs from './Cvs';
 import Vacancies from './Vacancies';
 import SignIn from './Forms/SignIn/SignIn';
 import SignUp from './Forms/SignUp/SignUp';
+import AddCV from './Forms/AddCV/AddCV';
 
 function MainPages() {
   return (
     <Routes>
-      <Route path="/" element={<Cvs />} />
       <Route path="/" element={<Vacancies />} />
+      <Route path="/cvs" element={<Cvs />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/users" element={<p>users</p>} />
@@ -24,7 +25,7 @@ function MainPages() {
       <Route path="/account/vacancies/:id" element={<p>account/vacancies/:id</p>} />
       <Route path="/account/profile/edit" element={<p>account/profile/edit</p>} />
       <Route path="/*" element={<p>ERROR</p>} />
-
+      <Route path="/account/cvs/new" element={<AddCV />} />
     </Routes>
   );
 }
