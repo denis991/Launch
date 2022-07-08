@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const { Users } = require('../../db/models');
 const Bcrypt = require('../../public/middlewares/bcrypt');
+const { checkSession } = require('../../public/middlewares/checkSession')
 
 router.route('/')
-  .post(async (req, res) => {
+  .post(checkSession, async (req, res) => {
     try {
       const { email, password, name } = req.body;
       const result = await Users.create({ email, password: await Bcrypt.hash(password), name });
@@ -17,4 +18,5 @@ router.route('/')
       return res.json(error);
     }
   });
+
 module.exports = router;
