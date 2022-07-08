@@ -1,11 +1,12 @@
 const router = require('express').Router();
 const {
-  CVS: CVs, Vacancies, CV_Skills, Vacancies_Skills,
+  CVs, Vacancies, CV_Skills, Vacancies_Skills,
 } = require('../db/models');
 
 // новое резюме юзера
 router.post('/cvs/new', async (req, res) => {
   try {
+    console.log(req.body);
     // данные с фронта
     const {
       skillsID,
@@ -33,7 +34,7 @@ router.post('/cvs/new', async (req, res) => {
     });
 
     const idCV = newCV.id;
-    skillsID.map(async (skillId) => {
+    skillsID?.map(async (skillId) => {
       await CV_Skills.create({
         idCV,
         skill_id: skillId,
