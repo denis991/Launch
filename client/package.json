@@ -20,6 +20,9 @@
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "styled-components": "^5.3.5",
+    "redux-thunk": "^2.4.1",
+    "socket.io": "^4.5.1",
+    "socket.io-client": "^4.5.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -34,6 +37,7 @@
       "react-app/jest"
     ]
   },
+  "proxy": "http://localhost:3006",
   "browserslist": {
     "production": [
       ">0.2%",
