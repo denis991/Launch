@@ -9,6 +9,7 @@ import AddVacancy from './Forms/AddVacancy/AddVacancy';
 import Account from './Account';
 import AuthRoute from '../AuthRoute/AuthRoute';
 import UserForm from './Forms/UserForm/UserForm';
+import ProfilEdit from './ProfilEdit';
 
 function MainPages() {
   return (
@@ -33,7 +34,7 @@ function MainPages() {
       <Route path="/account/vacancies" element={<p>account/vacancies</p>} />
       <Route path="/account/cvs/:id" element={<p>account/resumes/:id</p>} />
       <Route path="/account/vacancies/:id" element={<p>account/vacancies/:id</p>} />
-      <Route path="/account/profile/edit" element={<p>account/profile/edit</p>} />
+      <Route path="/account/profile/edit" element={<ProfilEdit />} />
       <Route path="/account/cvs/new" element={<AddCV />} />
       <Route path="/*" element={<Error />} />
     </Routes>
