@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import {
+  Form, Input, FormGroup, Label, Button
+} from 'reactstrap';
 import { useDispatch } from 'react-redux';
 import { addCVThunk } from '../../../../redux/actions/cvsActions';
+import './AddCV.css';
 
 function AddCv() {
   const dispatch = useDispatch();
@@ -20,16 +24,23 @@ function AddCv() {
   };
 
   return (
-    <div style={{ paddingTop: '90px', margin: '60px' }}>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <p>Название</p>
-          <input onChange={handleInput} value={form.name} type="text" name="title" />
-        </div>
+    <div className="formAddCV" onSubmit={handleSubmit}>
+      <Form>
+        <FormGroup>
+          <Label for="title">
+            Название
+          </Label>
+          <Input
+            name="title"
+            type="text"
+            onChange={handleInput}
+            value={form.name}
+          />
+        </FormGroup>
 
-        <div>
-          <label>
-            <input
+        <FormGroup>
+          <Label>
+            <Input
               type="checkbox"
               checked={checked}
               onChange={(e) => {
@@ -40,41 +51,71 @@ function AddCv() {
               name="elbrus"
             />
             Elbrus
-          </label>
-        </div>
+          </Label>
+        </FormGroup>
 
-        <div>
-          <p>Github</p>
-          <input onChange={handleInput} value={form.name} type="text" name="github" />
-        </div>
+        <FormGroup>
+          <Label>Github</Label>
+          <Input
+            onChange={handleInput}
+            value={form.name}
+            type="text"
+            name="github"
+          />
+        </FormGroup>
 
-        <div>
-          <p>Контакт</p>
-          <input onChange={handleInput} value={form.name} type="text" name="contact" />
-        </div>
+        <FormGroup>
+          <Label>Контакт</Label>
+          <Input
+            onChange={handleInput}
+            value={form.name}
+            type="text"
+            name="contact"
+          />
+        </FormGroup>
 
-        <div>
-          <p>Описание, навыки</p>
-          <input onChange={handleInput} value={form.name} type="textarea" name="body" />
-        </div>
+        <FormGroup>
+          <Label>Описание, навыки</Label>
+          <Input
+            onChange={handleInput}
+            value={form.name}
+            type="textarea"
+            name="body"
+          />
+        </FormGroup>
 
-        <div>
-          <p>Награды, Сертификаты</p>
-          <input onChange={handleInput} value={form.name} type="textarea" name="awards" />
-        </div>
+        <FormGroup>
+          <Label>Награды, Сертификаты</Label>
+          <Input
+            onChange={handleInput}
+            value={form.name}
+            type="textarea"
+            name="awards"
+          />
+        </FormGroup>
 
-        <div>
-          <p>Ваше образование</p>
-          <input onChange={handleInput} value={form.name} type="textarea" name="education" />
-        </div>
+        <FormGroup>
+          <Label>Ваше образование</Label>
+          <Input
+            onChange={handleInput}
+            value={form.name}
+            type="textarea"
+            name="education"
+          />
+        </FormGroup>
 
-        <div>
-          <p>Ваш опыт</p>
-          <input onChange={handleInput} value={form.name} type="textarea" name="experience" />
-        </div>
+        <FormGroup>
+          <Label>Ваш опыт</Label>
+          <Input
+            onChange={handleInput}
+            value={form.name}
+            type="textarea"
+            name="experience"
+          />
+        </FormGroup>
 
-        <button type="submit">Опубликовать резюме</button>
-      </form>
+        <Button type="submit">Опубликовать резюме</Button>
+      </Form>
     </div>
   );
 }

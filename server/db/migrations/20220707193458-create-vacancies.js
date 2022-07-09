@@ -1,4 +1,3 @@
-'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Vacancies', {
@@ -30,7 +29,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       contact_phone: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       contact_social: {
         type: Sequelize.STRING

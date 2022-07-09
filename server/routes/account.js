@@ -110,13 +110,13 @@ router.post('/vacancies/new', async (req, res) => {
       city,
     });
 
-    const idVacancy = newVacancy.id;
-    skillsID.map(async (skillId) => {
-      await Vacancies_Skills.create({
-        idVacancy,
-        skill_id: skillId,
-      });
-    });
+    // const idVacancy = newVacancy.id;
+    // skillsID?.map(async (skillId) => {
+    //   await Vacancies_Skills.create({
+    //     idVacancy,
+    //     skill_id: skillId,
+    //   });
+    // });
 
     res.sendStatus(200);
   } catch (err) {
