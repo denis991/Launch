@@ -7,7 +7,6 @@ import { userCheckAuthThunk } from './redux/actions/AuthAction';
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log('CONTEXT USEEFFECT');
     dispatch(userCheckAuthThunk());
   }, []);
   return (
