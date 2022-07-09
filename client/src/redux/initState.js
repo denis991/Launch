@@ -1,6 +1,8 @@
 const initState = {
-  user: null,
+  user: {},
   loader: false,
+  cvs: false,
+  skills: [],
 };
 
 export default initState;
