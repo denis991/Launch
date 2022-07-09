@@ -1,6 +1,6 @@
 import { GET_SKILLS } from '../constants/constants';
 
-export default (state = [], action) => {
+const skillsReducer = (state = [], action) => {
   const { type, payload } = action;
   switch (type) {
     case GET_SKILLS:
@@ -9,3 +9,4 @@ export default (state = [], action) => {
       return state;
   }
 };
+export default skillsReducer;
