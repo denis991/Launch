@@ -6,7 +6,6 @@ function AddCv() {
   const dispatch = useDispatch();
   const [checked, setChecked] = useState(false);
   const [form, setForm] = useState({});
-  console.log(form);
 
   const handleChange = () => {
     setChecked(!checked);
