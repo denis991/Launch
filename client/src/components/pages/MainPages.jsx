@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Cvs from './Cvs';
