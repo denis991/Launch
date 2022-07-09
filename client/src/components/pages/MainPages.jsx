@@ -5,6 +5,7 @@ import Vacancies from './Vacancies/Vacancies';
 import SignIn from './Forms/SignIn/SignIn';
 import SignUp from './Forms/SignUp/SignUp';
 import AddCV from './Forms/AddCV/AddCV';
+import Error from './Error/Error';
 
 function MainPages() {
   return (
@@ -25,8 +26,8 @@ function MainPages() {
       <Route path="/account/resumes/:id" element={<p>account/resumes/:id</p>} />
       <Route path="/account/vacancies/:id" element={<p>account/vacancies/:id</p>} />
       <Route path="/account/profile/edit" element={<p>account/profile/edit</p>} />
-      <Route path="/*" element={<p>ERROR</p>} />
       <Route path="/account/cvs/new" element={<AddCV />} />
+      <Route path="/*" element={<Error />} />
     </Routes>
   );
 }

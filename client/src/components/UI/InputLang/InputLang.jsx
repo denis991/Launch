@@ -7,7 +7,7 @@ function InputLang({ langProg, setLangProg }) {
   const dispatch = useDispatch();
   const skills = useSelector((state) => state.skills);
 
-  console.log(skills.lenght);
+  console.log(skills);
   useEffect(() => {
     dispatch(getSkill({}));
     dispatch(getSkillThunk());
@@ -17,17 +17,17 @@ function InputLang({ langProg, setLangProg }) {
 
       <select
         className="xz"
-        onClick={() => dispatch(getSkillThunk())}
+        // onClick={() => dispatch(getSkillThunk())}
         id="inputLang"
         value={langProg}
         onChange={(e) => setLangProg(e.target.value)}
       >
+        <option value="Язык программирования">Язык программирования</option>
         {skills.lenght > 1
         && skills.map((skill) => (
-          <option kay={Date.now() + Math.random()} value={skill.skill}>{skill.skill}</option>
+          <option key={skill.id} value={skill.skill}>{skill.skill}</option>
         ))}
-        <option value="Язык программирования">Язык программирования</option>
-        <option value="yii2">Yii2</option>
+        {/* <option value="yii2">Yii2</option>
         <option value="devops">DevOps</option>
         <option value="c++">C++</option>
         <option value="ios">iOS</option>
@@ -66,7 +66,7 @@ function InputLang({ langProg, setLangProg }) {
         <option value="spring">Spring</option>
         <option value="docker">Docker</option>
         <option value="node.js">node.js</option>
-        <option value="php">php</option>
+        <option value="php">php</option> */}
       </select>
     </label>
   );
