@@ -8,7 +8,13 @@ function Navbar() {
   const title = 'Launch';
   const [user, setUser] = useState({});
   const [menuActive, setMenuActive] = useState(false);
-  const items = [{ value: 'Резюме', href: '/signup', icon: '/img/time.svg' }, { value: 'Вакансии', href: '/main', icon: '/img/Mac.svg' }, { value: 'Рейтинг', href: '/rating', icon: '/img/Mony.svg' }, { value: 'Релокация', href: '/reloc', icon: '/img/Mony.svg' }, { value: 'Новости', href: '/news', icon: '/img/Mony.svg' }];
+  const items = [
+    { value: 'Резюме', href: '/signup', icon: '/img/time.svg' },
+    { value: 'Вакансии', href: '/main', icon: '/img/Mac.svg' },
+    { value: 'Рейтинг', href: '/rating', icon: '/img/Mony.svg' },
+    { value: 'Релокация', href: '/reloc', icon: '/img/Mony.svg' },
+    { value: 'Новости', href: '/news', icon: '/img/Mony.svg' }
+  ];
 
   const renderLogout = () => (
     <button className="logout_btn" type="button">Logout</button>
@@ -32,4 +38,5 @@ function Navbar() {
 
   );
 }
+// key={Date.now + Math.random()}
 export default Navbar;
