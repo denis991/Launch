@@ -9,12 +9,11 @@ function InputLang({ langProg, setLangProg }) {
 
   console.log(skills);
   useEffect(() => {
-    dispatch(getSkill({}));
+    // dispatch(getSkill({}));
     dispatch(getSkillThunk());
   }, []);
   return (
     <label htmlFor="inputLang" className="viewport">
-
       <select
         className="xz"
         // onClick={() => dispatch(getSkillThunk())}
@@ -23,8 +22,7 @@ function InputLang({ langProg, setLangProg }) {
         onChange={(e) => setLangProg(e.target.value)}
       >
         <option value="Язык программирования">Язык программирования</option>
-        {skills.lenght > 1
-        && skills.map((skill) => (
+        {skills && skills.map((skill) => (
           <option key={skill.id} value={skill.skill}>{skill.skill}</option>
         ))}
         {/* <option value="yii2">Yii2</option>
