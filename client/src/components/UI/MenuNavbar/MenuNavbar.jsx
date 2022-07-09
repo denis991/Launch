@@ -13,7 +13,7 @@ function MenuNavbar({
         </div>
         <ul>
           {items.map((item) => (
-            <li>
+            <li key={Date.now() + Math.random()}>
               <Link to={item.href}>
                 {item.value}
               </Link>
