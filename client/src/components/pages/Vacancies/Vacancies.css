@@ -8,5 +8,12 @@
   background-image: url('../../../../public/img/prev.jpeg');
   background-size: 1440px 650px;
   filter: contrast(80%);
+}
+.vac-list {
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+  justify-content: space-between;
+  margin-top: 150px;
 
 }

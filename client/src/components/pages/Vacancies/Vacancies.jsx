@@ -12,19 +12,29 @@ function Vacancies() {
     url: '/vacancies/576',
     level: 'Джуниор',
     leng: 'Ruby-разработчик',
-    salary: 'от 40 000 до 60 000 ₽ (На руки)',
+    salary: 'от 40 000 до 60 000 ₽',
+    company: ' Edstein',
+    body: 'Написание кода в соответствии с поставленными задачами Написание тестов Участие в отладке внутренних процессов разработки (code review, code style, git flow,deployment flow)',
+    dialect: 'PostgreSQL, ООП',
+  }, {
+    url: '/vacancies/576',
+    level: 'Джуниор',
+    leng: 'Ruby-разработчик',
+    salary: 'от 40 000 до 60 000 ₽',
     company: ' Edstein',
     body: 'Написание кода в соответствии с поставленными задачами Написание тестов Участие в отладке внутренних процессов разработки (code review, code style, git flow,deployment flow)',
     dialect: 'PostgreSQL, ООП',
   }]);
 
   return (
-    <div className="vac">
-
-      <VacanciesForm levelVacancies={levelVacancies} setLevelVacancies={setLevelVacancies} langProg={langProg} setLangProg={setLangProg} adVacancies={adVacancies} />
-      <VacanciesList adVacancies={adVacancies} />
+    <div>
+      <div className="vac">
+        <VacanciesForm levelVacancies={levelVacancies} setLevelVacancies={setLevelVacancies} langProg={langProg} setLangProg={setLangProg} adVacancies={adVacancies} />
+        <div className="vac-list">
+          <VacanciesList adVacancies={adVacancies} />
+        </div>
+      </div>
     </div>
-
   );
 }
 
