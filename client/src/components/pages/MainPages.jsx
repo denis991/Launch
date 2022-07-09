@@ -10,6 +10,7 @@ import Account from './Account';
 import AuthRoute from '../AuthRoute/AuthRoute';
 import UserForm from './Forms/UserForm/UserForm';
 import ProfilEdit from './ProfilEdit';
+import Resumes from './Resumes';
 
 function MainPages() {
   return (
@@ -26,7 +27,7 @@ function MainPages() {
       />
       <Route path="/users" element={<p>users</p>} />
       <Route path="/users/:id" element={<p>users/:id</p>} />
-      <Route path="/cvs" element={<p>resumes</p>} />
+      <Route path="/cvs" element={<Resumes />} />
       <Route path="/cvs/:id" element={<p>resumes/:id</p>} />
       <Route path="/account" element={<Account />} />
       <Route path="/account/vacancies/new" element={<AddVacancy />} />
