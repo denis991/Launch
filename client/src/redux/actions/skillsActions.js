@@ -10,7 +10,7 @@ export const clearSkill = () => ({
 
 export const getSkillThunk = () => async (dispatch) => {
   try {
-    dispatch(getSkill({}));
+    // dispatch(getSkill({}));
     const response = await fetch('/skills');
     if (response.ok) {
       const result = await response.json();
