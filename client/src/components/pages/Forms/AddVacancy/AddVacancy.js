@@ -6,11 +6,6 @@ import { useDispatch } from 'react-redux';
 import { addCVThunk } from '../../../../redux/actions/cvsActions';
 
 function AddVacancy() {
-  const options = [
-    { value: 'Джуниор', label: 'Джуниор' },
-    { value: 'Стажер', label: 'Стажер' },
-  ];
-
   return (
     <Form>
       <FormGroup>
@@ -20,145 +15,204 @@ function AddVacancy() {
         <Input
           id="title"
           name="title"
-          placeholder="введите название вакансии"
           type="text"
         />
       </FormGroup>
 
       <FormGroup>
         <Label for="level">
-          Select
+          Уровень
         </Label>
         <Input
-          id="exampleSelect"
-          name="select"
+          id="level"
+          name="level"
           type="select"
         >
           <option>
-            1
+            Стажер
           </option>
           <option>
-            2
-          </option>
-          <option>
-            3
-          </option>
-          <option>
-            4
-          </option>
-          <option>
-            5
+            Джуниор
           </option>
         </Input>
       </FormGroup>
+
       <FormGroup>
-        <Label for="examplePassword">
-          Password
+        <Label for="city">
+          Город
         </Label>
         <Input
-          id="examplePassword"
-          name="password"
-          placeholder="password placeholder"
-          type="password"
+          id="city"
+          name="city"
+          type="text"
         />
       </FormGroup>
 
       <FormGroup>
-        <Label for="exampleSelectMulti">
-          Select Multiple
+        <Label for="salary">
+          Зарплата
         </Label>
         <Input
-          id="exampleSelectMulti"
-          multiple
-          name="selectMulti"
+          id="salary"
+          name="salary"
+          type="text"
+        />
+      </FormGroup>
+
+      <FormGroup>
+        <Label for="schedule">
+          График работы
+        </Label>
+        <Input
+          id="schedule"
+          name="schedule"
           type="select"
         >
           <option>
-            1
+            Полный день
           </option>
           <option>
-            2
+            Частичная занятость
           </option>
           <option>
-            3
+            Проектная работа
           </option>
           <option>
-            4
-          </option>
-          <option>
-            5
+            Стажировка
           </option>
         </Input>
       </FormGroup>
+
       <FormGroup>
-        <Label for="exampleText">
-          Text Area
+        <Label for="url">
+          Сайт компании
         </Label>
         <Input
-          id="exampleText"
-          name="text"
+          id="url"
+          name="url"
+          type="text"
+        />
+      </FormGroup>
+
+      <FormGroup>
+        <Label for="contactName">
+          Имя контакта
+        </Label>
+        <Input
+          id="contactName"
+          name="contact_name"
+          type="text"
+        />
+      </FormGroup>
+      <FormGroup>
+        <Label for="contactSocial">
+          Телеграм
+        </Label>
+        <Input
+          id="contactSocial"
+          name="contact_social"
+          type="text"
+        />
+      </FormGroup>
+      <FormGroup>
+        <Label for="contactPhone">
+          Контактный телефон
+        </Label>
+        <Input
+          id="contactPhone"
+          name="contact_phone"
+          type="text"
+        />
+      </FormGroup>
+
+      <FormGroup>
+        <Label for="experience">
+          Опыт
+        </Label>
+        <Input
+          id="experience"
+          name="experience"
           type="textarea"
         />
       </FormGroup>
+
       <FormGroup>
-        <Label for="exampleFile">
-          File
+        <Label for="aboutCompany">
+          О компании
         </Label>
         <Input
-          id="exampleFile"
-          name="file"
-          type="file"
+          id="aboutCompany"
+          name="about_company"
+          type="textarea"
         />
-        <FormText>
-          This is some placeholder block-level help text for the above input.
-        </FormText>
       </FormGroup>
-      <FormGroup tag="fieldset">
-        <legend>
-          Radio Buttons
-        </legend>
-        <FormGroup check>
-          <Input
-            name="radio1"
-            type="radio"
-          />
-          {' '}
-          <Label check>
-            Option one is this and that—be sure to include why
-          </Label>
-        </FormGroup>
-        <FormGroup check>
-          <Input
-            name="radio1"
-            type="radio"
-          />
-          {' '}
-          <Label check>
-            Option two can be something else and selecting it will deselect option one
-          </Label>
-        </FormGroup>
-        <FormGroup
-          check
-          disabled
-        >
-          <Input
-            disabled
-            name="radio1"
-            type="radio"
-          />
-          {' '}
-          <Label check>
-            Option three is disabled
-          </Label>
-        </FormGroup>
-      </FormGroup>
-      <FormGroup check>
-        <Input type="checkbox" />
-        {' '}
-        <Label check>
-          Check me out
+
+      <FormGroup>
+        <Label for="aboutProject">
+          О проекте
         </Label>
+        <Input
+          id="aboutProject"
+          name="about_project"
+          type="textarea"
+        />
       </FormGroup>
+
+      <FormGroup>
+        <Label for="duties">
+          Обязанности
+        </Label>
+        <Input
+          id="duties"
+          name="about_duties"
+          type="textarea"
+        />
+      </FormGroup>
+
+      <FormGroup>
+        <Label for="requirements">
+          Требования
+        </Label>
+        <Input
+          id="requirements"
+          name="requirements"
+          type="textarea"
+        />
+      </FormGroup>
+
+      <FormGroup>
+        <Label for="requirements">
+          Требования
+        </Label>
+        <Input
+          id="requirements"
+          name="requirements"
+          type="textarea"
+        />
+      </FormGroup>
+
+      <FormGroup>
+        <Label for="technology">
+          Технологии
+        </Label>
+        <Input
+          id="technology"
+          name="technology"
+          type="textarea"
+        />
+      </FormGroup>
+
+      <FormGroup>
+        <Label for="conditions">
+          Условия работы
+        </Label>
+        <Input
+          id="conditions"
+          name="conditions"
+          type="textarea"
+        />
+      </FormGroup>
+
       <Button>
         Submit
       </Button>
