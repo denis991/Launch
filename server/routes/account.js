@@ -202,7 +202,9 @@ router.get('/profile/edit', async (req, res) => {
 });
 
 router.put('/profile/edit', async (req, res) => {
-  const { name, surname, email, password, avatar } = req.body;
+  const {
+    name, surname, email, password, avatar
+  } = req.body;
   try {
     const user = await Users.findOne({
       where: {
