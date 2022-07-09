@@ -14,13 +14,7 @@ function InputLang({ langProg, setLangProg }) {
   }, []);
   return (
     <label htmlFor="inputLang" className="viewport">
-      <select
-        className="xz"
-        // onClick={() => dispatch(getSkillThunk())}
-        id="inputLang"
-        value={langProg}
-        onChange={(e) => setLangProg(e.target.value)}
-      >
+      <select className="xz" id="inputLang" value={langProg} onChange={(e) => setLangProg(e.target.value)}>
         <option value="Язык программирования">Язык программирования</option>
         {skills && skills.map((skill) => (
           <option key={skill.id} value={skill.skill}>{skill.skill}</option>
