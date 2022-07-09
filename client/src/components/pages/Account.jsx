@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import ButtonAccount from '../UI/ButtonAccount/ButtonAccount';
 
 function Account() {
   const [usersAccountId, setUsersAccountId] = useState({});
@@ -13,7 +14,7 @@ function Account() {
     liks: '15',
   });
   return (
-    <div>
+    <>
 
       <h1 className="text-center">Account</h1>
       <div className="px-3 py-4 mb-3 bg-light rounded">
@@ -34,7 +35,8 @@ function Account() {
           </div>
         </div>
       </div>
-    </div>
+      <ButtonAccount />
+    </>
   );
 }
 
