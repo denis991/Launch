@@ -8,7 +8,7 @@ function Navbar() {
   const title = 'Launch';
   const [user, setUser] = useState({});
   const [menuActive, setMenuActive] = useState(false);
-  const items = [{ value: 'Резюме', href: '/signin', icon: '/img/time.svg' }, { value: 'Вакансии', href: '/main', icon: '/img/Mac.svg' }, { value: 'Рейтинг', href: '/rating', icon: '/img/Mony.svg' }, { value: 'Релокация', href: '/reloc', icon: '/img/Mony.svg' }, { value: 'Новости', href: '/news', icon: '/img/Mony.svg' }];
+  const items = [{ value: 'Резюме', href: '/signup', icon: '/img/time.svg' }, { value: 'Вакансии', href: '/main', icon: '/img/Mac.svg' }, { value: 'Рейтинг', href: '/rating', icon: '/img/Mony.svg' }, { value: 'Релокация', href: '/reloc', icon: '/img/Mony.svg' }, { value: 'Новости', href: '/news', icon: '/img/Mony.svg' }];
 
   const renderLogout = () => (
     <button className="logout_btn" type="button">Logout</button>
@@ -21,7 +21,9 @@ function Navbar() {
         </div>
         <div className="linki">
           <Link className="link" to="/">Home</Link>
-          <Link className="link" to="/qwerty">XZ</Link>
+          <Link className="link" to="/signup">signup</Link>
+          <Link className="link" to="/resumes">resumes</Link>
+          <Link className="link" to="/account">account</Link>
         </div>
         {user.id ? renderLogout() : <Link className="reg" to="/signup">Regis</Link> }
         <MenuNavbar active={menuActive} setActive={setMenuActive} header={title} items={items} />

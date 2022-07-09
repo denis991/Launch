@@ -18,6 +18,7 @@ function MainPages() {
       <Route path="/resumes" element={<p>resumes</p>} />
       <Route path="/resumes/:id" element={<p>resumes/:id</p>} />
       <Route path="/account/resumes/new" element={<p>account/resumes/new</p>} />
+      <Route path="/account" element={<p>account/vacancies/new</p>} />
       <Route path="/account/vacancies/new" element={<p>account/vacancies/new</p>} />
       <Route path="/account/resumes" element={<p>account/resumes</p>} />
       <Route path="/account/vacancies" element={<p>account/vacancies</p>} />

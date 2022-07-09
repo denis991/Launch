@@ -1,0 +1,7 @@
+.vacation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 160px
+  
+}
