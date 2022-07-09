@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import VacanciesForm from '../../UI/VacanciesForm/VacanciesForm';
 import VacanciesList from '../../UI/VacanciesList/VacanciesList';
-
 import './Vacancies.css';
 
 function Vacancies() {
   const [langProg, setLangProg] = useState('');
   const [levelVacancies, setLevelVacancies] = useState('');
+
   const [adVacancies, setAdVacancies] = useState([
     {
       url: '/vacancies/576',
