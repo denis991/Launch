@@ -1,9 +1,24 @@
 const router = require('express').Router();
 const {
-  CVs, Vacancies, CV_Skills, Vacancies_Skills,
+  CVs, Vacancies, CV_Skills, Vacancies_Skills, Notifications
 } = require('../db/models');
 
 // новое резюме юзера
+
+router.get('/notifications', async (req, res) => {
+  try {
+    const notis = await Notifications.findAll({
+      where: {
+        userId: req.session.userId,
+      },
+    });
+    res.json(notis);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(404);
+  }
+});
+
 router.post('/cvs/new', async (req, res) => {
   try {
     console.log(req.body);
