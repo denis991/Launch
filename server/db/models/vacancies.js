@@ -1,6 +1,7 @@
 const {
   Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Vacancies extends Model {
     /**
@@ -22,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     schedule: DataTypes.STRING,
     url: DataTypes.STRING,
     contact_name: DataTypes.STRING,
-    contact_phone: DataTypes.INTEGER,
+    contact_phone: DataTypes.STRING,
     contact_social: DataTypes.STRING,
     experience: DataTypes.STRING,
     about_company: DataTypes.STRING,
