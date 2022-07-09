@@ -1,14 +1,17 @@
 import { combineReducers } from 'redux';
 import loaderReducer from './loaderReducer';
-import userReducer from './userReducer';
+
 import cvsReducer from './cvsReducer';
 import skillsReducer from './skillReducer';
+import vacancyReducer from './vacancyReducer';
+import authReducer from './authReducer';
 
 const rootReducer = combineReducers({
-  user: userReducer,
+  user: authReducer,
   loader: loaderReducer,
   cvs: cvsReducer,
   skills: skillsReducer,
+  vacancy: vacancyReducer
 });
 
 export default rootReducer;
