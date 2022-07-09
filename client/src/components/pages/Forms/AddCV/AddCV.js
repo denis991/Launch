@@ -26,6 +26,7 @@ function AddCv() {
   return (
     <div className="formAddCV" onSubmit={handleSubmit}>
       <Form>
+        <h2>Новое резюме</h2>
         <FormGroup>
           <Label for="title">
             Название
@@ -113,8 +114,7 @@ function AddCv() {
             name="experience"
           />
         </FormGroup>
-
-        <Button type="submit">Опубликовать резюме</Button>
+        <button type="submit" className="btn btn-primary">Опубликовать резюме</button>
       </Form>
     </div>
   );
