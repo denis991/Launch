@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import MenuNavbar from '../UI/MenuNavbar/MenuNavbar';
 import UserMenu from '../UI/UserMenu/UserMenu';
+import CreateMenu from '../UI/CreateMenu/CreateMenu';
 import './Navbar.css';
 
 function Navbar() {
@@ -13,6 +14,7 @@ function Navbar() {
   const dispatch = useDispatch();
   const [menuActive, setMenuActive] = useState(false);
   const [userMenuActive, setUserMenuActive] = useState(false);
+  const [createdMenu, setCreatedMenu] = useState(false);
   const items = [
     { value: 'Резюме', href: '/auth', icon: '/img/time.svg' },
     { value: 'Вакансии', href: '/main', icon: '/img/Mac.svg' },
@@ -21,15 +23,25 @@ function Navbar() {
     { value: 'Новости', href: '/news', icon: '/img/Mony.svg' }
   ];
   const item = [
-    { value: 'Резюме', href: '/auth', icon: '/img/time.svg' },
-    { value: 'Вакансии', href: '/main', icon: '/img/Mac.svg' },
+    { value: 'Мои резюме', href: '/', icon: '/img/time.svg' },
+    { value: 'Мои вакансии', href: '/main', icon: '/img/Mac.svg' },
+    { value: 'Мой профиль', href: '/', icon: 'img/mac.svg' }
+  ];
+  const itemss = [
+    { value: 'Создать резюме', href: '/', icon: '/img/time.svg' },
+    { value: 'Создать вакансию', href: '/main', icon: '/img/Mac.svg' },
   ];
 
   const renderUserMenu = () => (
     <div className="userMenu" onClick={() => setUserMenuActive(!userMenuActive)}>
-      <span />
+      <img src="/img/prev.jpeg" alt="user" />
       <UserMenu active={userMenuActive} setActive={setUserMenuActive} header={title} items={item} />
-
+    </div>
+  );
+  const createMenu = () => (
+    <div className="createMenu" onClick={() => setCreatedMenu(!createdMenu)}>
+      <span>Добавить ▼</span>
+      <CreateMenu active={createdMenu} setActive={setCreatedMenu} header={title} items={itemss} />
     </div>
   );
   return (
@@ -42,7 +54,8 @@ function Navbar() {
           <Link className="link" to="/">Home</Link>
           <Link className="link" to="/cvs">Resumes</Link>
         </div>
-        <div>
+        <div className="created">
+          {user ? createMenu() : null}
           {user ? renderUserMenu() : <Link className="reg" to="/auth">Sign Up</Link> }
         </div>
         <MenuNavbar active={menuActive} setActive={setMenuActive} header={title} items={items} />
