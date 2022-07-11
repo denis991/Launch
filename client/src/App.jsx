@@ -7,7 +7,7 @@ import { userCheckAuthThunk } from './redux/actions/AuthAction';
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(userCheckAuthThunk());
+    // dispatch(userCheckAuthThunk());
   }, []);
   return (
     <div className="App">

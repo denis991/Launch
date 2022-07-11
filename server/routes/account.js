@@ -21,6 +21,21 @@ router.get('/notifications', async (req, res) => {
   }
 });
 
+router.delete('/notifications/:id', async (req, res) => {
+  try {
+    const { idNotification } = req.params;
+    await Notifications.destroy({
+      where: {
+        userId: req.session.userId,
+        id: idNotification,
+      },
+    });
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(404);
+  }
+});
+
 router.post('/cvs/new', async (req, res) => {
   try {
     console.log(req.body);

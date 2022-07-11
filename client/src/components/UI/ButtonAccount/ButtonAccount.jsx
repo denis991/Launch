@@ -23,7 +23,7 @@ function ButtonAccount() {
           <a className="nav-link px-3" data-bs-toggle="tab" href="#comments" onClick={() => setComp(4)}>Ответы</a>
         </li>
       </ul>
-      <div>
+      {/* <div>
         {(comp === 1)
         && (
           <ResumeUser />
@@ -40,7 +40,7 @@ function ButtonAccount() {
         && (
           <ResumeUser />
         )}
-      </div>
+      </div> */}
     </div>
   );
 }
