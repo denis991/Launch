@@ -16,20 +16,20 @@ function Navbar() {
   const [userMenuActive, setUserMenuActive] = useState(false);
   const [createdMenu, setCreatedMenu] = useState(false);
   const items = [
-    { value: 'Резюме', href: '/auth', icon: '/img/time.svg' },
-    { value: 'Вакансии', href: '/main', icon: '/img/Mac.svg' },
+    { value: 'Резюме', href: '/cvs', icon: '/img/time.svg' },
+    { value: 'Вакансии', href: '/', icon: '/img/Mac.svg' },
     { value: 'Рейтинг', href: '/rating', icon: '/img/Mony.svg' },
-    { value: 'Релокация', href: '/reloc', icon: '/img/Mony.svg' },
+    { value: 'Релокация', href: '/relocation', icon: '/img/Mony.svg' },
     { value: 'Новости', href: '/news', icon: '/img/Mony.svg' }
   ];
   const item = [
-    { value: 'Мои резюме', href: '/', icon: '/img/time.svg' },
-    { value: 'Мои вакансии', href: '/main', icon: '/img/Mac.svg' },
-    { value: 'Мой профиль', href: '/', icon: 'img/mac.svg' }
+    { value: 'Мои резюме', href: '/account/cvs', icon: '/img/time.svg' },
+    { value: 'Мои вакансии', href: '/account/vacancies', icon: '/img/Mac.svg' },
+    { value: 'Мой профиль', href: '/account', icon: 'img/mac.svg' }
   ];
   const itemss = [
-    { value: 'Создать резюме', href: '/', icon: '/img/time.svg' },
-    { value: 'Создать вакансию', href: '/main', icon: '/img/Mac.svg' },
+    { value: 'Создать резюме', href: '/account/cvs/new', icon: '/img/time.svg' },
+    { value: 'Создать вакансию', href: '/account/vacancies/new', icon: '/img/Mac.svg' },
   ];
 
   const renderUserMenu = () => (
@@ -44,17 +44,19 @@ function Navbar() {
       <CreateMenu active={createdMenu} setActive={setCreatedMenu} header={title} items={itemss} />
     </div>
   );
+  const notif = () => (
+    <Link className="notif" to="/notification">
+      🔔
+    </Link>
+  );
   return (
     <div className="navbar">
       <div className="links">
         <div className="burger-btn" onClick={() => setMenuActive(!menuActive)}>
           <span />
         </div>
-        <div className="linki">
-          <Link className="link" to="/">Home</Link>
-          <Link className="link" to="/cvs">Resumes</Link>
-        </div>
         <div className="created">
+          {user ? notif() : null}
           {user ? createMenu() : null}
           {user ? renderUserMenu() : <Link className="reg" to="/auth">Sign Up</Link> }
         </div>

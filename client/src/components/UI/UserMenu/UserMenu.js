@@ -11,12 +11,17 @@ function UserMenu({
   const { user } = useSelector((state) => state);
   const dispatch = useDispatch();
   const renderLogout = () => <button type="button" onClick={() => dispatch(userLogoutThunk())}>Logout</button>;
+  const fio = () => (
+    <div className="fio">
+      {user.name}
+    </div>
+  );
 
   return (
     <div className={active ? 'menu-user active' : 'user'} onClick={() => setActive(false)}>
       <div className="user-menu_content" onClick={(e) => e.stopPropagation()}>
         <div className="headerUser">
-          {header}
+          {user ? fio() : null}
         </div>
         <ul>
           {items.map((item) => (
