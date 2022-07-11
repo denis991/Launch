@@ -2,6 +2,8 @@ const router = require('express').Router();
 const {
   Users, CVs, Vacancies, CV_Skills, Vacancies_Skills, Notifications
 } = require('../db/models');
+const Bcrypt = require('../public/middlewares/bcrypt');
+const upload = require('../public/middlewares/multer.middleware');
 
 // новое резюме юзера
 
@@ -201,9 +203,9 @@ router.get('/profile/edit', async (req, res) => {
   }
 });
 
-router.put('/profile/edit', async (req, res) => {
+router.put('/profile/edit', upload.single('avatar'), async (req, res) => {
   const {
-    name, surname, email, password, avatar
+    name, surname, email, password
   } = req.body;
   try {
     const user = await Users.findOne({
@@ -214,8 +216,8 @@ router.put('/profile/edit', async (req, res) => {
     user.name = name;
     user.surname = surname;
     user.email = email;
-    user.password = password;
-    user.avatar = avatar;
+    user.password = await Bcrypt.hash(password);
+    user.avatar = req.file.path.replace('public', '');
     user.save();
     return res.sendStatus(200);
   } catch (err) {

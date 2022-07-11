@@ -13,25 +13,60 @@ router.get('/', async (req, res) => {
 });
 
 // конкретное резюме с комментариями
-router.get('/:id', async (req, res) => {
-  try {
-    const { id } = req.params;
-    const cv = await CVs.findOne({
-      where: {
-        id,
-      },
-    });
+router.route('/:id')
+  .get(async (req, res) => {
+    try {
+      const { id } = req.params;
+      const cv = await CVs.findOne({
+        where: {
+          id,
+        },
+      });
 
-    const comments = await CVComms.findOne({
-      where: {
-        id,
-      },
-    });
-    res.json({ cv, comments });
-  } catch (err) {
-    console.log(err);
-    res.sendStatus(404);
-  }
-});
+      const comments = await CVComms.findOne({
+        where: {
+          id,
+        },
+      });
+      res.json({ cv, comments });
+    } catch (err) {
+      console.log(err);
+      res.sendStatus(404);
+    }
+  })
+  .put(async (req, res) => {
+    const {
+      skillsID,
+      title,
+      elbrus,
+      github,
+      contact,
+      body,
+      awards,
+      education,
+      experience,
+    } = req.body;
+    try {
+      const cv = await CVs.findOne({
+        where: {
+          user_id: req.session.userId
+        }
+      });
+      cv.skillsID = skillsID;
+      cv.title = title;
+      cv.elbrus = elbrus;
+      cv.github = github;
+      cv.contact = contact;
+      cv.body = body;
+      cv.awards = awards;
+      cv.education = education;
+      cv.experience = experience;
+      cv.save();
+      return res.sendStatus(200);
+    } catch (err) {
+      console.log(err);
+      res.sendStatus(500);
+    }
+  });
 
 module.exports = router;
