@@ -7,9 +7,8 @@ import InputLevel from '../InputLevel/InputLevel';
 // import './VacanciesForm.css';
 
 function VacanciesForm({
-  levelVacancies, setLevelVacancies, langProg, setLangProg, adVacancies
+  levelVacancies, setLevelVacancies, langProg, setLangProg, adVacancies, setCity, city
 }) {
-  const [city, setCity] = useState('Город');
   return (
     <div className="p-3 mb-3 bg-light rounded-3">
 
@@ -18,17 +17,25 @@ function VacanciesForm({
         <InputLevel levelVacancies={levelVacancies} setLevelVacancies={setLevelVacancies} />
         <div className="d-flex flex-column justify-content-start string optional web_vacancies_search_form_city">
           <div className="input-group">
-            <input className="form-control string optional" placeholder={city} type="text" name="web_vacancies_search_form[city]" id="web_vacancies_search_form_city" value={setCity} />
+            <input
+              className="form-control string optional"
+              placeholder="город"
+              type="text"
+              name="web_vacancies_search_form[city]"
+              id="web_vacancies_search_form_city"
+              value={city}
+              onChange={(e) => {
+                setCity((prev) => e.target.value);
+              }}
+            />
           </div>
         </div>
         <InputLang langProg={langProg} setLangProg={setLangProg} />
-
         <div className="col d-flex">
-
           <Button name="commit" className="btn btn-primary me-2 flex-grow-1" data-disable-with="Найти">
             Найти
           </Button>
-          <Link class="btn btn-outline-secondary" to="/vacancies">Сбросить</Link>
+          <Link class="btn btn-outline-secondary" to="/">Сбросить</Link>
 
         </div>
       </form>

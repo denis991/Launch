@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import VacanciesForm from '../../UI/VacanciesForm/VacanciesForm';
 import VacanciesList from '../../UI/VacanciesList/VacanciesList';
@@ -8,7 +9,13 @@ function Vacancies() {
   const [langProg, setLangProg] = useState('');
   const [levelVacancies, setLevelVacancies] = useState('');
   const [search, setSearch] = useState(false);
-
+  const [city, setCity] = useState('');
+  const adVacancies = useSelector((state) => state.vacancy[0]);
+  const filterVacancies = adVacancies.filter(
+    (el) => (levelVacancies
+      ? el.levelVacancies.includes(levelVacancies)
+      : true)
+  );
   return (
     <div className="container my-4">
       <div className="my-2"> </div>
@@ -30,8 +37,10 @@ function Vacancies() {
             setLevelVacancies={setLevelVacancies}
             langProg={langProg}
             setLangProg={setLangProg}
+            city={city}
+            setCity={setCity}
           />
-          <VacanciesList />
+          <VacanciesList filterVacancies={filterVacancies} />
         </div>
       </main>
 

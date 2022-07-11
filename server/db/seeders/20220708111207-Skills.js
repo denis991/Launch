@@ -1,10 +1,9 @@
-'use strict';
-
 module.exports = {
 
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('Skills', [
-      { skill: 'HTML and CSS' },
+      { skill: 'HTML' },
+      { skill: 'CSS' },
       { skill: 'Java' },
       { skill: 'Javascript' },
       { skill: 'Typescript' },
@@ -30,7 +29,7 @@ module.exports = {
       { skill: 'PowerShell' },
       { skill: '1C' },
       { skill: 'Redux' },
-      { skill: 'ReactJS' },
+      { skill: 'React' },
       { skill: 'NodeJS' },
       { skill: 'Django' },
       { skill: 'AngularJS' },
@@ -57,12 +56,10 @@ module.exports = {
       { skill: 'Pyramid' },
       { skill: 'Vim' },
 
-    ])
+    ]);
   },
 
   async down(queryInterface, Sequelize) {
-
     await queryInterface.bulkDelete('Skills', null, {});
-
   }
 };
