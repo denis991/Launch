@@ -61,3 +61,36 @@
 .linki {
   padding-top: 12px;
 }
+.userMenu {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 10px;
+}
+.userMenu:before {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: -4px;
+  width: 30px;
+  background-color: white;
+  height: 3px;
+}
+.userMenu span {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  background-color: white;
+  height: 3px;
+}
+.userMenu:after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 24px;
+  width: 30px;
+  background-color: white;
+  height: 3px;
+}
