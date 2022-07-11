@@ -35,13 +35,13 @@ function Navbar() {
   const renderUserMenu = () => (
     <div className="userMenu" onClick={() => setUserMenuActive(!userMenuActive)}>
       <img src="/img/prev.jpeg" alt="user" />
-      <UserMenu active={userMenuActive} setActive={setUserMenuActive} header={title} items={item} />
+      <UserMenu active={userMenuActive} setActi={setUserMenuActive} header={title} items={item} />
     </div>
   );
   const createMenu = () => (
     <div className="createMenu" onClick={() => setCreatedMenu(!createdMenu)}>
       <span>Добавить ▼</span>
-      <CreateMenu active={createdMenu} setActive={setCreatedMenu} header={title} items={itemss} />
+      <CreateMenu active={createdMenu} setActiv={setCreatedMenu} header={title} items={itemss} />
     </div>
   );
   const notif = () => (

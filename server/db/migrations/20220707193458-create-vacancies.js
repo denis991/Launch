@@ -8,7 +8,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       title: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       level: {
         type: Sequelize.STRING
@@ -17,7 +18,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       company: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       schedule: {
         type: Sequelize.STRING
@@ -32,7 +34,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       contact_social: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       experience: {
         type: Sequelize.STRING
@@ -41,7 +44,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       about_project: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       duties: {
         type: Sequelize.STRING

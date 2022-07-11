@@ -1,7 +1,6 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Skills extends Model {
     /**
@@ -15,11 +14,14 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(Materials, { foreignKey: 'skill_id' });
     }
   }
-  Skills.init({
-    skill: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Skills',
-  });
+  Skills.init(
+    {
+      skill: DataTypes.STRING,
+    },
+    {
+      sequelize,
+      modelName: 'Skills',
+    }
+  );
   return Skills;
 };

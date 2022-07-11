@@ -1,25 +1,11 @@
-'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('UserComms', {
+    await queryInterface.createTable('CVs_Responses', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
-      },
-      body: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      couch_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'Users',
-          key: 'id',
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
       },
       user_id: {
         type: Sequelize.INTEGER,
@@ -27,10 +13,17 @@ module.exports = {
           model: 'Users',
           key: 'id',
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
       },
-      state: {
+
+      cv_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'CVs',
+          key: 'id',
+        },
+      },
+
+      status: {
         type: Sequelize.BOOLEAN
       },
       createdAt: {
@@ -44,6 +37,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('UserComms');
+    await queryInterface.dropTable('CVs_Responses');
   }
 };

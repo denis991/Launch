@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: space-between;
   padding-top: 160px
-  
 }
 
 .card_title {
@@ -30,6 +29,4 @@
   display: flex;
   width: 100%;
 
-
-  
 }

@@ -13,27 +13,28 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(Users, { foreignKey: 'user_id' });
       this.hasMany(Materials, { foreignKey: 'vacancy_id' });
       this.belongsToMany(Skills, { through: 'Vacancies_Skills' });
+      this.belongsToMany(Users, { through: 'Vacancies_Responses' });
     }
   }
   Vacancies.init({
-    title: DataTypes.STRING,
-    level: DataTypes.STRING,
-    salary: DataTypes.STRING,
-    company: DataTypes.STRING,
-    schedule: DataTypes.STRING,
-    url: DataTypes.STRING,
-    contact_name: DataTypes.STRING,
-    contact_phone: DataTypes.STRING,
-    contact_social: DataTypes.STRING,
-    experience: DataTypes.STRING,
-    about_company: DataTypes.STRING,
-    about_project: DataTypes.STRING,
-    duties: DataTypes.STRING,
-    requirements: DataTypes.STRING,
-    technology: DataTypes.STRING,
-    conditions: DataTypes.STRING,
-    city: DataTypes.STRING,
-    user_id: DataTypes.INTEGER,
+    title: DataTypes.STRING, // Название вакансии
+    level: DataTypes.STRING, // Уровень занятости
+    salary: DataTypes.STRING, // Зарплата
+    company: DataTypes.STRING, // Компания
+    schedule: DataTypes.STRING, //  График работы
+    url: DataTypes.STRING, // Ссылка на резюме
+    contact_name: DataTypes.STRING, // Имя контактного лица
+    contact_phone: DataTypes.STRING, // Телефон контактного лица
+    contact_social: DataTypes.STRING, // Ссылка на социальную сеть
+    experience: DataTypes.STRING, // Опыт работы
+    about_company: DataTypes.STRING, // О компании
+    about_project: DataTypes.STRING, // О проекте
+    duties: DataTypes.STRING, // Обязанности
+    requirements: DataTypes.STRING, // Требования
+    technology: DataTypes.STRING, // Технологии
+    conditions: DataTypes.STRING, // Условия
+    city: DataTypes.STRING, // Город
+    user_id: DataTypes.INTEGER, // Идентификатор пользователя
   }, {
     sequelize,
     modelName: 'Vacancies',
