@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSkill, getSkillThunk } from '../../../redux/actions/skillsActions';
-import './InputLang.css';
+// import './InputLang.css';
 
 function InputLang({ langProg, setLangProg }) {
   const dispatch = useDispatch();

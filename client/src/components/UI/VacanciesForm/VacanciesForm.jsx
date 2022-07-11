@@ -4,7 +4,7 @@ import { Button } from 'reactstrap';
 import InputLang from '../InputLang/InputLang';
 import InputLevel from '../InputLevel/InputLevel';
 
-import './VacanciesForm.css';
+// import './VacanciesForm.css';
 
 function VacanciesForm({
   levelVacancies, setLevelVacancies, langProg, setLangProg, adVacancies
@@ -24,9 +24,12 @@ function VacanciesForm({
         <InputLang langProg={langProg} setLangProg={setLangProg} />
 
         <Button type="submit" name="commit" value="Найти" className="btn btn-primary me-2 flex-grow-1" data-disable-with="Найти" />
-        <Link to="/vacancies" className="btn btn-outline-secondary">
-          <Button>сбросить</Button>
-        </Link>
+        <div className="col d-flex">
+
+          <Link to="/vacancies" className="btn btn-outline-secondary">
+            <Button>сбросить</Button>
+          </Link>
+        </div>
       </div>
     </form>
   );

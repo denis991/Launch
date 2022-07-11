@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import VacanciesForm from '../../UI/VacanciesForm/VacanciesForm';
 import VacanciesList from '../../UI/VacanciesList/VacanciesList';
-import './Vacancies.css';
+// import './Vacancies.css';
 
 function Vacancies() {
   const [langProg, setLangProg] = useState('');
@@ -22,16 +22,18 @@ function Vacancies() {
   // ]);
 
   return (
-    <div className="container my-4">
-      <div className=" col-md-9">
-        <VacanciesForm
-          levelVacancies={levelVacancies}
-          setLevelVacancies={setLevelVacancies}
-          langProg={langProg}
-          setLangProg={setLangProg}
-          // adVacancies={adVacancies}
-        />
-        <VacanciesList />
+    <div className="container my-3">
+      <div className=" row">
+        <div className="col-md-9">
+
+          <VacanciesForm
+            levelVacancies={levelVacancies}
+            setLevelVacancies={setLevelVacancies}
+            langProg={langProg}
+            setLangProg={setLangProg}
+          />
+          <VacanciesList />
+        </div>
       </div>
     </div>
   );
