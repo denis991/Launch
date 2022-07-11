@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { userLogoutThunk } from '../../../redux/actions/AuthAction';
 
 function UserMenu({
-  header, items, active, setActive,
+  header, items, active, setActi,
 }) {
   const { user } = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ function UserMenu({
   );
 
   return (
-    <div className={active ? 'menu-user active' : 'user'} onClick={() => setActive(false)}>
+    <div className={active ? 'menu-user active' : 'user'} onClick={() => setActi(false)}>
       <div className="user-menu_content" onClick={(e) => e.stopPropagation()}>
         <div className="headerUser">
           {user ? fio() : null}

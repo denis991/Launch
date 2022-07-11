@@ -1,15 +1,13 @@
 .user {
-  
-  transform: translateX(100%)
-  
+  transform: translateY(-300%)
+
 }
 .menu-user.active{
   position: relative;
-  width: 100vw;
   height: 100vh;
   top: 50px;
-  right: 10px;
-  transform: translateX(-176px);
+  right: 186px;
+  transform: translateY(0%);
   transition: all 0.2s;
   z-index: 50;
 }
