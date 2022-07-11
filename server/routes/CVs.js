@@ -23,12 +23,7 @@ router.route('/:id')
         },
       });
 
-      const comments = await CVComms.findOne({
-        where: {
-          id,
-        },
-      });
-      res.json({ cvUser, comments });
+      res.json({ cvUser });
     } catch (err) {
       console.log(err);
       res.sendStatus(404);

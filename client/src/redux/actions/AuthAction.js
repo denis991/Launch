@@ -12,7 +12,6 @@ export const userAuthThunk = (loginToggle, body) => async (dispatch) => {
     },
     body: JSON.stringify(body),
   });
-  console.log('=======>', response);
   const result = await response.json();
   dispatch(createUser(result));
 };
@@ -20,7 +19,6 @@ export const userAuthThunk = (loginToggle, body) => async (dispatch) => {
 export const userCheckAuthThunk = () => async (dispatch) => {
   const response = await fetch('/auth');
   const result = await response.json();
-  console.log('=======>', result);
   dispatch(checkUser(result));
 };
 
