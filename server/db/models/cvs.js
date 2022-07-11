@@ -10,8 +10,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({ Users, Skills }) {
-      this.belongsTo(Users, { foreignKey: 'user_id' })
-      this.belongsToMany(Skills, { through: 'CV_Skills' })
+      this.belongsTo(Users, { foreignKey: 'user_id' });
+      this.belongsToMany(Skills, { through: 'CV_Skills' });
+      this.belongsToMany(Users, { through: 'CVs_Responses' });
     }
   }
   CVs.init({
