@@ -11,11 +11,24 @@ function Vacancies() {
   const [search, setSearch] = useState(false);
   const [city, setCity] = useState('');
   const adVacancies = useSelector((state) => state.vacancy[0]);
-  const filterVacancies = adVacancies.filter(
+
+  const filterVacanciesCity = adVacancies?.filter(
     (el) => (levelVacancies
-      ? el.levelVacancies.includes(levelVacancies)
-      : true)
+      ? el.level.includes(levelVacancies)
+      : adVacancies)
   );
+  const filterVacanciesLevel = filterVacanciesCity?.filter(
+    (el) => (city
+      ? el.city.includes(city)
+      : filterVacanciesCity)
+  );
+
+  const filterVacancies = filterVacanciesLevel?.filter(
+    (el) => (langProg
+      ? el.technology.includes(langProg)
+      : filterVacanciesLevel)
+  );
+
   return (
     <div className="container my-4">
       <div className="my-2"> </div>
@@ -40,7 +53,7 @@ function Vacancies() {
             city={city}
             setCity={setCity}
           />
-          <VacanciesList filterVacancies={filterVacancies} />
+          <VacanciesList filterVacancies={filterVacancies} adVacancies={adVacancies} />
         </div>
       </main>
 

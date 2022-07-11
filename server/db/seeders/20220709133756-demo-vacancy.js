@@ -36,7 +36,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'JS, React, Redux, Node, Express, MongoDB',
       conditions: 'что-то тут должно быть',
-      city: 'new york',
+      city: 'New york',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
