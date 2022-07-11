@@ -4,6 +4,7 @@ const initState = {
   cvs: false,
   skills: [],
   vacancy: [],
+  cvComments: [],
 };
 
 export default initState;

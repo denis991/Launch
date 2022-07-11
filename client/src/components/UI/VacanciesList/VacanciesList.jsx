@@ -6,10 +6,10 @@ import {
 } from 'reactstrap';
 import { getVacanciesAllThunk } from '../../../redux/actions/vacancyActions';
 
-function VacanciesList() {
+function VacanciesList({ filterVacancies, adVacancies }) {
   const dispatch = useDispatch();
-  const adVacancies = useSelector((state) => state.vacancy[0]);
-  console.log(adVacancies, '!!!!!');
+
+  // console.log(adVacancies, '!!!!!');
   useEffect(() => {
     dispatch(getVacanciesAllThunk());
   }, []);
@@ -17,7 +17,7 @@ function VacanciesList() {
     <div className="card mb-3 border-0">
       <div className="card-body">
         <div>
-          { adVacancies?.map((el) => (
+          { filterVacancies?.map((el) => (
             <Card key={Date.now() + Math.random()}>
               <CardBody>
                 <Link to={`/vacancies/${el.id}`}>

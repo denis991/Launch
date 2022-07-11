@@ -12,7 +12,6 @@ export const userAuthThunk = (loginToggle, body, navigate) => async (dispatch) =
     },
     body: JSON.stringify(body),
   });
-  console.log('=======>', response);
   const result = await response.json();
   if (response.status === 200) {
     navigate('/');
@@ -32,6 +31,11 @@ export const userAuthThunk = (loginToggle, body, navigate) => async (dispatch) =
 //     alert(result?.message);
 //   }
 // };
+export const userCheckAuthThunk = () => async (dispatch) => {
+  const response = await fetch('/auth');
+  const result = await response.json();
+  dispatch(checkUser(result));
+};
 
 export const userLogoutThunk = () => async (dispatch) => {
   await fetch('/logout');
