@@ -11,6 +11,7 @@ import UserForm from './Forms/UserForm/UserForm';
 import ProfilEdit from './ProfilEdit';
 import CVsLists from './CVsLists/CVsLists';
 import About from './About';
+import CvUser from './CVUser/CVUser';
 
 function MainPages() {
   return (
@@ -28,7 +29,7 @@ function MainPages() {
       <Route path="/users/:id" element={<p>users/:id</p>} />
 
       <Route path="/cvs" element={<CVsLists />} />
-      <Route path="/cvs/:id" element={<p>resumes/:id</p>} />
+      <Route path="/cvs/:id" element={<CvUser />} />
 
       <Route path="/account" element={<Account />} />
       <Route path="/account/vacancies/new" element={<AddVacancy />} />

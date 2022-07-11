@@ -10,7 +10,6 @@ import './CVsLists.css';
 function CVsLists() {
   const dispatch = useDispatch();
   const cvs = useSelector((state) => state.cvs[0]);
-  console.log(cvs);
   useEffect(() => {
     dispatch(getCVsThunk());
   }, []);
@@ -20,20 +19,28 @@ function CVsLists() {
       <div className="col-md-7">
         <div>
           <h2>Резюме программистов</h2>
+          <div className="nav nav-pills mb-3 justify-content-center">
+            <a className="nav-item nav-link link-dark active" href="#">Все</a>
+            <a className="nav-item nav-link link-dark" href="#">Популярные</a>
+            <a className="nav-item nav-link link-dark" href="#">Новые</a>
+            <a className="nav-item nav-link link-dark" href="#">Без рекомендаций</a>
+          </div>
           {cvs?.map((cv) => (
             <Card key={cv.id} className="cvsLists">
               <CardBody>
                 <CardTitle tag="h5">
-                  <Link to={`cvs/${cv.id}`}>{cv.title}</Link>
+                  <Link to={`${cv.id}`}>
+                    {cv?.title}
+                  </Link>
                 </CardTitle>
                 <CardSubtitle
                   className="mb-2 text-muted"
                   tag="h6"
                 >
-                  {cv.createdAt.split('T')[0]}
+                  {cv?.createdAt.split('T')[0]}
                 </CardSubtitle>
                 <CardText>
-                  {cv.body}
+                  {cv?.body}
                 </CardText>
               </CardBody>
             </Card>
@@ -41,7 +48,6 @@ function CVsLists() {
         </div>
       </div>
     </div>
-
   );
 }
 

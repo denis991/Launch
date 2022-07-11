@@ -18,7 +18,8 @@ export const addVacancyThunk = (data) => async (dispatch) => {
     dispatch(addVacancy());
   }
 };
-export const getVacancies = (data) => ({ type: 'GET_VACANCIES', data });
+
+export const getVacancies = (data) => ({ type: 'GET_VACANCIES', payload: data });
 
 export const getVacanciesThunk = () => async (dispatch) => {
   const response = await fetch('/account/vacancies');

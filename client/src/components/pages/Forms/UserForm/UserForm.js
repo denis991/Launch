@@ -26,7 +26,7 @@ function UserForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(userAuthThunk(loginToggle, form));
+    dispatch(userAuthThunk(loginToggle, form, navigate));
     setForm({});
     navigate('/');
   };
@@ -80,8 +80,12 @@ function UserForm() {
           />
         </FormGroup>
         <FormGroup className="mb-3" controlId="formBasicCheckbox">
-          <input type="checkbox" onChange={handleForm} />
+          <Input type="checkbox" onChange={handleForm} />
           <span>{loginToggle ? 'Back to registration' : 'To login'}</span>
+        </FormGroup>
+        <FormGroup className="mb-3" controlId="formBasicCheckbox">
+          <Input type="checkbox" />
+          <span>remember me</span>
         </FormGroup>
         <Button variant="primary" type="submit">
           Submit
