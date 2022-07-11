@@ -19,6 +19,12 @@ function CVsLists() {
       <div className="col-md-7">
         <div>
           <h2>Резюме программистов</h2>
+          <div className="nav nav-pills mb-3 justify-content-center">
+            <a className="nav-item nav-link link-dark active" href="#">Все</a>
+            <a className="nav-item nav-link link-dark" href="#">Популярные</a>
+            <a className="nav-item nav-link link-dark" href="#">Новые</a>
+            <a className="nav-item nav-link link-dark" href="#">Без рекомендаций</a>
+          </div>
           {cvs?.map((cv) => (
             <Card key={cv.id} className="cvsLists">
               <CardBody>
