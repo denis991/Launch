@@ -1,4 +1,3 @@
-'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Vacancies', {
@@ -9,7 +8,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       title: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       level: {
         type: Sequelize.STRING
@@ -18,7 +18,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       company: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       schedule: {
         type: Sequelize.STRING
@@ -30,10 +31,11 @@ module.exports = {
         type: Sequelize.STRING
       },
       contact_phone: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       contact_social: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       experience: {
         type: Sequelize.STRING
@@ -42,7 +44,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       about_project: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       duties: {
         type: Sequelize.STRING
@@ -70,11 +73,13 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('NOW'),
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('NOW'),
       }
     });
   },

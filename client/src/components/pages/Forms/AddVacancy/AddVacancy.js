@@ -30,11 +30,24 @@ function AddVacancy() {
       <Form>
         <FormGroup>
           <Label for="title">
-            Название
+            Название вакансии
           </Label>
           <Input
             id="title"
             name="title"
+            type="text"
+            onChange={handleInput}
+            value={form.name}
+          />
+        </FormGroup>
+
+        <FormGroup>
+          <Label for="companyName">
+            Название компании
+          </Label>
+          <Input
+            id="companyName"
+            name="company"
             type="text"
             onChange={handleInput}
             value={form.name}
@@ -134,6 +147,8 @@ function AddVacancy() {
             id="contactName"
             name="contact_name"
             type="text"
+            onChange={handleInput}
+            value={form.name}
           />
         </FormGroup>
         <FormGroup>
@@ -206,20 +221,7 @@ function AddVacancy() {
           </Label>
           <Input
             id="duties"
-            name="about_duties"
-            type="textarea"
-            onChange={handleInput}
-            value={form.name}
-          />
-        </FormGroup>
-
-        <FormGroup>
-          <Label for="requirements">
-            Требования
-          </Label>
-          <Input
-            id="requirements"
-            name="requirements"
+            name="duties"
             type="textarea"
             onChange={handleInput}
             value={form.name}

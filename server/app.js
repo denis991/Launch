@@ -22,6 +22,7 @@ const signupRouter = require('./routes/auth/signupRouter');
 const signinRouter = require('./routes/auth/signinRouter');
 const logoutRouter = require('./routes/auth/logoutRouter');
 const skillsRouter = require('./routes/skills');
+const cvCommentsRouter = require('./routes/commentsCV');
 
 const sessionConfig = {
   name: 'wannalaunch',
@@ -53,6 +54,7 @@ app.use('/cvs', cvsRouter);
 app.use('/account', accountRouter);
 app.use('/notifications', notificationsRouter);
 app.use('/skills', skillsRouter);
+app.use('/comments', cvCommentsRouter);
 
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);

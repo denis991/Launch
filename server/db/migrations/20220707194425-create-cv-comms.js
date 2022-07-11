@@ -9,7 +9,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       body: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       cv_id: {
         type: Sequelize.INTEGER

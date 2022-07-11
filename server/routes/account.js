@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const {
-  CVs, Vacancies, CV_Skills, Vacancies_Skills, Notifications
+  Users, CVs, Vacancies, CV_Skills, Vacancies_Skills, Notifications
 } = require('../db/models');
+const Bcrypt = require('../public/middlewares/bcrypt');
+const upload = require('../public/middlewares/multer.middleware');
 
 // новое резюме юзера
 
@@ -110,13 +112,13 @@ router.post('/vacancies/new', async (req, res) => {
       city,
     });
 
-    const idVacancy = newVacancy.id;
-    skillsID.map(async (skillId) => {
-      await Vacancies_Skills.create({
-        idVacancy,
-        skill_id: skillId,
-      });
-    });
+    // const idVacancy = newVacancy.id;
+    // skillsID?.map(async (skillId) => {
+    //   await Vacancies_Skills.create({
+    //     idVacancy,
+    //     skill_id: skillId,
+    //   });
+    // });
 
     res.sendStatus(200);
   } catch (err) {
@@ -130,7 +132,7 @@ router.get('/cvs', async (req, res) => {
   try {
     const userCVS = await CVs.findAll({
       where: {
-        userId: req.session.userId,
+        user_id: req.session.userId,
       },
     });
     res.json(userCVS);
@@ -145,7 +147,7 @@ router.get('/vacancies', async (req, res) => {
   try {
     const userVacancies = await Vacancies.findAll({
       where: {
-        userId: req.session.userId,
+        user_id: req.session.userId,
       },
     });
     res.json(userVacancies);
@@ -160,7 +162,7 @@ router.delete('/cvs', async (req, res) => {
     const { idCV } = req.body;
     await CVs.destroy({
       where: {
-        userId: req.session.userId,
+        user_id: req.session.userId,
         id: idCV,
       },
     });
@@ -176,11 +178,48 @@ router.delete('/vacancies', async (req, res) => {
     const { idVacancy } = req.body;
     await Vacancies.destroy({
       where: {
-        userId: req.session.userId,
+        user_id: req.session.userId,
         id: idVacancy,
       },
     });
     res.sendStatus(200);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
+});
+
+router.get('/profile/edit', async (req, res) => {
+  try {
+    const user = await Users.findOne({
+      where: {
+        id: req.session.userId
+      }
+    });
+    res.json(user);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
+});
+
+router.put('/profile/edit', upload.single('avatar'), async (req, res) => {
+  const {
+    name, surname, email, password
+  } = req.body;
+  try {
+    const user = await Users.findOne({
+      where: {
+        id: req.session.userId
+      }
+    });
+    user.name = name;
+    user.surname = surname;
+    user.email = email;
+    user.password = await Bcrypt.hash(password);
+    user.avatar = req.file.path.replace('public', '');
+    user.save();
+    return res.sendStatus(200);
   } catch (err) {
     console.log(err);
     res.sendStatus(500);

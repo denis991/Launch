@@ -1,9 +1,18 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { userCheckAuthThunk } from '../../redux/actions/AuthAction';
 import ButtonAccount from '../UI/ButtonAccount/ButtonAccount';
 
 function Account() {
   const [usersAccountId, setUsersAccountId] = useState({});
+  const [stateTextProf, setstateTextProf] = useState([]);
+  // setstateTextProf = (vacancy) => {};
+  const [resumeId, setResumeId] = useState([]);
+  const [vacancyId, setVacancyId] = useState([]);
+  const [commentsId, setCommentsId] = useState([]);
+  const dispatch = useDispatch();
   const [usetInfo, setUsetInfo] = useState({
     name: 'denis',
     surname: 'guzunov',
@@ -13,6 +22,15 @@ function Account() {
     comments: '13',
     liks: '15',
   });
+  // useEffect(() => { // получаем данные о пользователе из базы данных
+  //   dispatch(userCheckAuthThunk())
+  //     .then((res) => {
+  //       setUsersAccountId(res.data.user);
+  //       setResumeId(res.data.user.resumes);
+  //       setVacancyId(res.data.user.vacancies);
+  //       setCommentsId(res.data.user.comments);
+  //     });
+  // }, []);
   return (
     <>
 
@@ -36,6 +54,14 @@ function Account() {
         </div>
       </div>
       <ButtonAccount />
+      {stateTextProf && stateTextProf.map((item) => (
+        <div className="px-3 py-4 mb-3 bg-light rounded">
+
+          <div className="h3 text-black-50">{item.liks}</div>
+        </div>
+
+      ))}
+
     </>
   );
 }
