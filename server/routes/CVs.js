@@ -17,7 +17,7 @@ router.route('/:id')
   .get(async (req, res) => {
     try {
       const { id } = req.params;
-      const cv = await CVs.findOne({
+      const cvUser = await CVs.findOne({
         where: {
           id,
         },
@@ -28,7 +28,7 @@ router.route('/:id')
           id,
         },
       });
-      res.json({ cv, comments });
+      res.json({ cvUser, comments });
     } catch (err) {
       console.log(err);
       res.sendStatus(404);
@@ -49,7 +49,7 @@ router.route('/:id')
     try {
       const cv = await CVs.findOne({
         where: {
-          user_id: req.session.userId
+          user_id: req.session.userId,
         }
       });
       cv.skillsID = skillsID;
