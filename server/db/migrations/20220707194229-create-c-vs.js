@@ -8,7 +8,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       title: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       elbrus: {
         type: Sequelize.BOOLEAN
@@ -17,10 +18,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       contact: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       body: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       awards: {
         type: Sequelize.STRING
