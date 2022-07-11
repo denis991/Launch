@@ -133,11 +133,11 @@
 .created {
   display: flex;
   justify-content: space-between;
-  width: 280px;
+  width: 300px;
 }
 .notif {
   position: relative;
   top: 5px;
-  left: 90px;
+  left: 110px;
 }
 
