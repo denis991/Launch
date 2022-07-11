@@ -65,7 +65,7 @@
   width: 30px;
   height: 30px;
   position: relative;
-  top: 10px;
+  top: -10px;
 }
 .userMenu:before {
   content: '';
@@ -74,16 +74,17 @@
   top: -4px;
   width: 30px;
   background-color: white;
-  height: 3px;
+
 }
-.userMenu span {
-  content: '';
+.userMenu img {
   position: absolute;
-  top: 10px;
   right: 10px;
-  width: 30px;
+  top: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
   background-color: white;
-  height: 3px;
 }
 .userMenu:after {
   content: '';
@@ -92,5 +93,46 @@
   top: 24px;
   width: 30px;
   background-color: white;
-  height: 3px;
+
 }
+
+
+.createMenu {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: -15px;
+}
+.createMenu:before {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: -4px;
+  width: 30px;
+  background-color: white;
+
+}
+.createMenu span {
+  position: absolute;
+  right: -80px;
+  top: 15px;
+  border-radius: 25px;
+  padding: 5px;
+  color: white;
+
+}
+.createMenu:after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 24px;
+  width: 30px;
+  background-color: white;
+
+}
+.created {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
