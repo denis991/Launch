@@ -1,5 +1,5 @@
 import React from 'react';
-import './inputLevel.css';
+// import './inputLevel.css';
 
 function InputLevel({ levelVacancies, setLevelVacancies }) {
   return (
