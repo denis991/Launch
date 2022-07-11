@@ -17,7 +17,7 @@ function InputLang({ langProg, setLangProg }) {
       <div className="input-group">
 
         <select className="form-control select optional" id="web_vacancies_search_form_direction" value={langProg} onChange={(e) => setLangProg(e.target.value)}>
-          <option value="Язык программирования">Язык программирования</option>
+          <option value="">Язык программирования</option>
           {skills && skills.map((skill) => (
             <option key={skill.id} value={skill.skill}>{skill.skill}</option>
           ))}
