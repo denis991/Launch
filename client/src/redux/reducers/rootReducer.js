@@ -5,13 +5,15 @@ import cvsReducer from './cvsReducer';
 import skillsReducer from './skillReducer';
 import vacancyReducer from './vacancyReducer';
 import authReducer from './authReducer';
+import cvCommentReducer from './cvCommentReducer';
 
 const rootReducer = combineReducers({
   user: authReducer,
   loader: loaderReducer,
   cvs: cvsReducer,
   skills: skillsReducer,
-  vacancy: vacancyReducer
+  vacancy: vacancyReducer,
+  cvComments: cvCommentReducer,
 });
 
 export default rootReducer;

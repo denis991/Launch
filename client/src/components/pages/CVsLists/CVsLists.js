@@ -13,7 +13,7 @@ function CVsLists() {
   useEffect(() => {
     dispatch(getCVsThunk());
   }, []);
-
+  console.log(cvs);
   return (
     <div className="container my-4">
       <div className="col-md-7">

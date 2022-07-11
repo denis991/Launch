@@ -6,10 +6,10 @@ import {
 } from 'reactstrap';
 import { getVacanciesAllThunk } from '../../../redux/actions/vacancyActions';
 
-function VacanciesList({ filterVacancies }) {
+function VacanciesList({ filterVacancies, adVacancies }) {
   const dispatch = useDispatch();
 
-  console.log(filterVacancies, '!!!!!');
+  // console.log(adVacancies, '!!!!!');
   useEffect(() => {
     dispatch(getVacanciesAllThunk());
   }, []);
