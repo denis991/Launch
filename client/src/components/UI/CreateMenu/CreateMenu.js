@@ -10,7 +10,6 @@ function UserMenu({
 }) {
   const { user } = useSelector((state) => state);
   const dispatch = useDispatch();
-  const renderLogout = () => <button type="button" onClick={() => dispatch(userLogoutThunk())}>Logout</button>;
 
   return (
     <div className={active ? 'create' : 'menu-create active'} onClick={() => setActive(false)}>
@@ -25,6 +24,7 @@ function UserMenu({
           ))}
         </div>
       </div>
+
     </div>
   );
 }
