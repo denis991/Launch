@@ -10,6 +10,7 @@ import AuthRoute from '../AuthRoute/AuthRoute';
 import UserForm from './Forms/UserForm/UserForm';
 import ProfilEdit from './ProfilEdit';
 import CVsLists from './CVsLists/CVsLists';
+import About from './About';
 
 function MainPages() {
   return (
@@ -37,6 +38,7 @@ function MainPages() {
       <Route path="/account/vacancies/:id" element={<p>account/vacancies/:id</p>} />
       <Route path="/account/profile/edit" element={<ProfilEdit />} />
       <Route path="/account/cvs/new" element={<AddCV />} />
+      <Route path="/about" element={<About />} />
       <Route path="/*" element={<Error />} />
     </Routes>
   );

@@ -9,9 +9,8 @@ import { getVacanciesAllThunk } from '../../../redux/actions/vacancyActions';
 function VacanciesList() {
   const dispatch = useDispatch();
   const adVacancies = useSelector((state) => state.vacancy[0]);
-  // console.log(adVacancies, '!!!!!');
+  console.log(adVacancies, '!!!!!');
   useEffect(() => {
-    // dispatch(getSkill({}));
     dispatch(getVacanciesAllThunk());
   }, []);
   return (
@@ -19,7 +18,7 @@ function VacanciesList() {
       <div className="card-body">
         <div>
           { adVacancies?.map((el) => (
-            <Card>
+            <Card key={Date.now() + Math.random()}>
               <CardBody>
                 <Link to={`/vacancies/${el.id}`}>
 
@@ -50,15 +49,3 @@ function VacanciesList() {
 }
 
 export default VacanciesList;
-// { adVacancies.map((el) => (
-//       <div className="vacation">
-//         <div>
-//           <div>{}</div>
-//           <h5>
-//             <a href={el.url}>
-//               <span className="sp">{el.level}</span>
-//               <span className="sp">{el.leng}</span>
-//               <span className="sp">{el.salary}</span>
-//               <span>
-//                 <span>-</span>
-//                 {el.company};

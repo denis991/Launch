@@ -1,38 +1,40 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import VacanciesForm from '../../UI/VacanciesForm/VacanciesForm';
 import VacanciesList from '../../UI/VacanciesList/VacanciesList';
-import './Vacancies.css';
+// import './Vacancies.css';
 
 function Vacancies() {
   const [langProg, setLangProg] = useState('');
   const [levelVacancies, setLevelVacancies] = useState('');
-
-  // const [adVacancies, setAdVacancies] = useState([
-  //   {
-  //     url: '/vacancies/576',
-  //     level: 'Джуниор',
-  //     leng: 'Ruby-разработчик',
-  //     salary: 'от 40 000 до 60 000 ₽ (На руки)',
-  //     company: ' Edstein',
-  //     body: 'Написание кода в соответствии с поставленными
-  // задачами Написание тестов Участие в отладке внутренних процессов
-  // разработки (code review, code style, git flow,deployment flow)',
-  //     dialect: 'PostgreSQL, ООП',
-  //   },
-  // ]);
+  const [search, setSearch] = useState(false);
 
   return (
     <div className="container my-4">
-      <div className=" col-md-9">
-        <VacanciesForm
-          levelVacancies={levelVacancies}
-          setLevelVacancies={setLevelVacancies}
-          langProg={langProg}
-          setLangProg={setLangProg}
-          // adVacancies={adVacancies}
-        />
-        <VacanciesList />
-      </div>
+      <div className="my-2"> </div>
+      <main>
+        <div className="row">
+          <h1 className="col-md-9">
+            {search ? (
+              <h1 className="h2 mb-5">
+                то что вы искали
+              </h1>
+            ) : (
+              <span className="me-2">Вакансии для разработчиков</span>
+            )}
+
+            <Link className="bi-telegram" to="/about" />
+          </h1>
+          <VacanciesForm
+            levelVacancies={levelVacancies}
+            setLevelVacancies={setLevelVacancies}
+            langProg={langProg}
+            setLangProg={setLangProg}
+          />
+          <VacanciesList />
+        </div>
+      </main>
+
     </div>
   );
 }
