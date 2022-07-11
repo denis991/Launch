@@ -4,7 +4,7 @@ module.exports = {
       name: 'admin',
       surname: 'admin',
       email: 'admin@admin.ru',
-      password: '123',
+      password: '1234qwer',
     }], {});
   },
 
