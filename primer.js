@@ -11,9 +11,35 @@ import {
 } from 'reactstrap';
 import { userAuthThunk } from '../../../../redux/actions/AuthAction';
 
+// const handleChange = (e) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+
+const useInput = (initialValue) => {
+  const [form, setForm] = useState({});
+  const [value, setValue] = useState(initialValue);
+  const [isDirty, setDirty] = useState(false);
+
+  setForm((prev) => ({ ...prev, [initialValue.target.name]: initialValue.target.value }));
+
+  const onChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  const onBlur = (e) => {
+    setDirty(true);
+  };
+
+  return {
+    value,
+    onChange,
+    onBlur,
+  };
+};
+
 function UserForm() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const email = useInput('');
+  const password = useInput('');
 
   const [form, setForm] = useState({});
   const [loginToggle, setLoginToggle] = useState(false);
@@ -22,7 +48,7 @@ function UserForm() {
     setLoginToggle(!loginToggle);
   };
 
-  const handleChange = (e) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  // const handleChange = (e) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,11 +67,10 @@ function UserForm() {
             value={form.name || ''}
             name="name"
             disabled={loginToggle}
-            onChange={handleChange}
+            onChange={(e)=>{
+              console.log("tttttttt");
+              useInput(e)}}
             placeholder="Name"
-            required
-            pattern="[A-ZА-Яa-zа-я]{1,30}"
-            title="Имя не должно содержать иных символов кроме буквенных и не быть длиннее 30 символов"
           />
         </FormGroup>
 
@@ -53,13 +78,11 @@ function UserForm() {
           <Label>Email address</Label>
           <Input
             type="text"
-            value={form.email || ''}
+            value={email.value}
             name="email"
-            onChange={handleChange}
+            onChange={(e) => email.onChange(e)}
+            onBlur={(e) => email.onBlur}
             placeholder="Email"
-            required
-            pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
-            title="Введите email в указанном формате user@gmail.com"
           />
           <FormText className="text-muted">
             Well never share your email with anyone else.
@@ -70,13 +93,11 @@ function UserForm() {
           <Label>Password</Label>
           <Input
             type="password"
-            value={form.password || ''}
+            value={password.value}
             name="password"
-            onChange={handleChange}
+            onChange={(e) => password.onChange(e)}
+            onBlur={(e) => password.onBlur}
             placeholder="Password"
-            required
-            pattern="(?=(?:.*[A-Za-z]){2})(?=(?:.*[0-9]){4})^.{6,}$"
-            title="Пароль должен содержать минимум 2 буквы и 4 цифры"
           />
         </FormGroup>
         <FormGroup className="mb-3" controlId="formBasicCheckbox">
