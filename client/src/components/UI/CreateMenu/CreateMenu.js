@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 import React from 'react';
-import './UserMenu.css';
+import './CreateMenu.css';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { userLogoutThunk } from '../../../redux/actions/AuthAction';
@@ -13,21 +13,17 @@ function UserMenu({
   const renderLogout = () => <button type="button" onClick={() => dispatch(userLogoutThunk())}>Logout</button>;
 
   return (
-    <div className={active ? 'menu-user active' : 'user'} onClick={() => setActive(false)}>
-      <div className="user-menu_content" onClick={(e) => e.stopPropagation()}>
-        <div className="headerUser">
-          {header}
-        </div>
-        <ul>
+    <div className={active ? 'create' : 'menu-create active'} onClick={() => setActive(false)}>
+      <div className="create-menu_content" onClick={(e) => e.stopPropagation()}>
+        <div className="content">
           {items.map((item) => (
-            <li>
-              <Link to={item.href}>
+            <div>
+              <Link className="content-link" to={item.href}>
                 {item.value}
               </Link>
-            </li>
+            </div>
           ))}
-        </ul>
-        {user ? renderLogout() : <Link className="reg" to="/auth">Sign Up</Link> }
+        </div>
       </div>
     </div>
   );
