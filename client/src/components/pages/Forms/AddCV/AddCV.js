@@ -40,22 +40,6 @@ function AddCv() {
         </FormGroup>
 
         <FormGroup>
-          <Label>
-            <Input
-              type="checkbox"
-              checked={checked}
-              onChange={(e) => {
-                handleChange();
-                handleInput(e);
-              }}
-              value={form.name}
-              name="elbrus"
-            />
-            Elbrus
-          </Label>
-        </FormGroup>
-
-        <FormGroup>
           <Label>Github</Label>
           <Input
             onChange={handleInput}

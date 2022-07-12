@@ -1,4 +1,6 @@
-import { ADD_VACANCY, GET_VACANCIES, GET_VACANCIES_ALL } from '../types/vacancyTypes';
+import {
+  ADD_VACANCY, GET_VACANCIES, GET_VACANCIES_ALL, GET_VACANCIES_FILTER
+} from '../types/vacancyTypes';
 
 export const addVacancy = () => ({ type: ADD_VACANCY });
 
@@ -40,5 +42,16 @@ export const getVacanciesAllThunk = () => async (dispatch) => {
     const data = await response.json();
     // console.log(data, 'data<_____');
     dispatch(getVacanciesAll(data));
+  }
+};
+
+export const getVacanciesFilter = (data) => ({ type: 'GET_VACANCIES_FILTER', payload: data });
+
+export const getVacanciesFilterThunk = () => async (dispatch) => {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/`);
+  if (response.ok) {
+    const data = await response.json();
+    console.log(data, 'data<----');
+    dispatch(getVacanciesFilter(data));
   }
 };

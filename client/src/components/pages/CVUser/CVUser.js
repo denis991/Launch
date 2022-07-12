@@ -2,17 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCVThunk } from '../../../redux/actions/cvsActions';
 import CvUserComment from './CVUserComment';
+import { getCVCommentThunk } from '../../../redux/actions/cvCommentsAction';
 
 function CvUser() {
   const dispatch = useDispatch();
-
   const parseUrl = window.location.href.split('/');
   const id = parseUrl[parseUrl.length - 1];
 
   const cv = useSelector((state) => state.cvs[0]);
+  const comments = useSelector((state) => state.cvComments);
 
   useEffect(() => {
     dispatch(getCVThunk(id));
+  }, []);
+
+  useEffect(() => {
+    dispatch(getCVCommentThunk(id));
   }, []);
 
   return (
@@ -48,6 +53,18 @@ function CvUser() {
         <p>{cv?.cvUser?.experience}</p>
       </div>
 
+      <div>
+        {comments?.map((comment) => (
+          <div key={comment.id}>
+            <p>
+              {comment.body}
+              {' '}
+              -
+              {comment.name}
+            </p>
+          </div>
+        ))}
+      </div>
       <CvUserComment cvId={cv?.cvUser?.id} />
     </div>
   );
