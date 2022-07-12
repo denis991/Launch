@@ -8,7 +8,6 @@ function VacancyUser() {
   const id = parseUrl[parseUrl.length - 1];
 
   const vacancy = useSelector((state) => state.vacancy);
-  console.log('state ===>', vacancy);
 
   useEffect(() => {
     dispatch(getUserVacancyThunk(id));
@@ -51,30 +50,56 @@ function VacancyUser() {
         <p>{vacancy?.city}</p>
       </div>
 
-      {/* <div> */}
-      {/*  <h4>Контакты</h4> */}
-      {/*  <p> */}
-      {/*    tel: */}
-      {/*    {' '} */}
-      {/*    {vacancy?.cvUser?.contact} */}
-      {/*  </p> */}
-      {/*  <p><a href={`${vacancy?.cvUser?.github}`}>github</a></p> */}
-      {/* </div> */}
+      <div>
+        <h4>Условия работы</h4>
+        <p>{vacancy?.conditions}</p>
+      </div>
 
-      {/* <div> */}
-      {/*  <h4>Достижения</h4> */}
-      {/*  <p>{vacancy?.cvUser?.awards}</p> */}
-      {/* </div> */}
+      <div>
+        <h4>Контакты</h4>
+        <p>
+          Имя:
+          {' '}
+          {vacancy?.contact_name}
+        </p>
+        <p>
+          tel:
+          {' '}
+          {vacancy?.contact_phone}
+        </p>
+        <p>
+          social:
+          {' '}
+          {vacancy?.contact_social}
+        </p>
+      </div>
 
-      {/* <div> */}
-      {/*  <h4>Образование</h4> */}
-      {/*  <p>{vacancy?.cvUser?.education}</p> */}
-      {/* </div> */}
+      <div>
+        <h4>Обязанности</h4>
+        <p>{vacancy?.duties}</p>
+      </div>
 
-      {/* <div> */}
-      {/*  <h4>Мой опыт</h4> */}
-      {/*  <p>{vacancy?.cvUser?.experience}</p> */}
-      {/* </div> */}
+      <div>
+        <h4>Опыт</h4>
+        <p>{vacancy?.experience}</p>
+      </div>
+
+      <div>
+        <h4>Требования</h4>
+        <p>{vacancy?.requirements}</p>
+      </div>
+
+      <div>
+        <h4>Технологии</h4>
+        <p>{vacancy?.technology}</p>
+      </div>
+
+      <div>
+        <h4>График</h4>
+        <p>{vacancy?.schedule}</p>
+      </div>
+
+      <button type="button" className="btn btn-primary">Откликнуться</button>
     </div>
   );
 }
