@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { CHECK_USER, CREATE_USER, LOGOUT_USER } from '../types/userTypes';
 
 export const createUser = (data) => ({ type: CREATE_USER, payload: data });
@@ -22,19 +23,12 @@ export const userAuthThunk = (loginToggle, body, navigate) => async (dispatch) =
   }
 };
 
-// export const userCheckAuthThunk = () => async dispatch => {
-//   const response = await fetch('/auth');
-//   const result = await response.json();
-//   if (response.ok) {
-//     dispatch(checkUser(result));
-//   } else {
-//     alert(result?.message);
-//   }
-// };
-export const userCheckAuthThunk = () => async (dispatch) => {
-  const response = await fetch('/auth');
-  const result = await response.json();
-  dispatch(checkUser(result));
+export const userCheckAuthThunk = (navigage) => async (dispatch) => {
+  // const res = await axios.get('http://localhost:3006/auth', { withCredentials: true });
+  const res = await fetch('http://localhost:3006/auth', { credentials: 'include', method: 'post' });
+  const lol = await res.json();
+  dispatch(checkUser(lol));
+  navigage('/');
 };
 
 export const userLogoutThunk = () => async (dispatch) => {

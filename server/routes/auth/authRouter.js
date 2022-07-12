@@ -4,16 +4,14 @@ const { Users } = require('../../db/models');
 
 router.route('/').post(async (req, res) => {
   try {
-    const user = await Users.findOne({ where: { email: req.body.email } });
-    const truePass = bcrypt.compareSync(req.body.password, user.password);
-    if (truePass) {
-      res.json(user);
-    } else {
-      throw new Error('wrong password');
-    }
+    const user = await Users.findOne({
+      where: { id: req.session.userId },
+      raw: true,
+    });
+    res.json(user);
   } catch (error) {
     console.log(error);
-    res.json(error);
+    res.status(500).json(null);
   }
 });
 
