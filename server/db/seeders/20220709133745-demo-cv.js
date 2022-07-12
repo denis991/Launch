@@ -32,7 +32,7 @@ module.exports = {
       experience: 'Сентябрь 2012 — по настоящее время',
       education: 'Московский государственный технический ',
       views: '130',
-      user_id: 1,
+      user_id: 2,
     }, {
       title: 'Frontend-разработчик',
       elbrus: true,
