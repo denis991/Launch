@@ -18,7 +18,7 @@ function VacanciesList({ filterVacancies, adVacancies }) {
       <div className="card-body">
         <div>
           { filterVacancies?.map((el) => (
-            <Card key={Date.now() + Math.random()}>
+            <Card key={el.id}>
               <CardBody>
                 <Link to={`/vacancies/${el.id}`}>
 
