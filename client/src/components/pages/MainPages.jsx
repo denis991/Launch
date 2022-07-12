@@ -12,11 +12,13 @@ import ProfilEdit from './ProfilEdit';
 import CVsLists from './CVsLists/CVsLists';
 import About from './About';
 import CvUser from './CVUser/CVUser';
+import VacancyUser from './VacancyUser/VacancyUser';
 
 function MainPages() {
   return (
     <Routes>
       <Route path="/" element={<Vacancies />} />
+      <Route path="/vacancies/:id" element={<VacancyUser />} />
       <Route
         path="/auth"
         element={(

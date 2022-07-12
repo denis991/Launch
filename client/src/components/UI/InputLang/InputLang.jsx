@@ -7,7 +7,6 @@ function InputLang({ langProg, setLangProg }) {
   const dispatch = useDispatch();
   const skills = useSelector((state) => state.skills);
 
-  console.log(skills);
   useEffect(() => {
     // dispatch(getSkill({}));
     dispatch(getSkillThunk());
