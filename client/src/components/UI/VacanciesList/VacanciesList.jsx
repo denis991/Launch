@@ -7,12 +7,6 @@ import {
 import { getVacanciesAllThunk } from '../../../redux/actions/vacancyActions';
 
 function VacanciesList({ filterVacancies, adVacancies }) {
-  const dispatch = useDispatch();
-
-  // console.log(adVacancies, '!!!!!');
-  useEffect(() => {
-    dispatch(getVacanciesAllThunk());
-  }, []);
   return (
     <div className="card mb-3 border-0">
       <div className="card-body">

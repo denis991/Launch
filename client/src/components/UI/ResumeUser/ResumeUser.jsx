@@ -11,10 +11,10 @@ function ResumeUser() {
   useEffect(() => {
     dispatch(getCVsThunk());
   }, []);
-  const [resUs, setResUs] = useState({ });
+  // const [resUs, setResUs] = useState({ });
   const user = useSelector((state) => state.user);
   const getCvs = useSelector((state) => state.cvs[0]);
-  console.log(user, getCvs, 'user<----');
+  // console.log(user, getCvs, 'user<----');
 
   let cvs = getCvs?.filter(
     (el) => (user.id
@@ -22,11 +22,11 @@ function ResumeUser() {
       : false)
   );
   if (cvs === undefined) { cvs = []; }
-  console.log(cvs, 'cvs<----');
+  // console.log(cvs, 'cvs<----');
 
   return (
     <>
-      <div>ResumeUser</div>
+      <h5 className="text-center">ваши резюме</h5>
       <div className="card mb-3 border-0">
         <div className="card-body">
           <div>

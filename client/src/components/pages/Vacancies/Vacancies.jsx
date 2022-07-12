@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { getVacanciesAllThunk } from '../../../redux/actions/vacancyActions';
 import VacanciesForm from '../../UI/VacanciesForm/VacanciesForm';
 import VacanciesList from '../../UI/VacanciesList/VacanciesList';
 // import './Vacancies.css';
 
 function Vacancies() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getVacanciesAllThunk());
+  }, []);
   const [langProg, setLangProg] = useState('');
   const [levelVacancies, setLevelVacancies] = useState('');
   const [search, setSearch] = useState(false);
