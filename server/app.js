@@ -1,15 +1,34 @@
 const express = require('express');
+const { Server } = require('socket.io');
+const app = express();
 const logger = require('morgan');
 const cors = require('cors');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const server = require('http').createServer(app);
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 require('dotenv').config();
 
-const app = express();
 
-app.use(cors());
+const io = new Server(server, {
+  cors: {
+    origin: 'http://localhost:3006',
+    credentials: true,
+  }
+});
+
+io.on('connect', socket => { });
+
+// const app = express();
+
+app.use(
+  cors({
+    origin: 'http://localhost:3006',
+    credentials: true,
+  })
+);
+
 const PORT = process.env.DB_PORT;
 
 const mainPageRouter = require('./routes/mainPage');
@@ -56,6 +75,6 @@ app.use('/notifications', notificationsRouter);
 app.use('/skills', skillsRouter);
 app.use('/comments', cvCommentsRouter);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);
 });
