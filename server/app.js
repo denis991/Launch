@@ -28,6 +28,7 @@ app.use(
     credentials: true,
   })
 );
+// app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 
 const PORT = process.env.DB_PORT;
 

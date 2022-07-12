@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addCVCommentThunk } from '../../../redux/actions/cvCommentsAction';
 
-function CvUserComment({ cvId }) {
+function CvUserComment({ cvid }) {
   const dispatch = useDispatch();
 
   const [form, setForm] = useState({});
@@ -13,7 +13,8 @@ function CvUserComment({ cvId }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addCVCommentThunk({ form, cvId }));
+    setForm({});
+    dispatch(addCVCommentThunk({ form, cvid }));
   };
 
   return (
