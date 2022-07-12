@@ -16,9 +16,9 @@ function Navbar() {
   const [userMenuActive, setUserMenuActive] = useState(false);
   const [createdMenu, setCreatedMenu] = useState(false);
   const items = [
-    { value: 'Резюме', href: '/cvs', icon: '/img/time.svg' },
-    { value: 'Вакансии', href: '/', icon: '/img/Mac.svg' },
-    { value: 'Рейтинг', href: '/rating', icon: '/img/Mony.svg' },
+    // { value: 'Резюме', href: '/cvs', icon: '/img/time.svg' },
+    // { value: 'Вакансии', href: '/', icon: '/img/Mac.svg' },
+    // { value: 'Рейтинг', href: '/rating', icon: '/img/Mony.svg' },
     { value: 'Релокация', href: '/relocation', icon: '/img/Mony.svg' },
     { value: 'Новости', href: '/news', icon: '/img/Mony.svg' }
   ];
@@ -55,16 +55,19 @@ function Navbar() {
         <div className="burger-btn" onClick={() => setMenuActive(!menuActive)}>
           <span />
         </div>
+        <div className="reg">
+          <Link className="reg" to="/">Вакансии</Link>
+          <Link className="reg" to="/cvs">Резюме</Link>
+          <Link className="reg" to="/rating">Рейтинг</Link>
+        </div>
         <div className="created">
           {user ? notif() : null}
           {user ? createMenu() : null}
-          {user ? renderUserMenu() : <Link className="reg" to="/auth">Sign Up</Link> }
+          {user ? renderUserMenu() : <Link className="reg" to="/auth">Войти/Регистрация</Link> }
         </div>
         <MenuNavbar active={menuActive} setActive={setMenuActive} header={title} items={items} />
-
       </div>
     </div>
-
   );
 }
 // key={Date.now + Math.random()}
