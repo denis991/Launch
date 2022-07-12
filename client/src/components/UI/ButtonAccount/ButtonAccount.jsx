@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getVacanciesThunk } from '../../../redux/actions/vacancyActions';
+import AnswersUser from '../AnswersUser/AnswersUser';
+import CvsUser from '../CvsUser/CvsUser';
 import ResumeUser from '../ResumeUser/ResumeUser';
+import СommentsUser from '../СommentsUser/СommentsUser';
 
 function ButtonAccount() {
   const [comp, setComp] = useState(1);
@@ -23,24 +26,24 @@ function ButtonAccount() {
           <a className="nav-link px-3" data-bs-toggle="tab" href="#comments" onClick={() => setComp(4)}>Ответы</a>
         </li>
       </ul>
-      {/* <div>
+      <div>
         {(comp === 1)
         && (
           <ResumeUser />
         )}
         {(comp === 2)
         && (
-          <ResumeUser />
+          <CvsUser />
         )}
         {(comp === 3)
         && (
-          <ResumeUser />
+          <СommentsUser />
         )}
         {(comp === 4)
         && (
-          <ResumeUser />
+          <AnswersUser />
         )}
-      </div> */}
+      </div>
     </div>
   );
 }
