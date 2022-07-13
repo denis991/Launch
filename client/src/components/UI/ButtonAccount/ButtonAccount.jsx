@@ -9,9 +9,9 @@ import ResumeUser from '../ResumeUser/ResumeUser';
 import СommentsUser from '../СommentsUser/СommentsUser';
 import SocketChat from '../Socket/SoketChat';
 
-function ButtonAccount() {
+function ButtonAccount({ userPage }) {
   const [comp, setComp] = useState(1);
-  // const { user } = useSelector((state) => state);
+  // TODO: userPage тот на чью стрвницу зашел пользователь
   const dispatch = useDispatch();
   return (
     <div>
@@ -30,26 +30,26 @@ function ButtonAccount() {
         </li>
 
         <Button color="success" outline>
-          <Link data-bs-toggle="tab" to={<SocketChat />}>чат</Link>
+          <Link data-bs-toggle="tab" to={<SocketChat userPage={userPage} />}>чат</Link>
         </Button>
 
       </ul>
       <div>
         {(comp === 1)
         && (
-          <ResumeUser />
+          <ResumeUser userPage={userPage} />
         )}
         {(comp === 2)
         && (
-          <CvsUser />
+          <CvsUser userPage={userPage} />
         )}
         {(comp === 3)
         && (
-          <СommentsUser />
+          <СommentsUser userPage={userPage} />
         )}
         {(comp === 4)
         && (
-          <AnswersUser />
+          <AnswersUser userPage={userPage} />
         )}
       </div>
     </div>

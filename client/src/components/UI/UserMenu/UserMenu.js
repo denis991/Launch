@@ -25,7 +25,7 @@ function UserMenu({
         </div>
         <ul style={{ padding: '0px' }}>
           {items.map((item) => (
-            <li style={{ listStyleType: 'none' }}>
+            <li key={item.id} style={{ listStyleType: 'none' }}>
               <Link to={item.href}>
                 {item.value}
               </Link>

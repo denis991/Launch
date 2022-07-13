@@ -3,16 +3,15 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 function AuthRoute({ children }) {
-  const { users } = useSelector((state) => state);
+  const users = useSelector((state) => state.users);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (users) {
-      navigate('/');
-    }
-  }, []);
-
-  console.log(users);
+  // useEffect(() => {
+  //   if (users) {
+  //     console.log(users);
+  //     navigate('/');
+  //   }
+  // }, []);
 
   return <div>{children}</div>;
 }

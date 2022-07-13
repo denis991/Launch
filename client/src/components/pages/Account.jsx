@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { userCheckAuthThunk } from '../../redux/actions/AuthAction';
 import ButtonAccount from '../UI/ButtonAccount/ButtonAccount';
 
@@ -12,6 +12,7 @@ function Account() {
   const [resumeId, setResumeId] = useState([]);
   const [vacancyId, setVacancyId] = useState([]);
   const [commentsId, setCommentsId] = useState([]);
+  const userPage = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [usetInfo, setUsetInfo] = useState({
     name: 'denis',
@@ -54,9 +55,9 @@ function Account() {
         </div>
       </div>
 
-      <ButtonAccount />
+      <ButtonAccount userPage={userPage} />
       {stateTextProf && stateTextProf.map((item) => (
-        <div className="px-3 py-4 mb-3 bg-light rounded" key={Date.now() + Math.random()}>
+        <div className="px-3 py-4 mb-3 bg-light rounded" key={item.id}>
 
           <div className="h3 text-black-50">{item.liks}</div>
         </div>
