@@ -13,13 +13,13 @@ import socket from '../Socket/socket';
 import Chat from '../Socket/components/Chat';
 import reducer from '../Socket/reducer';
 
-function ButtonAccount({ userPage, roomIdUser }) {
+function ButtonAccount({ userPage, roomId }) {
   const sessionUser = useSelector((state) => state.user);
 
   const [comp, setComp] = useState(1);
   // TODO: userPage тот на чью стрвницу зашел пользователь
 
-  const [roomId, setRoomId] = useState(roomIdUser);
+  // const [roomId, setRoomId] = useState(roomIdUser);
   const [userName, setUserName] = useState(sessionUser.name);
   // const dispatch = useDispatch();
   const [isLoading, setLoading] = useState(false);
@@ -32,7 +32,7 @@ function ButtonAccount({ userPage, roomIdUser }) {
     messages: [],
   });
   console.log(state, 'state');
-  console.log(roomIdUser, 'roomIdUser');
+  console.log(roomId, 'roomIdUser');
   const onLogin = async (obj) => {
     dispatch({
       type: 'JOINED',

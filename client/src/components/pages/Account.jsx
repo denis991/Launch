@@ -56,7 +56,7 @@ function Account() {
         </div>
       </div>
 
-      <ButtonAccount userPage={userPage} roomIdUser={userPage?.id} />
+      <ButtonAccount userPage={userPage} roomId={userPage?.id} />
       {stateTextProf && stateTextProf.map((item) => (
         <div className="px-3 py-4 mb-3 bg-light rounded" key={item.id}>
 

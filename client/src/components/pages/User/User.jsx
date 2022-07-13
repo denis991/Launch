@@ -36,7 +36,7 @@ function User() {
           </div>
         </div>
       )}
-      <ButtonAccount userPage={user?.user} roomIdUser={user.user?.id} />
+      <ButtonAccount userPage={user?.user} roomId={user.user?.id} />
     </>
   );
 }
