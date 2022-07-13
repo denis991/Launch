@@ -10,11 +10,6 @@ function AddVacancy() {
   const dispatch = useDispatch();
   const [checked, setChecked] = useState(false);
   const [form, setForm] = useState({});
-  console.log(form);
-
-  const handleChange = () => {
-    setChecked(!checked);
-  };
 
   const handleInput = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });

@@ -9,6 +9,7 @@ import usersReducer from './usersReducer';
 import userReducer from './userReducer';
 import cvUserReducer from './cvUserReducer';
 import vacanciesReducer from './vacanciesReducer';
+import accountReducer from './accountReducer';
 
 const rootReducer = combineReducers({
   user: authReducer,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   cvComments: cvCommentReducer,
   vacancy: userVacancyReducer,
   vacancies: vacanciesReducer,
+  accountInfoUser: accountReducer,
 });
 
 export default rootReducer;
