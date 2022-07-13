@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { Button } from 'reactstrap';
 import { getVacanciesThunk } from '../../../redux/actions/vacancyActions';
 import AnswersUser from '../AnswersUser/AnswersUser';
 import CvsUser from '../CvsUser/CvsUser';
 import ResumeUser from '../ResumeUser/ResumeUser';
 import СommentsUser from '../СommentsUser/СommentsUser';
+import SocketChat from '../Socket/SoketChat';
 
 function ButtonAccount() {
   const [comp, setComp] = useState(1);
-  const { user } = useSelector((state) => state);
+  // const { user } = useSelector((state) => state);
   const dispatch = useDispatch();
   return (
     <div>
@@ -25,6 +28,11 @@ function ButtonAccount() {
         <li className="nav-itemЗ">
           <a className="nav-link px-3" data-bs-toggle="tab" href="#comments" onClick={() => setComp(4)}>Ответы</a>
         </li>
+
+        <Button color="success" outline>
+          <Link data-bs-toggle="tab" to={<SocketChat />}>чат</Link>
+        </Button>
+
       </ul>
       <div>
         {(comp === 1)

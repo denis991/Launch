@@ -53,9 +53,10 @@ function Account() {
           </div>
         </div>
       </div>
+
       <ButtonAccount />
       {stateTextProf && stateTextProf.map((item) => (
-        <div className="px-3 py-4 mb-3 bg-light rounded">
+        <div className="px-3 py-4 mb-3 bg-light rounded" key={Date.now() + Math.random()}>
 
           <div className="h3 text-black-50">{item.liks}</div>
         </div>
