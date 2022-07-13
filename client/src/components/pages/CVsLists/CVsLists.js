@@ -10,6 +10,7 @@ import './CVsLists.css';
 function CVsLists() {
   const dispatch = useDispatch();
   const cvs = useSelector((state) => state.cvs[0]);
+
   useEffect(() => {
     dispatch(getCVsThunk());
   }, []);
