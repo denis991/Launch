@@ -58,12 +58,12 @@ function Navbar() {
         <div className="reg">
           <Link className="reg" to="/">Вакансии</Link>
           <Link className="reg" to="/cvs">Резюме</Link>
-          <Link className="reg" to="/rating">Рейтинг</Link>
+          <Link className="reg" to="/users">Рейтинг</Link>
         </div>
         <div className="created">
           {user ? notif() : null}
           {user ? createMenu() : null}
-          {user ? renderUserMenu() : <Link className="reg" to="/auth">Войти/Регистрация</Link> }
+          {user ? renderUserMenu() : <Link className="reg" to="/auth">Войти</Link> }
         </div>
         <MenuNavbar active={menuActive} setActive={setMenuActive} header={title} items={items} />
       </div>
