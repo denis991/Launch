@@ -13,13 +13,13 @@ function CVsLists() {
   useEffect(() => {
     dispatch(getCVsThunk());
   }, []);
-  console.log(cvs);
+
   return (
     <div className="container my-4">
-      <div className="col-md-7">
+      <div className="col-md-12">
         <div>
-          <h2>Резюме программистов</h2>
-          <div className="nav nav-pills mb-3 justify-content-center">
+          <h1>Резюме программистов</h1>
+          <div className="nav nav-pills mb-3 justify-content-start">
             <a className="nav-item nav-link link-dark active" href="#">Все</a>
             <a className="nav-item nav-link link-dark" href="#">Популярные</a>
             <a className="nav-item nav-link link-dark" href="#">Новые</a>

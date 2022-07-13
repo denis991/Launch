@@ -65,6 +65,8 @@ function AddVacancy() {
             onChange={handleInput}
             value={form.name}
           >
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+            <option value="" hidden />
             <option>
               Стажер
             </option>
@@ -111,6 +113,8 @@ function AddVacancy() {
             onChange={handleInput}
             value={form.name}
           >
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+            <option value="" hidden />
             <option>
               Полный день
             </option>

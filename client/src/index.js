@@ -9,13 +9,14 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import store from './redux/store';
-import Footer from './components/UI/Footer/Footer';
+// import Footer from './components/UI/Footer/Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Provider store={store}>
       <Navbar />
+
       <App />
       {/* <Footer /> */}
     </Provider>
