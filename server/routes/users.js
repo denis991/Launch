@@ -28,10 +28,16 @@ router.get('/:id', async (req, res) => {
       where: {
         id,
       },
+      include: {
+        model: CVComms,
+        attributes: [
+          [sequelize.fn('COUNT', sequelize.col('body')), 'countComments']
+        ],
+      },
+      group: ['Users.id', 'CVComms.id']
     });
-    const userName = user.name;
-    const userSurname = user.surname;
-    res.json({ userName, userSurname });
+
+    res.json({ user });
   } catch (err) {
     console.log(err);
     res.sendStatus(404);
