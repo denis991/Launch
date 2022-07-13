@@ -4,7 +4,6 @@ const { Vacancies } = require('../db/models');
 router.get('/', async (req, res) => {
   try {
     const allVacancies = await Vacancies.findAll();
-    console.log('==========>', allVacancies);
     res.json(allVacancies);
   } catch (err) {
     console.log('ERROR:', err);

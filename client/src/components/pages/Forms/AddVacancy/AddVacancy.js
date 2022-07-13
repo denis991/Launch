@@ -3,7 +3,7 @@ import {
   Form, Input, FormGroup, Label
 } from 'reactstrap';
 import { useDispatch } from 'react-redux';
-import { addVacancyThunk } from '../../../../redux/actions/vacancyActions';
+import { addVacancyThunk } from '../../../../redux/actions/userVacancyActions';
 import './AddVacancy.css';
 
 function AddVacancy() {
