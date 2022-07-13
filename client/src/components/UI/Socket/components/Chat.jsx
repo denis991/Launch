@@ -3,7 +3,7 @@ import socket from '../socket';
 import chatCSS from './Chat.module.css';
 
 function Chat({
-  users, messages, userName, roomId, onAddMessage
+  users, messages, userName, roomId, onAddMessage, userPage, sessionUser
 }) {
   const [messageValue, setMessageValue] = React.useState('');
   const messagesRef = React.useRef(null);

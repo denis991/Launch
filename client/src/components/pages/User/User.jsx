@@ -11,6 +11,7 @@ function User() {
   // const idTest = parseUrl[parseUrl.length - 1];
   const user = useSelector((state) => state.statsUser);
   console.log(user);
+
   // console.log(id);
 
   useEffect(() => {
@@ -35,7 +36,7 @@ function User() {
           </div>
         </div>
       )}
-      <ButtonAccount userPage={user.user?.id} />
+      <ButtonAccount userPage={user?.user} roomIdUser={user.user?.id} />
     </>
   );
 }

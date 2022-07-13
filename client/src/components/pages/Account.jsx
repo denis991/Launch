@@ -13,6 +13,7 @@ function Account() {
   const [vacancyId, setVacancyId] = useState([]);
   const [commentsId, setCommentsId] = useState([]);
   const userPage = useSelector((state) => state.user);
+  console.log(userPage.id);
   const dispatch = useDispatch();
   const [usetInfo, setUsetInfo] = useState({
     name: 'denis',
@@ -55,7 +56,7 @@ function Account() {
         </div>
       </div>
 
-      <ButtonAccount userPage={userPage?.id} />
+      <ButtonAccount userPage={userPage} roomIdUser={userPage?.id} />
       {stateTextProf && stateTextProf.map((item) => (
         <div className="px-3 py-4 mb-3 bg-light rounded" key={item.id}>
 

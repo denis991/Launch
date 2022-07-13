@@ -63,6 +63,7 @@ io.on('connection', (socket) => {
   });
 
   console.log('user connected', socket.id);
+  // console.log('request info',socket.to);
 });
 
 server.listen(PORT, (err) => {
