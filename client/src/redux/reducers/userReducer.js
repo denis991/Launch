@@ -1,6 +1,6 @@
 import { GET_USER } from '../types/userTypes';
 
-const userReducer = (state = null, action) => {
+const userReducer = (state = '', action) => {
   const { type, payload } = action;
   switch (type) {
     case GET_USER:

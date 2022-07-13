@@ -17,7 +17,7 @@ function ResumeUser({ userPage }) {
   // console.log(user, getCvs, 'user<----');
 
   let cvs = getCvs?.filter(
-    (el) => (userPage.id
+    (el) => (userPage?.id
       ? el.user_id === userPage.id
       : false)
   );
