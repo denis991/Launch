@@ -1,11 +1,10 @@
-import { GET_ALL_USERS, GET_USER } from '../types/userTypes';
+import { GET_USER } from '../types/userTypes';
 
 const userReducer = (state = null, action) => {
   const { type, payload } = action;
   switch (type) {
-    case GET_ALL_USERS:
-      return payload;
     case GET_USER:
+      console.log('payload USER', payload);
       return payload;
     default:
       return state;

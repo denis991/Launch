@@ -14,6 +14,9 @@ import About from './About';
 import CvUser from './CVUser/CVUser';
 import VacancyUser from './VacancyUser/VacancyUser';
 import Users from './Users/Users';
+import News from './News';
+import Relocation from './Relocation';
+import User from './User/User';
 
 function MainPages() {
   return (
@@ -29,7 +32,7 @@ function MainPages() {
         )}
       />
       <Route path="/users" element={<Users />} />
-      <Route path="/users/:id" element={<p>users/:id</p>} />
+      <Route path="/users/:id" element={<User />} />
 
       <Route path="/cvs" element={<CVsLists />} />
       <Route path="/cvs/:id" element={<CvUser />} />
@@ -43,6 +46,8 @@ function MainPages() {
       <Route path="/account/profile/edit" element={<ProfilEdit />} />
       <Route path="/account/cvs/new" element={<AddCV />} />
       <Route path="/about" element={<About />} />
+      <Route path="/news" element={<News />} />
+      <Route path="/relocation" element={<Relocation />} />
       <Route path="/*" element={<Error />} />
     </Routes>
   );

@@ -8,7 +8,7 @@ function Users() {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
   let counter = 0;
-  console.log(users);
+  console.log('users =>>>', users);
 
   useEffect(() => {
     dispatch(getUsersThunk());
@@ -36,7 +36,7 @@ function Users() {
         <tbody>
           {/* eslint-disable-next-line no-return-assign */}
           {users?.map((user) => (
-            <tr>
+            <tr key={user.id}>
               <th scope="row">
                 {counter += 1}
               </th>
