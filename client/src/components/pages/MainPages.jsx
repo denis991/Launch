@@ -13,8 +13,10 @@ import CVsLists from './CVsLists/CVsLists';
 import About from './About';
 import CvUser from './CVUser/CVUser';
 import VacancyUser from './VacancyUser/VacancyUser';
+import Users from './Users/Users';
 import News from './News';
 import Relocation from './Relocation';
+import User from './User/User';
 
 function MainPages() {
   return (
@@ -29,8 +31,8 @@ function MainPages() {
           </AuthRoute>
         )}
       />
-      <Route path="/users" element={<p>users</p>} />
-      <Route path="/users/:id" element={<p>users/:id</p>} />
+      <Route path="/users" element={<Users />} />
+      <Route path="/users/:id" element={<User />} />
 
       <Route path="/cvs" element={<CVsLists />} />
       <Route path="/cvs/:id" element={<CvUser />} />
