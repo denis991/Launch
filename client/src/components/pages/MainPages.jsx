@@ -14,7 +14,7 @@ import About from './About';
 import CvUser from './CVUser/CVUser';
 import VacancyUser from './VacancyUser/VacancyUser';
 import News from './News';
-import Relocation from './Relocation';
+import Reloc from '../Relocation/Reloc';
 
 function MainPages() {
   return (
@@ -45,7 +45,7 @@ function MainPages() {
       <Route path="/account/cvs/new" element={<AddCV />} />
       <Route path="/about" element={<About />} />
       <Route path="/news" element={<News />} />
-      <Route path="/relocation" element={<Relocation />} />
+      <Route path="/relocation" element={<Reloc />} />
       <Route path="/*" element={<Error />} />
     </Routes>
   );
