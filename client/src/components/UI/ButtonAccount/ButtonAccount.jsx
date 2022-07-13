@@ -15,9 +15,10 @@ import reducer from '../Socket/reducer';
 
 function ButtonAccount({ userPage }) {
   const sessionUser = useSelector((state) => state.user);
+
   const [comp, setComp] = useState(1);
   // TODO: userPage тот на чью стрвницу зашел пользователь
-  console.log(userPage);
+
   const [roomId, setRoomId] = useState(userPage);
   const [userName, setUserName] = useState(sessionUser.name);
   // const dispatch = useDispatch();
