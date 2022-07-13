@@ -12,7 +12,6 @@ function User() {
   }, []);
 
   const user = useSelector((state) => state.statsUser);
-  console.log('user =>>>', user);
 
   return (
     <div className="px-3 py-4 mb-3 bg-light rounded">

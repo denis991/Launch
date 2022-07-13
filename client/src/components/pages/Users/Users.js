@@ -8,7 +8,6 @@ function Users() {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
   let counter = 0;
-  console.log('users =>>>', users);
 
   useEffect(() => {
     dispatch(getUsersThunk());
