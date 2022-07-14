@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCVThunk } from '../../../redux/actions/cvsActions';
+import {
+  Card, CardBody, CardText, CardTitle
+} from 'reactstrap';
+import { Link } from 'react-router-dom';
 import CvUserComment from './CVUserComment';
 import { getCVCommentThunk } from '../../../redux/actions/cvCommentsAction';
+import { getUserCVThunk } from '../../../redux/actions/cvUserAction';
 
 function CvUser() {
   const dispatch = useDispatch();
   const parseUrl = window.location.href.split('/');
   const id = parseUrl[parseUrl.length - 1];
 
-  const cv = useSelector((state) => state.cvs[0]);
+  const cv = useSelector((state) => state.userCV);
   const comments = useSelector((state) => state.cvComments);
 
   useEffect(() => {
-    dispatch(getCVThunk(id));
+    dispatch(getUserCVThunk(id));
   }, []);
 
   useEffect(() => {
@@ -34,8 +38,12 @@ function CvUser() {
 
       <div>
         <h4>Контакты</h4>
-        <p>{cv?.cvUser?.contact}</p>
-        <a href={`${cv?.cvUser?.github}`}>github</a>
+        <p>
+          tel:
+          {' '}
+          {cv?.cvUser?.contact}
+        </p>
+        <p><a href={`${cv?.cvUser?.github}`}>github</a></p>
       </div>
 
       <div>
@@ -53,19 +61,40 @@ function CvUser() {
         <p>{cv?.cvUser?.experience}</p>
       </div>
 
-      <div>
+      <div className="mt-2">
+        <CvUserComment cvid={cv?.cvUser?.id} />
+      </div>
+
+      <div className="w-75 mx-auto">
+        <div className="d-flex justify-content-center">
+          <h5>Комментарии</h5>
+        </div>
         {comments?.map((comment) => (
-          <div key={comment.id}>
-            <p>
-              {comment.body}
-              {' '}
-              -
-              {comment.name}
-            </p>
-          </div>
+          <Card
+            color="light"
+            key={comment.id}
+            className="mt-2"
+          >
+            <CardBody>
+              <CardTitle tag="h6">
+                <Link to={`/users/${comment.user_id}`}>
+                  {comment.User.name}
+                </Link>
+              </CardTitle>
+              <CardText>
+                {comment.body}
+              </CardText>
+              <CardText>
+                <small className="text-muted d-flex justify-content-end">
+                  Дата публикации:
+                  {' '}
+                  {comment?.createdAt.split('T')[0]}
+                </small>
+              </CardText>
+            </CardBody>
+          </Card>
         ))}
       </div>
-      <CvUserComment cvId={cv?.cvUser?.id} />
     </div>
   );
 }

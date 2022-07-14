@@ -1,5 +1,5 @@
 export const ADD_VACANCY = 'ADD_CV';
-export const ADD_CV_TEST = 'ADD_CV_TEST';
 export const GET_VACANCIES = 'GET_VACANCIES';
 export const GET_VACANCIES_ALL = 'GET_VACANCIES_ALL';
 export const GET_VACANCIES_FILTER = 'GET_VACANCIES_FILTER';
+export const GET_USER_VACANCY = 'GET_USER_VACANCY';

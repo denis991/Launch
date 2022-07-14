@@ -39,5 +39,7 @@ module.exports = {
     'no-alert': 0,
     'linebreak-style': 0,
     'eslint-disable-next-line': 0,
+    'react/jsx-props-no-spreading': 0,
+    camelcase: 'off',
   },
 };

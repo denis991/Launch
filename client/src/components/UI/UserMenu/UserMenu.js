@@ -10,7 +10,7 @@ function UserMenu({
 }) {
   const { user } = useSelector((state) => state);
   const dispatch = useDispatch();
-  const renderLogout = () => <button type="button" onClick={() => dispatch(userLogoutThunk())}>Logout</button>;
+  const renderLogout = () => <button type="button" className="btn btn-secondary" onClick={() => dispatch(userLogoutThunk())}>Выйти</button>;
   const fio = () => (
     <div className="fio">
       {user.name}
@@ -23,16 +23,16 @@ function UserMenu({
         <div className="headerUser">
           {user ? fio() : null}
         </div>
-        <ul>
+        <ul style={{ padding: '0px' }}>
           {items.map((item) => (
-            <li>
+            <li key={item.id} style={{ listStyleType: 'none' }}>
               <Link to={item.href}>
                 {item.value}
               </Link>
             </li>
           ))}
         </ul>
-        {user ? renderLogout() : <Link className="reg" to="/auth">Sign Up</Link> }
+        {user ? renderLogout() : <Link className="reg" to="/auth">Регистрация</Link> }
       </div>
     </div>
   );

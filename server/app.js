@@ -9,7 +9,8 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+
 const PORT = process.env.DB_PORT;
 
 const mainPageRouter = require('./routes/mainPage');
@@ -23,6 +24,7 @@ const signinRouter = require('./routes/auth/signinRouter');
 const logoutRouter = require('./routes/auth/logoutRouter');
 const skillsRouter = require('./routes/skills');
 const cvCommentsRouter = require('./routes/commentsCV');
+const relocationRouter = require('./routes/relocation');
 
 const sessionConfig = {
   name: 'wannalaunch',
@@ -55,6 +57,7 @@ app.use('/account', accountRouter);
 app.use('/notifications', notificationsRouter);
 app.use('/skills', skillsRouter);
 app.use('/comments', cvCommentsRouter);
+app.use('/relocation', relocationRouter);
 
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);

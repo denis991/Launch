@@ -8,6 +8,10 @@ router.route('/:id').get(async (req, res) => {
       where: {
         cv_id: id,
       },
+      include: {
+        model: Users,
+        attributes: ['name'],
+      }
     });
     res.json(comments);
   } catch (error) {
@@ -33,9 +37,13 @@ router.route('/:id').post(async (req, res) => {
       }
     });
     const idComms = cvComms.id;
+    const { createdAt } = cvComms;
     const { name } = user;
+    const user_id = req.session.userId;
 
-    res.json({ idComms, name });
+    res.json({
+      idComms, name, createdAt, user_id
+    });
   } catch (error) {
     console.log(error);
     res.json(error);

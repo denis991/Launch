@@ -16,7 +16,7 @@ function UserMenu({
       <div className="create-menu_content" onClick={(e) => e.stopPropagation()}>
         <div className="content">
           {items.map((item) => (
-            <div>
+            <div key={Date.now() + Math.random()}>
               <Link className="content-link" to={item.href}>
                 {item.value}
               </Link>

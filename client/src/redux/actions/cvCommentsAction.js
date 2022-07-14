@@ -4,9 +4,10 @@ export const addCVComment = (data) => ({ type: ADD_CV_COMMENT, payload: data });
 export const getCVComment = (data) => ({ type: GET_CV_COMMENT, payload: data });
 
 export const addCVCommentThunk = (data) => async (dispatch) => {
-  const { form, cvId } = data;
+  const { form, cvid } = data;
+  console.log(cvid);
   const response = await fetch(
-    `/comments/${cvId}`,
+    `/comments/${cvid}`,
     {
       method: 'post',
       headers: {
@@ -19,15 +20,23 @@ export const addCVCommentThunk = (data) => async (dispatch) => {
   if (response.ok) {
     const { body } = form;
     const userData = await response.json();
-    const { idComms, name } = userData;
+    const {
+      idComms, name, createdAt, user_id
+    } = userData;
+
     dispatch(addCVComment({
-      cvId, body, id: idComms, name
+      cvid,
+      body,
+      id: idComms,
+      User: { name },
+      createdAt,
+      user_id
     }));
   }
 };
 
-export const getCVCommentThunk = (cvId) => async (dispatch) => {
-  const response = await fetch(`/comments/${cvId}`);
+export const getCVCommentThunk = (cvid) => async (dispatch) => {
+  const response = await fetch(`/comments/${cvid}`);
   const data = await response.json();
 
   if (response.ok) {

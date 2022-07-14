@@ -4,21 +4,15 @@ import { Link } from 'react-router-dom';
 import {
   Button, Card, CardBody, CardSubtitle, CardText, CardTitle
 } from 'reactstrap';
-import { getVacanciesAllThunk } from '../../../redux/actions/vacancyActions';
+import { getVacanciesAllThunk } from '../../../redux/actions/userVacancyActions';
 
 function VacanciesList({ filterVacancies, adVacancies }) {
-  const dispatch = useDispatch();
-
-  // console.log(adVacancies, '!!!!!');
-  useEffect(() => {
-    dispatch(getVacanciesAllThunk());
-  }, []);
   return (
     <div className="card mb-3 border-0">
       <div className="card-body">
         <div>
           { filterVacancies?.map((el) => (
-            <Card key={Date.now() + Math.random()}>
+            <Card key={el.id}>
               <CardBody>
                 <Link to={`/vacancies/${el.id}`}>
 
