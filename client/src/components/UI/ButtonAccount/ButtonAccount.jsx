@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import axios from 'axios';
-import { getVacanciesThunk } from '../../../redux/actions/vacancyActions';
+// import { getVacanciesThunk } from '../../../redux/actions/vacancyActions';
 import AnswersUser from '../AnswersUser/AnswersUser';
 import CvsUser from '../CvsUser/CvsUser';
 import ResumeUser from '../ResumeUser/ResumeUser';

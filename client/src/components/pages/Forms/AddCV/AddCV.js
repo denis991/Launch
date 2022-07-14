@@ -3,24 +3,19 @@ import {
   Form, Input, FormGroup, Label, Button
 } from 'reactstrap';
 import { useDispatch } from 'react-redux';
-import { addCVThunk } from '../../../../redux/actions/cvsActions';
+import { addUserCVThunk } from '../../../../redux/actions/cvUserAction';
 import './AddCV.css';
 
 function AddCv() {
   const dispatch = useDispatch();
-  const [checked, setChecked] = useState(false);
   const [form, setForm] = useState({});
-
-  const handleChange = () => {
-    setChecked(!checked);
-  };
 
   const handleInput = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = () => {
-    dispatch(addCVThunk(form));
+    dispatch(addUserCVThunk(form));
   };
 
   return (
