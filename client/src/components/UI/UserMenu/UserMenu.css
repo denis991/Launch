@@ -3,16 +3,16 @@
 /* Please ❤ this if you like it! */
 
 
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
 body{
-	/* font-family: 'Montserrat', sans-serif; */
+	font-family: 'Montserrat', sans-serif;
 	font-weight: 300;
 	font-size: 15px;
 	line-height: 1.7;
 	color: #ececee;
 	background-color: #1f2029;
-
+	overflow: hidden;
   background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
   background-position: center;
   background-repeat: repeat;
@@ -33,26 +33,29 @@ body{
   transform: translateY(-50%);
 }
 h1{
-  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 7vw;
   line-height: 1;
-
+  color: Black;
   text-align: center;
-  
-  color: black;
+  /* -webkit-text-stroke: 2px #ffeba7;
+  text-stroke: 2px #ffeba7;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent; */
+
 }
 
-.menu-icon:checked,
-.menu-icon:not(:checked){
+.my:checked,
+.my:not(:checked){
   position: absolute;
   left: -9999px;
 }
 .menu-icon:checked + label,
 .menu-icon:not(:checked) + label{
   position: fixed;
-  top: 43px;
-  right: 1815px;
+  top: 63px;
+  left: 75px;
   display: block;
   width: 30px;
   height: 30px;
@@ -121,15 +124,15 @@ h1{
 
 .nav1{
   position: fixed;
-  top: 10px;
-  right: 1790px;
+  top: 33px;
+  right: 1310px;
   display: block;
   width: 80px;
   height: 80px;
   padding: 0;
   margin: 0;
   z-index: 9;
-
+  overflow: hidden;
   box-shadow: 0 8px 30px 0 rgba(0,0,0,0.3);
   background-color: #353746;
   animation: border-transform 7s linear infinite;
@@ -277,15 +280,21 @@ h1{
 @media screen and (max-width: 991px) {
   .menu-icon:checked + label,
   .menu-icon:not(:checked) + label{
-    top: 40px;
-    right: 340px;
+    right: 55px;
   }
   .logo {
     left: 30px;
   }
   .nav1{
-    top: 10px;
-    right: 320px;
+    right: 30px;
+  }
+  h1{
+    font-size: 9vw;
+    -webkit-text-stroke: 2px transparent;
+    text-stroke: 2px transparent;
+    -webkit-text-fill-color: #ffeba7;
+    text-fill-color: #ffeba7;
+    color: #ffeba7;
   }
   .nav1 ul li a{
     font-size: 8vh;
