@@ -1,5 +1,7 @@
 import initState from '../initState';
-import {JOINED, NEW_MESSAGE, SET_DATA, SET_USERS} from '../types/chatTypes';
+import {
+  JOINED, NEW_MESSAGE, SET_DATA, SET_USERS
+} from '../types/chatTypes';
 
 export default (state = initState.chat, action) => {
   switch (action.type) {

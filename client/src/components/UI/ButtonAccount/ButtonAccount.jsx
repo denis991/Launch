@@ -1,18 +1,18 @@
-import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {Button} from 'reactstrap';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { Button } from 'reactstrap';
 import axios from 'axios';
 import AnswersUser from '../AnswersUser/AnswersUser';
 import CvsUser from '../CvsUser/CvsUser';
 import ResumeUser from '../ResumeUser/ResumeUser';
 
 import socket from '../Socket/socket';
-import {JOINED, SET_DATA, SET_USERS} from "../../../redux/types/chatTypes";
-import {addMessage} from "../../../redux/actions/chatActions";
-import CommentsUser from "../СommentsUser/СommentsUser";
+import { JOINED, SET_DATA, SET_USERS } from '../../../redux/types/chatTypes';
+import { addMessage } from '../../../redux/actions/chatActions';
+import CommentsUser from '../СommentsUser/СommentsUser';
 
-function ButtonAccount({userPage, roomId}) {
+function ButtonAccount({ userPage, roomId }) {
   const sessionUser = useSelector((state) => state.user);
   const [comp, setComp] = useState(1);
   const [userName, setUserName] = useState(sessionUser.name);
@@ -25,7 +25,7 @@ function ButtonAccount({userPage, roomId}) {
       payload: obj,
     });
     socket.emit('ROOM:JOIN', obj);
-    const {data} = await axios.get(`${process.env.REACT_APP_SOKIT_HTTP}/rooms/${obj.roomId}`);
+    const { data } = await axios.get(`${process.env.REACT_APP_SOKIT_HTTP}/rooms/${obj.roomId}`);
     console.log(obj.roomId, '-----------------------------------------------------');
     dispatch({
       type: SET_DATA,
@@ -43,8 +43,8 @@ function ButtonAccount({userPage, roomId}) {
   useEffect(() => {
     socket.on('ROOM:SET_USERS', setUsers);
     socket.on('ROOM:NEW_MESSAGE', (data) => {
-      console.log(data, 'ROOM:NEW_MESSAGE')
-      dispatch(addMessage(data))
+      console.log(data, 'ROOM:NEW_MESSAGE');
+      dispatch(addMessage(data));
     });
   }, [socket]);
 
@@ -66,26 +66,55 @@ function ButtonAccount({userPage, roomId}) {
     <div>
       <ul className="nav nav-pills justify-content-center" role="navigation">
         <li className="nav-item">
-          <a className="nav-link px-3 active" data-bs-toggle="tab" href="#resume"
-             onClick={() => setComp(1)}>Резюме</a>
+          <a
+            className="nav-link px-3 active"
+            data-bs-toggle="tab"
+            href="#resume"
+            onClick={() => setComp(1)}
+          >
+            Резюме
+
+          </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link px-3" data-bs-toggle="tab" href="#answers"
-             onClick={() => setComp(2)}>Вакансии </a>
+          <a
+            className="nav-link px-3"
+            data-bs-toggle="tab"
+            href="#answers"
+            onClick={() => setComp(2)}
+          >
+            Вакансии
+            {' '}
+
+          </a>
         </li>
         <li className="nav-itemЗ">
-          <a className="nav-link px-3" data-bs-toggle="tab" href="#comments"
-             onClick={() => setComp(3)}>Комментарии</a>
+          <a
+            className="nav-link px-3"
+            data-bs-toggle="tab"
+            href="#comments"
+            onClick={() => setComp(3)}
+          >
+            Комментарии
+
+          </a>
         </li>
         <li className="nav-itemЗ">
-          <a className="nav-link px-3" data-bs-toggle="tab" href="#comments"
-             onClick={() => setComp(4)}>Ответы</a>
+          <a
+            className="nav-link px-3"
+            data-bs-toggle="tab"
+            href="#comments"
+            onClick={() => setComp(4)}
+          >
+            Ответы
+
+          </a>
         </li>
 
         <Button color="success" outline disabled={isLoading} onClick={onEnter}>
           <Link
             data-bs-toggle="tab"
-            to={'/chat'}
+            to="/chat"
           >
             {isLoading ? 'Вход...' : 'Войти в чат'}
           </Link>
@@ -95,19 +124,19 @@ function ButtonAccount({userPage, roomId}) {
       <div>
         {(comp === 1)
         && (
-          <ResumeUser userPage={userPage}/>
+          <ResumeUser userPage={userPage} />
         )}
         {(comp === 2)
         && (
-          <CvsUser userPage={userPage}/>
+          <CvsUser userPage={userPage} />
         )}
         {(comp === 3)
         && (
-          <CommentsUser userPage={userPage}/>
+          <CommentsUser userPage={userPage} />
         )}
         {(comp === 4)
         && (
-          <AnswersUser userPage={userPage}/>
+          <AnswersUser userPage={userPage} />
         )}
       </div>
     </div>
