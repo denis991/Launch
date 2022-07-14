@@ -9,21 +9,21 @@ const PORT = process.env.DB_PORT_SOKIT;
 app.use(express.json());
 app.use(cors())
 
-const rooms = new Map();
-
+const rooms = new Map();// !!!
+console.log(rooms);
 app.get(`/rooms/:id`, (req, res) => {
-  const { id: roomId } = req.params;
+  const {id: roomId} = req.params;
   const obj = rooms.has(roomId)
     ? {
-        users: [...rooms.get(roomId).get('users').values()],
-        messages: [...rooms.get(roomId).get('messages').values()],
-      }
-    : { users: [], messages: [] };
+      users: [...rooms.get(roomId).get('users').values()],
+      messages: [...rooms.get(roomId).get('messages').values()],
+    }
+    : {users: [], messages: []};
   res.json(obj);
 });
-
+//создаёь новую комнату
 app.post(`/rooms`, (req, res) => {
-  const { roomId, userName } = req.body;
+  const {roomId, userName} = req.body;
   if (!rooms.has(roomId)) {
     rooms.set(
       roomId,
@@ -37,14 +37,14 @@ app.post(`/rooms`, (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  socket.on('ROOM:JOIN', ({ roomId, userName }) => {
+  socket.on('ROOM:JOIN', ({roomId, userName}) => {
     socket.join(roomId);
     rooms.get(roomId).get('users').set(socket.id, userName);
     const users = [...rooms.get(roomId).get('users').values()];
     socket.to(roomId).broadcast.emit('ROOM:SET_USERS', users);
   });
 
-  socket.on('ROOM:NEW_MESSAGE', ({ roomId, userName, text }) => {
+  socket.on('ROOM:NEW_MESSAGE', ({roomId, userName, text}) => {
     const obj = {
       userName,
       text,
@@ -63,6 +63,7 @@ io.on('connection', (socket) => {
   });
 
   console.log('user connected', socket.id);
+  console.log(rooms);
   // console.log('request info',socket.to);
 });
 

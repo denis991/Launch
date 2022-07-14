@@ -1,12 +1,15 @@
 import React from 'react';
 import socket from '../socket';
 import chatCSS from './Chat.module.css';
+import {useDispatch, useSelector} from "react-redux";
+import {addMessage} from "../../../../redux/actions/chatActions";
 
-function Chat({
-  users, messages, userName, roomId, onAddMessage, userPage, sessionUser
-}) {
+function Chat() {
   const [messageValue, setMessageValue] = React.useState('');
   const messagesRef = React.useRef(null);
+  const dispatch = useDispatch()
+
+  const {users, messages, userName, roomId} = useSelector(s => s.chat)
 
   const onSendMessage = () => {
     socket.emit('ROOM:NEW_MESSAGE', {
@@ -14,7 +17,7 @@ function Chat({
       roomId,
       text: messageValue,
     });
-    onAddMessage({ userName, text: messageValue });
+    dispatch(addMessage({userName, text: messageValue}))
     setMessageValue('');
   };
 
@@ -29,7 +32,7 @@ function Chat({
           Комната:
           {' '}
           <b>{roomId}</b>
-          <hr />
+          <hr/>
           <b>
             Онлайн (
             {users.length}
