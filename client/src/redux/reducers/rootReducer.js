@@ -12,6 +12,7 @@ import vacanciesReducer from './vacanciesReducer';
 import accountReducer from './accountReducer';
 // import newsReducer from './newsReduser';
 import chatReducer from './chatReducer';
+import relocationReducer from './relocationReducer';
 
 const rootReducer = combineReducers({
   user: authReducer,
@@ -26,8 +27,9 @@ const rootReducer = combineReducers({
   vacancy: userVacancyReducer,
   vacancies: vacanciesReducer,
   accountInfoUser: accountReducer,
-  chat: chatReducer
+  chat: chatReducer,
   // news: newsReducer,
+  relocation: relocationReducer
 });
 
 export default rootReducer;
