@@ -6,11 +6,11 @@ function AuthRoute({ children }) {
   const { users } = useSelector((state) => state);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (users) {
-      navigate('/');
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (users) {
+  //     // navigate('/');
+  //   }
+  // }, []);
 
   console.log(users);
 
