@@ -35,10 +35,8 @@ function MainPages() {
       />
       <Route path="/users" element={<Users />} />
       <Route path="/users/:id" element={<User />} />
-
       <Route path="/cvs" element={<CVsLists />} />
       <Route path="/cvs/:id" element={<CvUser />} />
-
       <Route path="/account" element={<Account />} />
       <Route path="/account/vacancies/new" element={<AddVacancy />} />
       <Route path="/account/cvs" element={<p>account/resumes</p>} />
@@ -49,9 +47,9 @@ function MainPages() {
       <Route path="/account/cvs/new" element={<AddCV />} />
       <Route path="/about" element={<About />} />
       <Route path="/news" element={<News />} />
+      <Route path="/relocation" element={<Relocation />} />
       <Route path="/relocation" element={<Reloc />} />
-      {/* <Route path="/relocation" element={<Relocation />} /> */}
-      <Route path="/Chat/:id" element={<Chat />} />
+      <Route path="/chat" element={<Chat />} />
       <Route path="/*" element={<Error />} />
     </Routes>
   );

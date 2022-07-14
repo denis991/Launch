@@ -1,6 +1,6 @@
 import React from 'react';
 
-function OmmentsUser({ userPage }) {
+function CommentsUser({ userPage }) {
   return (
     <div>
       <h1>Комментарии они скоро будут в разработке</h1>
@@ -8,4 +8,4 @@ function OmmentsUser({ userPage }) {
   );
 }
 
-export default OmmentsUser;
+export default CommentsUser;

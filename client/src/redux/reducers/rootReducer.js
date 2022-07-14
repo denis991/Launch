@@ -11,6 +11,7 @@ import cvUserReducer from './cvUserReducer';
 import vacanciesReducer from './vacanciesReducer';
 import accountReducer from './accountReducer';
 // import newsReducer from './newsReduser';
+import chatReducer from './chatReducer';
 
 const rootReducer = combineReducers({
   user: authReducer,
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
   vacancy: userVacancyReducer,
   vacancies: vacanciesReducer,
   accountInfoUser: accountReducer,
+  chat: chatReducer
   // news: newsReducer,
 });
 
