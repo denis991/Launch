@@ -75,6 +75,7 @@ function ButtonAccount({ userPage, roomId }) {
       roomId,
       userName,
     };
+    console.log(obj, 'obj');
     setLoading(true);
     await axios.post(`${process.env.REACT_APP_SOKIT_HTTP}/rooms`, obj);
     onLogin(obj);
