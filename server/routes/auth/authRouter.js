@@ -8,6 +8,7 @@ router.route('/').post(async (req, res) => {
       where: { id: req.session.userId },
       raw: true,
     });
+    console.log('=======USER=======', user);
     res.json(user);
   } catch (error) {
     console.log(error);

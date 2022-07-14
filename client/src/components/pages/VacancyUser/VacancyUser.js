@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserVacancyThunk } from '../../../redux/actions/vacancyActions';
+import { getUserVacancyThunk } from '../../../redux/actions/userVacancyActions';
 
 function VacancyUser() {
   const dispatch = useDispatch();

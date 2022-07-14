@@ -3,18 +3,13 @@ import {
   Form, Input, FormGroup, Label
 } from 'reactstrap';
 import { useDispatch } from 'react-redux';
-import { addVacancyThunk } from '../../../../redux/actions/vacancyActions';
+import { addVacancyThunk } from '../../../../redux/actions/userVacancyActions';
 import './AddVacancy.css';
 
 function AddVacancy() {
   const dispatch = useDispatch();
   const [checked, setChecked] = useState(false);
   const [form, setForm] = useState({});
-  console.log(form);
-
-  const handleChange = () => {
-    setChecked(!checked);
-  };
 
   const handleInput = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
