@@ -8,6 +8,9 @@ function AuthRoute({ children }) {
 
   // useEffect(() => {
   //   if (users) {
+  //     // navigate('/');
+  //   }
+  // }, []);
   //     console.log(users);
   //     navigate('/');
   //   }

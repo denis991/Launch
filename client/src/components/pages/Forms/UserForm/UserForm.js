@@ -32,10 +32,10 @@ function UserForm() {
   };
 
   return (
-    <div className="userForm">
+    <div className="userForm w-75 m-auto" style={{ paddingTop: '20px' }}>
       <Form onSubmit={handleSubmit}>
         <FormGroup className="mb-3" controlId="formBasicName">
-          <Label>Name</Label>
+          <Label>Имя</Label>
           <Input
             type="text"
             value={form.name || ''}
@@ -50,7 +50,7 @@ function UserForm() {
         </FormGroup>
 
         <FormGroup className="mb-3" controlId="formBasicEmail">
-          <Label>Email address</Label>
+          <Label>Email</Label>
           <Input
             type="text"
             value={form.email || ''}
@@ -61,13 +61,11 @@ function UserForm() {
             pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
             title="Введите email в указанном формате user@gmail.com"
           />
-          <FormText className="text-muted">
-            Well never share your email with anyone else.
-          </FormText>
+          <FormText className="text-muted" />
         </FormGroup>
 
         <FormGroup className="mb-3" controlId="formBasicPassword">
-          <Label>Password</Label>
+          <Label>Пароль</Label>
           <Input
             type="password"
             value={form.password || ''}
@@ -81,14 +79,14 @@ function UserForm() {
         </FormGroup>
         <FormGroup className="mb-3" controlId="formBasicCheckbox">
           <Input type="checkbox" onChange={handleForm} />
-          <span>{loginToggle ? 'Back to registration' : 'To login'}</span>
+          <span>{loginToggle ? 'Вернуться к регистрации' : 'Авторизироваться'}</span>
         </FormGroup>
         <FormGroup className="mb-3" controlId="formBasicCheckbox">
           <Input type="checkbox" />
-          <span>remember me</span>
+          <span>Запомнить меня</span>
         </FormGroup>
         <Button variant="primary" type="submit">
-          Submit
+          Войти
         </Button>
       </Form>
     </div>
