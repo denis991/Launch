@@ -7,12 +7,7 @@ import ButtonAccount from '../../UI/ButtonAccount/ButtonAccount';
 function User() {
   const dispatch = useDispatch();
   const { id } = useParams();
-  // const parseUrl = window.location.href.split('/');
-  // const idTest = parseUrl[parseUrl.length - 1];
   const user = useSelector((state) => state.statsUser);
-  console.log(user);
-
-  // console.log(id);
 
   useEffect(() => {
     dispatch(getUserThunk(id));

@@ -13,6 +13,8 @@ import accountReducer from './accountReducer';
 import relocationReducer from './relocationReducer';
 
 // import newsReducer from './newsReduser';
+import chatReducer from './chatReducer';
+// import relocationReducer from './relocationReducer';
 
 const rootReducer = combineReducers({
   user: authReducer,
@@ -24,10 +26,13 @@ const rootReducer = combineReducers({
   cvs: cvsReducer,
   relocation: relocationReducer,
   cvComments: cvCommentReducer,
+  // news: newsReducer,
   vacancy: userVacancyReducer,
   vacancies: vacanciesReducer,
   accountInfoUser: accountReducer,
+  chat: chatReducer,
   // news: newsReducer,
+  // relocation: relocationReducer
 });
 
 export default rootReducer;

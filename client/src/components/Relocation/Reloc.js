@@ -2,7 +2,8 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import getRelocationThunk from '../../redux/actions/relocationActions';
 import Relocation from '../UI/Relocation/Relocation';
-import VacanciesForm from '../UI/VacanciesForm/VacanciesForm';
+// import VacanciesForm from '../UI/VacanciesForm/VacanciesForm';
+import VacanciesFormReloc from '../UI/VacanciesForm/VacanciesFormReloc';
 
 function Reloc() {
   const [langProg, setLangProg] = useState('');
@@ -17,13 +18,13 @@ function Reloc() {
 
   return (
     <div>
-      <VacanciesForm
+      <VacanciesFormReloc
         levelVacancies={levelVacancies}
         setLevelVacancies={setLevelVacancies}
         langProg={langProg}
         setLangProg={setLangProg}
-        city={country}
-        setCity={setCountry}
+        country={country}
+        setCountry={setCountry}
       />
       <Relocation country={country} langProg={langProg} levelVacancies={levelVacancies} />
     </div>

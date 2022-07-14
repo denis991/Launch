@@ -6,6 +6,13 @@ const initState = {
   vacancy: [],
   cvComments: [],
   statsUser: '',
+  chat: {
+    joined: false,
+    roomId: null,
+    userName: null,
+    users: [],
+    messages: [],
+  }
 };
 
 export default initState;

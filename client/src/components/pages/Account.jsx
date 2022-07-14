@@ -13,7 +13,7 @@ function Account() {
   const [vacancyId, setVacancyId] = useState([]);
   const [commentsId, setCommentsId] = useState([]);
   const userPage = useSelector((state) => state.user);
-  console.log(userPage.id);
+  // console.log(userPage.id);
   const dispatch = useDispatch();
   const [stateTextProf, setstateTextProf] = useState([]);
   const userAccountInfo = useSelector((state) => state.accountInfoUser);
