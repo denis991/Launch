@@ -1,16 +1,14 @@
 import {
-  ADD_VACANCY, GET_USER_VACANCY, GET_VACANCIES, GET_VACANCIES_ALL, GET_VACANCIES_FILTER
+  ADD_VACANCY, GET_USER_VACANCY, GET_VACANCIES_FILTER
 } from '../types/vacancyTypes';
 
-const vacancyReducer = (state = [], action) => {
+const userVacancyReducer = (state = [], action) => {
   const { type, payload } = action;
-  switch (action.type) {
+  switch (type) {
     case ADD_VACANCY:
       return true;
     case GET_USER_VACANCY:
-      return action.payload;
-    case GET_VACANCIES_ALL:
-      return [...state, action.payload];
+      return payload;
     case GET_VACANCIES_FILTER:
       return {
         ...state,
@@ -29,4 +27,4 @@ const vacancyReducer = (state = [], action) => {
   }
 };
 
-export default vacancyReducer;
+export default userVacancyReducer;

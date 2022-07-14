@@ -1,4 +1,0 @@
-REACT_APP_SOKIT_HTTP=http://localhost:3066
-DB_PORT_SOKIT=3066
-
-`${process.env.REACT_APP_SOKIT_HTTP}/`

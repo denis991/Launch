@@ -38,21 +38,6 @@ export const getVacanciesThunk = () => async (dispatch) => {
   }
 };
 
-export const getVacanciesAll = (data) => ({
-  type: GET_VACANCIES_ALL,
-  payload: data,
-});
-export const getVacanciesAllThunk = () => async (dispatch) => {
-  // console.log('ENV', process.env);
-  // console.log('ENV', process.env.REACT_APP_API_URL);
-  const response = await fetch(`${process.env.REACT_APP_API_URL}/`);
-  if (response.ok) {
-    const data = await response.json();
-    // console.log(data, 'data<_____');
-    dispatch(getVacanciesAll(data));
-  }
-};
-
 export const getVacanciesFilter = (data) => ({ type: 'GET_VACANCIES_FILTER', payload: data });
 export const getVacanciesFilterThunk = () => async (dispatch) => {
   const response = await fetch(`${process.env.REACT_APP_API_URL}/`);

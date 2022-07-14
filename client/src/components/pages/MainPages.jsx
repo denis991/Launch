@@ -17,6 +17,7 @@ import Users from './Users/Users';
 import News from './News';
 import Relocation from './Relocation';
 import User from './User/User';
+import Chat from '../UI/Socket/components/Chat';
 
 function MainPages() {
   return (
@@ -48,6 +49,7 @@ function MainPages() {
       <Route path="/about" element={<About />} />
       <Route path="/news" element={<News />} />
       <Route path="/relocation" element={<Relocation />} />
+      <Route path="/Chat/:id" element={<Chat />} />
       <Route path="/*" element={<Error />} />
     </Routes>
   );

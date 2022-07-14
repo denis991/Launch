@@ -1,9 +1,9 @@
-import { GET_USER } from '../types/userTypes';
+import { GET_USER_ACCOUNT_INFO } from '../types/accountTypes';
 
-const userReducer = (state = '', action) => {
+const userReducer = (state = null, action) => {
   const { type, payload } = action;
   switch (type) {
-    case GET_USER:
+    case GET_USER_ACCOUNT_INFO:
       return payload;
     default:
       return state;
