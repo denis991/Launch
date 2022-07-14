@@ -14,7 +14,7 @@ import relocationReducer from './relocationReducer';
 
 // import newsReducer from './newsReduser';
 import chatReducer from './chatReducer';
-import relocationReducer from './relocationReducer';
+// import relocationReducer from './relocationReducer';
 
 const rootReducer = combineReducers({
   user: authReducer,
@@ -32,7 +32,7 @@ const rootReducer = combineReducers({
   accountInfoUser: accountReducer,
   chat: chatReducer,
   // news: newsReducer,
-  relocation: relocationReducer
+  // relocation: relocationReducer
 });
 
 export default rootReducer;

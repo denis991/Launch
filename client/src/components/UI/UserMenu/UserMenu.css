@@ -43,8 +43,8 @@ h1{
   color: black;
 }
 
-.menu-icon:checked,
-.menu-icon:not(:checked){
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked){
   position: absolute;
   left: -9999px;
 }
