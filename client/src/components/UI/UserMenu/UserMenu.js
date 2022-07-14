@@ -9,6 +9,10 @@ function MenuNavbar(props) {
       <label htmlFor="menu-icon" />
       <nav className="nav1">
         <ul className="pt-5">
+
+          <li><Link to="/">Vacancies</Link></li>
+          <li><Link to="/users">Rating</Link></li>
+          <li><Link to="/cvs">Resume</Link></li>
           <li><Link to="/news">News</Link></li>
           <li><Link to="/relocation">Relocation</Link></li>
         </ul>
