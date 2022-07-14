@@ -67,16 +67,8 @@ function ButtonAccount({ userPage, roomId }) {
   return (
     <div>
       <ul className="nav nav-pills justify-content-center" role="navigation">
-        <li className="nav-item">
-          <a
-            className="nav-link px-3 active"
-            data-bs-toggle="tab"
-            href="#resume"
-            onClick={() => setComp(1)}
-          >
-            Резюме
-
-          </a>
+        <li className="nav-item active">
+          <a className="nav-link px-3" data-bs-toggle="tab" href="#resume" onClick={() => setComp(1)}>Резюме</a>
         </li>
         <li className="nav-item">
           <a

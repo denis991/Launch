@@ -17,7 +17,7 @@ function Relocation({ country, langProg, levelVacancies }) {
     dispatch(getRelocationThunk());
   }, []);
 
-  const memoRelocation = useMemo(() => relocation.filter((el) => {
+  const memoRelocation = useMemo(() => relocation?.filter((el) => {
     if (!langProg || !country) {
       return true;
     }
@@ -25,7 +25,7 @@ function Relocation({ country, langProg, levelVacancies }) {
       return true;
     }
     return false;
-  }), [country, langProg, levelVacancies]);
+  }), [country, langProg]);
 
   return (
 

@@ -1,0 +1,10 @@
+.header {
+  height: 80px;
+}
+.reg {
+  position: relative;
+  left: 80%;
+  top: 30px;
+  text-decoration: none;
+  color: black;
+}

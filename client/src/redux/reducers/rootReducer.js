@@ -10,6 +10,8 @@ import userReducer from './userReducer';
 import cvUserReducer from './cvUserReducer';
 import vacanciesReducer from './vacanciesReducer';
 import accountReducer from './accountReducer';
+import relocationReducer from './relocationReducer';
+
 // import newsReducer from './newsReduser';
 import chatReducer from './chatReducer';
 import relocationReducer from './relocationReducer';
@@ -22,6 +24,7 @@ const rootReducer = combineReducers({
   loader: loaderReducer,
   skills: skillsReducer,
   cvs: cvsReducer,
+  relocation: relocationReducer,
   cvComments: cvCommentReducer,
   // news: newsReducer,
   vacancy: userVacancyReducer,
