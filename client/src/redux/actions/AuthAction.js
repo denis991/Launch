@@ -28,7 +28,7 @@ export const userCheckAuthThunk = (navigate) => async (dispatch) => {
   const res = await fetch('http://localhost:3006/auth', { credentials: 'include', method: 'post' });
   const lol = await res.json();
   dispatch(checkUser(lol));
-  navigate('/');
+  // navigate('/');
 };
 
 export const userLogoutThunk = () => async (dispatch) => {

@@ -1,4 +1,3 @@
-'use strict';
 const {
   Model
 } = require('sequelize');
@@ -15,9 +14,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   Relocation.init({
     title: DataTypes.STRING,
+    lang: DataTypes.STRING,
     country: DataTypes.STRING,
     level: DataTypes.STRING,
-    body: DataTypes.STRING,
+    body: DataTypes.TEXT,
     url: DataTypes.STRING
   }, {
     sequelize,

@@ -1,4 +1,3 @@
-'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Relocations', {
@@ -11,6 +10,9 @@ module.exports = {
       title: {
         type: Sequelize.STRING
       },
+      lang: {
+        type: Sequelize.STRING
+      },
       country: {
         type: Sequelize.STRING
       },
@@ -18,7 +20,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       body: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       url: {
         type: Sequelize.STRING
