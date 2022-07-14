@@ -24,6 +24,7 @@ const signinRouter = require('./routes/auth/signinRouter');
 const logoutRouter = require('./routes/auth/logoutRouter');
 const skillsRouter = require('./routes/skills');
 const cvCommentsRouter = require('./routes/commentsCV');
+const relocationRouter = require('./routes/relocation');
 
 const sessionConfig = {
   name: 'wannalaunch',
@@ -56,6 +57,7 @@ app.use('/account', accountRouter);
 app.use('/notifications', notificationsRouter);
 app.use('/skills', skillsRouter);
 app.use('/comments', cvCommentsRouter);
+app.use('/relocation', relocationRouter);
 
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);

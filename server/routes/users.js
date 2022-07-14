@@ -1,9 +1,19 @@
 const router = require('express').Router();
-const { Users } = require('../db/models');
+const sequelize = require('sequelize');
+const { CVComms, Users } = require('../db/models');
 
 router.get('/', async (req, res) => {
   try {
-    const allUsers = await Users.findAll();
+    const allUsers = await Users.findAll({
+      include: {
+        model: CVComms,
+        attributes: [
+          [sequelize.fn('COUNT', sequelize.col('body')), 'countComments']
+        ],
+      },
+      group: ['Users.id', 'CVComms.id']
+    });
+
     res.json(allUsers);
   } catch (err) {
     console.log(err);
