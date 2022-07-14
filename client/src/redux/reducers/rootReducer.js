@@ -21,6 +21,7 @@ const rootReducer = combineReducers({
   skills: skillsReducer,
   cvs: cvsReducer,
   cvComments: cvCommentReducer,
+  // news: newsReducer,
   vacancy: userVacancyReducer,
   vacancies: vacanciesReducer,
   accountInfoUser: accountReducer,

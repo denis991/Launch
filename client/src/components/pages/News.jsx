@@ -60,7 +60,7 @@ function News() {
                   type="text"
                   name="text"
                   id="text"
-                  placeholder="Search for something..."
+                  placeholder="Искать что-то..."
                   autoComplete="off"
                   required
                   value={text}
@@ -73,7 +73,7 @@ function News() {
                   type="submit"
                   onClick={handleSubmit}
                 >
-                  Search
+                  Поиск
                 </Button>
               </form>
 
@@ -100,7 +100,7 @@ function News() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        Read More
+                        Читать статью
                       </a>
                     </CardText>
                   </CardBody>
