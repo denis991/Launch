@@ -5,7 +5,7 @@ import { Button } from 'reactstrap';
 import axios from 'axios';
 // import { getVacanciesThunk } from '../../../redux/actions/vacancyActions';
 import AnswersUser from '../AnswersUser/AnswersUser';
-import CvsUser from '../../UI/CvsUser/CvsUser';
+import CvsUser from '../CvsUser/CvsUser';
 import ResumeUser from '../ResumeUser/ResumeUser';
 import СommentsUser from '../СommentsUser/СommentsUser';
 

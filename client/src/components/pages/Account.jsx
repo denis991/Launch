@@ -8,7 +8,6 @@ import { getInfoAccountUserThunk } from '../../redux/actions/accountActions';
 
 function Account() {
   const [usersAccountId, setUsersAccountId] = useState({});
-  const [stateTextProf, setstateTextProf] = useState([]);
   // setstateTextProf = (vacancy) => {};
   const [resumeId, setResumeId] = useState([]);
   const [vacancyId, setVacancyId] = useState([]);
