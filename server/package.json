@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node app.js",
     "start": "node app.js",
-    "dev": "nodemon app.js --ignore sessions"
+    "dev": "nodemon app.js --ignore sessions",
+    "server": "node server.js"
   },
   "keywords": [],
   "author": "",

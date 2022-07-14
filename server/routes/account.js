@@ -1,6 +1,7 @@
 const router = require('express').Router();
+const sequelize = require('sequelize');
 const {
-  Users, CVs, Vacancies, CV_Skills, Vacancies_Skills, Notifications
+  Users, CVs, Vacancies, CV_Skills, Vacancies_Skills, Notifications, CVComms
 } = require('../db/models');
 const Bcrypt = require('../public/middlewares/bcrypt');
 const upload = require('../public/middlewares/multer.middleware');
@@ -238,6 +239,27 @@ router.put('/profile/edit', upload.single('avatar'), async (req, res) => {
   } catch (err) {
     console.log(err);
     res.sendStatus(500);
+  }
+});
+
+router.get('/', async (req, res) => {
+  try {
+    const user = await Users.findOne({
+      where: {
+        id: req.session.userId
+      },
+      include: {
+        model: CVComms,
+        attributes: [
+          [sequelize.fn('COUNT', sequelize.col('body')), 'countComments']
+        ],
+      },
+      group: ['Users.id', 'CVComms.id']
+    });
+    res.json(user);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(404);
   }
 });
 

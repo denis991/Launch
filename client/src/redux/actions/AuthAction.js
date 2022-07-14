@@ -23,12 +23,12 @@ export const userAuthThunk = (loginToggle, body, navigate) => async (dispatch) =
   }
 };
 
-export const userCheckAuthThunk = (navigage) => async (dispatch) => {
+export const userCheckAuthThunk = (navigate) => async (dispatch) => {
   // const res = await axios.get('http://localhost:3006/auth', { withCredentials: true });
   const res = await fetch('http://localhost:3006/auth', { credentials: 'include', method: 'post' });
   const lol = await res.json();
   dispatch(checkUser(lol));
-  navigage('/');
+  navigate('/');
 };
 
 export const userLogoutThunk = () => async (dispatch) => {
