@@ -5,6 +5,7 @@ const initState = {
   skills: [],
   vacancy: [],
   cvComments: [],
+  // news: [],
 };
 
 export default initState;

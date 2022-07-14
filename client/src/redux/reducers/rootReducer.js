@@ -10,6 +10,7 @@ import userReducer from './userReducer';
 import cvUserReducer from './cvUserReducer';
 import vacanciesReducer from './vacanciesReducer';
 import accountReducer from './accountReducer';
+// import newsReducer from './newsReduser';
 
 const rootReducer = combineReducers({
   user: authReducer,
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
   vacancy: userVacancyReducer,
   vacancies: vacanciesReducer,
   accountInfoUser: accountReducer,
+  // news: newsReducer,
 });
 
 export default rootReducer;
