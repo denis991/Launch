@@ -1,2 +1,0 @@
-export const ENABLE_LOADER = 'ACTIVATE_LOADER';
-export const DISABLE_LOADER = 'DISABLE_LOADER';
