@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     // console.log('==========>', allVacancies);
     res.json(allVacancies);
   } catch (err) {
-    console.log('ERROR:', err);
+    // console.log('ERROR:', err);
     res.sendStatus(404);
   }
 });

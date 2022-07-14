@@ -1,6 +1,6 @@
 import React from 'react';
 
-function OmmentsUser() {
+function OmmentsUser({ userPage }) {
   return (
     <div>
       <h1>Комментарии они скоро будут в разработке</h1>
