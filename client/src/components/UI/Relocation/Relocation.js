@@ -6,7 +6,7 @@ import {
 import getRelocationThunk from '../../../redux/actions/relocationActions';
 import VacanciesForm from '../VacanciesForm/VacanciesForm';
 
-function Relocation({ city, langProg, levelVacancies }) {
+function Relocation({ country, langProg, levelVacancies }) {
   const relocation = useSelector((state) => state.relocation);
   console.log(relocation);
   const dispatch = useDispatch();
@@ -18,14 +18,14 @@ function Relocation({ city, langProg, levelVacancies }) {
   }, []);
 
   const memoRelocation = useMemo(() => relocation.filter((el) => {
-    if (!langProg) {
+    if (!langProg || !country) {
       return true;
     }
-    if (el.lang === langProg) {
+    if (el.lang === langProg && el.country === country) {
       return true;
     }
     return false;
-  }), [city, langProg, levelVacancies]);
+  }), [country, langProg, levelVacancies]);
 
   return (
 

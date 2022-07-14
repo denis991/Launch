@@ -11,15 +11,5 @@ router.get('/', async (req, res) => {
     res.sendStatus(404);
   }
 });
-router.get('/reloc', async (req, res) => {
-  try {
-    const relocation = await Relocation.findAll({ where: { ...req.body } });
-    console.log('==========>', relocation);
-    res.json(relocation);
-  } catch (err) {
-    console.log('ERROR:', err);
-    res.sendStatus(404);
-  }
-});
 
 module.exports = router;

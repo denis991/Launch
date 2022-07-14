@@ -6,14 +6,14 @@ import VacanciesForm from '../UI/VacanciesForm/VacanciesForm';
 
 function Reloc() {
   const [langProg, setLangProg] = useState('');
-  const [city, setCity] = useState('');
+  const [country, setCountry] = useState('');
   const [levelVacancies, setLevelVacancies] = useState('');
   const relocation = useSelector((state) => state.relocation);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getRelocationThunk());
-  }, [langProg, city, levelVacancies]);
+  }, [langProg, country, levelVacancies]);
 
   return (
     <div>
@@ -22,10 +22,10 @@ function Reloc() {
         setLevelVacancies={setLevelVacancies}
         langProg={langProg}
         setLangProg={setLangProg}
-        city={city}
-        setCity={setCity}
+        city={country}
+        setCity={setCountry}
       />
-      <Relocation city={city} langProg={langProg} levelVacancies={levelVacancies} />
+      <Relocation country={country} langProg={langProg} levelVacancies={levelVacancies} />
     </div>
   );
 }
