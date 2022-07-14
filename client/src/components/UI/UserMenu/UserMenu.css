@@ -46,8 +46,10 @@ h1{
 
 }
 
-[type="checkbox"]:checked,
-[type="checkbox"]:not(:checked){
+/* [type="checkbox"]:checked,
+[type="checkbox"]:not(:checked){ */
+  .my:checked,
+.my:not(:checked){
   position: absolute;
   left: -9999px;
 }
@@ -125,7 +127,7 @@ h1{
 .nav1{
   position: fixed;
   top: 33px;
-  right: 1310px;
+  right: 91%;
   display: block;
   width: 80px;
   height: 80px;
