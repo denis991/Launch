@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 const router = require('express').Router();
 const { Vacancies } = require('../db/models');
 

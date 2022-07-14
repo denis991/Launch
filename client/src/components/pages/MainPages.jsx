@@ -15,7 +15,8 @@ import CvUser from './CVUser/CVUser';
 import VacancyUser from './VacancyUser/VacancyUser';
 import Users from './Users/Users';
 import News from './News';
-import Relocation from './Relocation';
+import Reloc from '../Relocation/Reloc';
+// import Relocation from './Relocation';
 import User from './User/User';
 import Chat from '../UI/Socket/components/Chat';
 
@@ -48,7 +49,8 @@ function MainPages() {
       <Route path="/account/cvs/new" element={<AddCV />} />
       <Route path="/about" element={<About />} />
       <Route path="/news" element={<News />} />
-      <Route path="/relocation" element={<Relocation />} />
+      <Route path="/relocation" element={<Reloc />} />
+      {/* <Route path="/relocation" element={<Relocation />} /> */}
       <Route path="/Chat/:id" element={<Chat />} />
       <Route path="/*" element={<Error />} />
     </Routes>
