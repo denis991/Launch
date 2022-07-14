@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserVacancyThunk } from '../../../redux/actions/userVacancyActions';
+import ModalSuccess from '../../UI/ModalSuccess/ModalSuccess';
 
 function VacancyUser() {
   const dispatch = useDispatch();
@@ -98,8 +99,7 @@ function VacancyUser() {
         <h4>График</h4>
         <p>{vacancy?.schedule}</p>
       </div>
-
-      <button type="button" className="btn btn-primary">Откликнуться</button>
+      <ModalSuccess />
     </div>
   );
 }
