@@ -6,19 +6,19 @@ import {
 } from 'reactstrap';
 import { getCVsThunk } from '../../../redux/actions/cvsActions';
 
-function ResumeUser() {
+function ResumeUser({ userPage }) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCVsThunk());
   }, []);
   // const [resUs, setResUs] = useState({ });
-  const user = useSelector((state) => state.user);
+  // const userPage = useSelector((state) => state.user); // вырезанный кусок делаем дрилинг
   const getCvs = useSelector((state) => state.cvs[0]);
   // console.log(user, getCvs, 'user<----');
 
   let cvs = getCvs?.filter(
-    (el) => (user.id
-      ? el.user_id === user.id
+    (el) => (userPage?.id
+      ? el.user_id === userPage.id
       : false)
   );
   if (cvs === undefined) { cvs = []; }

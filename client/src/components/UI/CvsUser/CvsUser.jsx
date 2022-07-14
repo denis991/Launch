@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getVacanciesAllThunk } from '../../../redux/actions/vacanciesActions';
 import VacanciesList from '../VacanciesList/VacanciesList';
 
-function CvsUser(props) {
+function CvsUser({ userPage }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,8 +15,8 @@ function CvsUser(props) {
   const GetVacancies = useSelector((state) => state.vacancy[0]);
   console.log(GetVacancies, 'GetVacancies<----');
   let filterVacancies = GetVacancies?.filter(
-    (el) => (user.id
-      ? el.user_id === user.id
+    (el) => (userPage.id
+      ? el.user_id === userPage.id
       : false)
   );
   if (filterVacancies === undefined) { filterVacancies = []; }
