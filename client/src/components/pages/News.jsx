@@ -3,44 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   Button, Card, CardBody, CardSubtitle, CardText, CardTitle, Input
 } from 'reactstrap';
-import { Link } from 'react-router-dom';
-import { getNewsThunk } from '../../redux/actions/NewsActions';
-import initState from '../../redux/initState';
-// function News({ items, profiles }) {
-//   const [query, setQuery] = useState('');
-//   const [text, setText] = useState('');
-//   const dispatch = useDispatch();
-//   const res = useSelector((state) => state.news);
-
-//   useEffect(() => {
-//     dispatch(getNewsThunk());
-//   }, []);
-
-//   return (
-//     <div>
-//       {res.map((item) => (
-//         <div key={item.id}>
-//           <p>
-//             Title:
-//             {item.items}
-//           </p>
-//           <p>
-//             Genre:
-//             {item.profiles}
-//           </p>
-//         </div>
-
-//       ))}
-//     </div>
-//   );
-// }
+// import { Link } from 'react-router-dom';
+// import { getNewsThunk } from '../../redux/actions/NewsActions';
+// import initState from '../../redux/initState';
 
 function News() {
   const [items, setItems] = useState([]);
   const [query, setQuery] = useState('');
   const [text, setText] = useState('');
   const [largeTitle, setLargeTitle] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // loading state
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsLoading(true);
@@ -95,6 +67,8 @@ function News() {
                   onChange={(e) => setText(e.target.value)}
                 />
                 <Button
+                  color="primary"
+                  outline
                   className="batton mb-3"
                   type="submit"
                   onClick={handleSubmit}
