@@ -244,6 +244,7 @@ router.put('/profile/edit', upload.single('avatar'), async (req, res) => {
 
 router.get('/', async (req, res) => {
   try {
+    console.log(req.session.userId);
     const user = await Users.findOne({
       where: {
         id: req.session.userId

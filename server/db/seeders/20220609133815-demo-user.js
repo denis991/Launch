@@ -1,24 +1,36 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('Users', [{
-      name: 'admin',
-      surname: 'admin',
+      name: 'Стив',
+      surname: 'Джобс',
       email: 'admin@admin.ru',
       password: '$2b$10$NZjGaK8EtdAuDhBig430gOg3PCgbm2ea0a7m5oou1GRp2QlyDlVi2',
     }, {
-      name: 'den',
-      surname: 'gu',
+      name: 'Денис',
+      surname: 'Гуцуляк',
       email: 'd.991@mail.ru',
       password: '$2b$10$NZjGaK8EtdAuDhBig430gOg3PCgbm2ea0a7m5oou1GRp2QlyDlVi2',
     }, {
-      name: 'borsch',
-      surname: 'Zhenya',
+      name: 'Илон',
+      surname: 'Маск',
       email: 'borsch@admin.ru',
       password: '$2b$10$NZjGaK8EtdAuDhBig430gOg3PCgbm2ea0a7m5oou1GRp2QlyDlVi2',
     }, {
-      name: 'base',
-      surname: 'Vlad',
-      email: 'base@admin.ru',
+      name: 'Билли',
+      surname: 'Херрингтон',
+      email: 'gachi@admin.ru',
+      password: '$2b$10$NZjGaK8EtdAuDhBig430gOg3PCgbm2ea0a7m5oou1GRp2QlyDlVi2',
+    },
+    {
+      name: 'Билл',
+      surname: 'Гейтс',
+      email: 'micro@admin.ru',
+      password: '$2b$10$NZjGaK8EtdAuDhBig430gOg3PCgbm2ea0a7m5oou1GRp2QlyDlVi2',
+    },
+    {
+      name: 'Винсент',
+      surname: 'Вега',
+      email: 'vega@admin.ru',
       password: '$2b$10$NZjGaK8EtdAuDhBig430gOg3PCgbm2ea0a7m5oou1GRp2QlyDlVi2',
     }], {});
   },
