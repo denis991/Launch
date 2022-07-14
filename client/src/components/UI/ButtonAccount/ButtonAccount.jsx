@@ -16,6 +16,7 @@ function ButtonAccount({ userPage, roomId }) {
   const sessionUser = useSelector((state) => state.user);
   const [comp, setComp] = useState(1);
   const [userName, setUserName] = useState(sessionUser.name);
+  console.log(sessionUser, userName);
   const dispatch = useDispatch();
   const [isLoading, setLoading] = useState(false);
 
@@ -59,8 +60,8 @@ function ButtonAccount({ userPage, roomId }) {
       userName,
     };
     setLoading(true);
-    const res = await axios.post(`${process.env.REACT_APP_SOKIT_HTTP}/rooms`, obj);
-    await onLogin(obj);
+    await axios.post(`${process.env.REACT_APP_SOKIT_HTTP}/rooms`, obj);
+    onLogin(obj);
   };
   return (
     <div>

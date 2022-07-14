@@ -9,7 +9,7 @@ const PORT = process.env.DB_PORT_SOKIT;
 app.use(express.json());
 app.use(cors())
 
-const rooms = new Map();// !!!
+const rooms = new Map();
 console.log(rooms);
 app.get(`/rooms/:id`, (req, res) => {
   const {id: roomId} = req.params;
@@ -39,6 +39,7 @@ app.post(`/rooms`, (req, res) => {
 io.on('connection', (socket) => {
   socket.on('ROOM:JOIN', ({roomId, userName}) => {
     socket.join(roomId);
+    console.log('roomId',roomId);
     rooms.get(roomId).get('users').set(socket.id, userName);
     const users = [...rooms.get(roomId).get('users').values()];
     socket.to(roomId).broadcast.emit('ROOM:SET_USERS', users);
@@ -49,6 +50,7 @@ io.on('connection', (socket) => {
       userName,
       text,
     };
+    console.log(obj,'obj');
     rooms.get(roomId).get('messages').push(obj);
     socket.to(roomId).broadcast.emit('ROOM:NEW_MESSAGE', obj);
   });
@@ -63,7 +65,8 @@ io.on('connection', (socket) => {
   });
 
   console.log('user connected', socket.id);
-  console.log(rooms);
+  console.log('rooms' ,rooms);
+  // console.log('socket',socket );
   // console.log('request info',socket.to);
 });
 
