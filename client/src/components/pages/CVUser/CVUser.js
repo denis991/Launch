@@ -4,20 +4,20 @@ import {
   Card, CardBody, CardText, CardTitle
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { getCVThunk } from '../../../redux/actions/cvsActions';
 import CvUserComment from './CVUserComment';
 import { getCVCommentThunk } from '../../../redux/actions/cvCommentsAction';
+import { getUserCVThunk } from '../../../redux/actions/cvUserAction';
 
 function CvUser() {
   const dispatch = useDispatch();
   const parseUrl = window.location.href.split('/');
   const id = parseUrl[parseUrl.length - 1];
 
-  const cv = useSelector((state) => state.cvs[0]);
+  const cv = useSelector((state) => state.userCV);
   const comments = useSelector((state) => state.cvComments);
 
   useEffect(() => {
-    dispatch(getCVThunk(id));
+    dispatch(getUserCVThunk(id));
   }, []);
 
   useEffect(() => {

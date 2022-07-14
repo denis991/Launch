@@ -16,9 +16,7 @@ root.render(
   <BrowserRouter>
     <Provider store={store}>
       <Navbar />
-
       <App />
-      {/* <Footer /> */}
     </Provider>
   </BrowserRouter>,
 );
