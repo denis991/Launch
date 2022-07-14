@@ -47,7 +47,7 @@ function MainPages() {
       <Route path="/account/cvs/new" element={<AddCV />} />
       <Route path="/about" element={<About />} />
       <Route path="/news" element={<News />} />
-      <Route path="/relocation" element={<Relocation />} />
+      {/* <Route path="/relocation" element={<Relocation />} /> */}
       <Route path="/relocation" element={<Reloc />} />
       <Route path="/chat" element={<Chat />} />
       <Route path="/*" element={<Error />} />
