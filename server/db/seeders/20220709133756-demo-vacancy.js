@@ -17,7 +17,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'CSS',
       conditions: 'что-то тут должно быть',
-      city: 'Moscow',
+      city: 'Москва',
       user_id: '1',
     }, {
       title: 'Стажер в ООО Ромашка',
@@ -36,7 +36,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'JS, React, Redux, Node, Express, MongoDB',
       conditions: 'что-то тут должно быть',
-      city: 'New york',
+      city: 'Санкт-Петербург',
       user_id: '2',
     }, {
       title: 'Джуниор backend в медицинскую компанию',
@@ -55,7 +55,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'Javascript',
       conditions: 'Здравоохранение и социальное обеспечение',
-      city: 'Saint Petersburg',
+      city: 'Анапа',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
@@ -74,7 +74,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'CSS',
       conditions: 'что-то тут должно быть',
-      city: 'Moscow',
+      city: 'Грозный',
       user_id: '1',
     }, {
       title: 'Fullstack разработчик на полный день',
@@ -93,7 +93,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'JS, React, Redux, Node, Express, MongoDB',
       conditions: 'что-то тут должно быть',
-      city: 'new york',
+      city: 'Москва',
       user_id: '2',
     }, {
       title: 'DevOps разработчик',
@@ -112,7 +112,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'Javascript',
       conditions: 'Здравоохранение и социальное обеспечение',
-      city: 'Saint Petersburg',
+      city: 'Сочи',
       user_id: '2',
     }, {
       title: 'GameDev master',
@@ -131,7 +131,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'CSS',
       conditions: 'что-то тут должно быть',
-      city: 'Moscow',
+      city: 'Владивосток',
       user_id: '1',
     }, {
       title: 'Data Science engineer',
@@ -150,7 +150,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'JS, React, Redux, Node, Express, MongoDB',
       conditions: 'что-то тут должно быть',
-      city: 'new york',
+      city: 'Тула',
       user_id: '2',
     }, {
       title: 'HR Manager GachiScript',
@@ -169,7 +169,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'Javascript',
       conditions: 'Здравоохранение и социальное обеспечение',
-      city: 'Saint Petersburg',
+      city: 'Санкт-Петербург',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
@@ -188,7 +188,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'CSS',
       conditions: 'что-то тут должно быть',
-      city: 'Moscow',
+      city: 'Элиста',
       user_id: '1',
     }, {
       title: 'HTML-верстка',
@@ -207,7 +207,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'JS, React, Redux, Node, Express, MongoDB',
       conditions: 'что-то тут должно быть',
-      city: 'new york',
+      city: 'Пермь',
       user_id: '2',
     }, {
       title: 'Разработчик событий',
@@ -226,7 +226,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'Javascript',
       conditions: 'Здравоохранение и социальное обеспечение',
-      city: 'Saint Petersburg',
+      city: 'Москва',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
@@ -245,7 +245,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'CSS',
       conditions: 'что-то тут должно быть',
-      city: 'Moscow',
+      city: 'Москва',
       user_id: '1',
     }, {
       title: 'Стажер в Яндекс',
@@ -264,7 +264,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'JS, React, Redux, Node, Express, MongoDB',
       conditions: 'что-то тут должно быть',
-      city: 'new york',
+      city: 'Екатеринбург',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
@@ -283,7 +283,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'Javascript',
       conditions: 'Здравоохранение и социальное обеспечение',
-      city: 'Saint Petersburg',
+      city: 'Челябинск',
       user_id: '2',
     }, {
       title: 'Junior Backend Разработчик',
@@ -302,7 +302,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'CSS',
       conditions: 'что-то тут должно быть',
-      city: 'Moscow',
+      city: 'Томск',
       user_id: '1',
     }, {
       title: 'Бигдата стажер в компанию',
@@ -321,7 +321,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'JS, React, Redux, Node, Express, MongoDB',
       conditions: 'что-то тут должно быть',
-      city: 'new york',
+      city: 'Москва',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
@@ -340,7 +340,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'Javascript',
       conditions: 'Здравоохранение и социальное обеспечение',
-      city: 'Saint Petersburg',
+      city: 'Москва',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
@@ -359,7 +359,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'CSS',
       conditions: 'что-то тут должно быть',
-      city: 'Moscow',
+      city: 'Москва',
       user_id: '1',
     }, {
       title: 'Frontend разработчик в автосервис',
@@ -378,7 +378,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'JS, React, Redux, Node, Express, MongoDB',
       conditions: 'что-то тут должно быть',
-      city: 'new york',
+      city: 'Тула',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
@@ -397,7 +397,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'Javascript',
       conditions: 'Здравоохранение и социальное обеспечение',
-      city: 'Saint Petersburg',
+      city: 'Грозный',
       user_id: '2',
     }, {
       title: 'Junior Backend Developer',
@@ -416,7 +416,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'CSS',
       conditions: 'что-то тут должно быть',
-      city: 'Moscow',
+      city: 'Владивосток',
       user_id: '1',
     }, {
       title: 'Стажер в ООО Сказка',
@@ -435,7 +435,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'JS, React, Redux, Node, Express, MongoDB',
       conditions: 'что-то тут должно быть',
-      city: 'new york',
+      city: 'Санкт-Петербург',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
@@ -454,7 +454,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'Javascript',
       conditions: 'Здравоохранение и социальное обеспечение',
-      city: 'Saint Petersburg',
+      city: 'Москва',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
@@ -473,7 +473,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'CSS',
       conditions: 'что-то тут должно быть',
-      city: 'Moscow',
+      city: 'Брянск',
       user_id: '1',
     }, {
       title: 'Стажер Frontend Developer',
@@ -492,7 +492,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'JS, React, Redux, Node, Express, MongoDB',
       conditions: 'что-то тут должно быть',
-      city: 'new york',
+      city: 'Челябинск',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
@@ -511,7 +511,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'Javascript',
       conditions: 'Здравоохранение и социальное обеспечение',
-      city: 'Saint Petersburg',
+      city: 'Архангельск',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
@@ -530,7 +530,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'CSS',
       conditions: 'что-то тут должно быть',
-      city: 'Moscow',
+      city: 'Пермь',
       user_id: '1',
     }, {
       title: 'Джун Бэк Developer',
@@ -549,7 +549,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'JS, React, Redux, Node, Express, MongoDB',
       conditions: 'что-то тут должно быть',
-      city: 'new york',
+      city: 'Омск',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
@@ -568,7 +568,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'Javascript',
       conditions: 'Здравоохранение и социальное обеспечение',
-      city: 'Saint Petersburg',
+      city: 'Сочи',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
@@ -587,7 +587,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'CSS',
       conditions: 'что-то тут должно быть',
-      city: 'Moscow',
+      city: 'Москва',
       user_id: '1',
     }, {
       title: 'Джуниор Frontend Developer',
@@ -606,7 +606,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'JS, React, Redux, Node, Express, MongoDB',
       conditions: 'что-то тут должно быть',
-      city: 'new york',
+      city: 'Тула',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
@@ -625,7 +625,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'Javascript',
       conditions: 'Здравоохранение и социальное обеспечение',
-      city: 'Saint Petersburg',
+      city: 'Екатеринбург',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
@@ -644,7 +644,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'CSS',
       conditions: 'что-то тут должно быть',
-      city: 'Moscow',
+      city: 'Москва',
       user_id: '1',
     }, {
       title: 'Стажер в ООО Самсон Frontend Developer',
@@ -663,7 +663,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'JS, React, Redux, Node, Express, MongoDB',
       conditions: 'что-то тут должно быть',
-      city: 'new york',
+      city: 'Санкт-Петербург',
       user_id: '2',
     }, {
       title: 'Junior Frontend Developer',
@@ -682,7 +682,7 @@ module.exports = {
       requirements: 'что-то тут должно быть',
       technology: 'Javascript',
       conditions: 'Здравоохранение и социальное обеспечение',
-      city: 'Saint Petersburg',
+      city: 'Анапа',
       user_id: '2',
     }], {});
   },
