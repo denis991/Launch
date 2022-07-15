@@ -9,8 +9,8 @@
   color: black;
 }
 .logoRocket {
-  position: absolute;
-  right: 148vh;
+  position: relative;
+  left: 45%;
 
 }
 
