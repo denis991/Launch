@@ -14,8 +14,8 @@ function TestNavbar() {
   );
   return (
     <div className="header">
-      <div className="logoRocket">
-        <img src="https://cliply.co/wp-content/uploads/2019/09/371909290_ROCKET_400px.gif" width="125px" height="110px" alt="logo" />
+      <div>
+        <img className="logoRocket" src="https://cliply.co/wp-content/uploads/2019/09/371909290_ROCKET_400px.gif" width="90px" alt="logo" />
       </div>
       <UserMenu />
       {user ? renderUserMenu() : <Link className="reg" to="/auth">Войти</Link>}
