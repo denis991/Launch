@@ -11,7 +11,7 @@
     "dotenv": "^16.0.1",
     "express": "^4.17.1",
     "nodemon": "^2.0.3",
-    "socket.io": "^2.3.0"
+    "socket.io": "^4.4.1"
   },
   "scripts": {
     "server": "nodemon server.js",

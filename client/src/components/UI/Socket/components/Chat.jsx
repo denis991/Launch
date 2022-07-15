@@ -1,59 +1,43 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import socket from '../socket';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import styles from './Chat.module.css';
-import { addMessage } from '../../../../redux/actions/chatActions';
+import {addMessage} from '../../../../redux/actions/chatActions';
 
-function Chat() {
+function Chat({socket}) {
   const [messageValue, setMessageValue] = React.useState('');
   const messagesRef = React.useRef(null);
   const dispatch = useDispatch();
+  const user = useSelector(s => s.user)
 
-  const {
-    users, messages, userName, roomId
-  } = useSelector((s) => s.chat);
+  const chat = useSelector((s) => s.chat);
+
+  useEffect(() => {
+    socket.emit('user-connected', 'darsen')
+  }, [user])
+
+  useEffect(() => {
+    socket.on('message', ({name, message}) => {
+      dispatch(addMessage({userName: name, text: message}));
+    })
+  }, [socket])
 
   const onSendMessage = () => {
-    socket.emit('ROOM:NEW_MESSAGE', {
-      userName,
-      roomId,
-      text: messageValue,
-    });
-    dispatch(addMessage({ userName, text: messageValue }));
+    socket.emit('message', {name: user.name, message: messageValue})
     setMessageValue('');
   };
 
   React.useEffect(() => {
     messagesRef.current.scrollTo(0, 99999);
-  }, [messages]);
+  }, [chat]);
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.chat}>
-        <div className={styles.chatusers}>
-          Комната:
-          {' '}
-          <b>{roomId}</b>
-          <hr />
-          <b>
-            Онлайн (
-            {users.length}
-            ):
-          </b>
-          <ul>
-            {users.map((name, index) => (
-              <li key={name + index}>{name}</li>
-            ))}
-          </ul>
-        </div>
         <div className={styles.chatmessages}>
           <div ref={messagesRef} className={styles.messages}>
-            {messages.map((message) => (
+            {chat?.map((message) => (
               <div className={styles.message}>
-                <p>{message.text}</p>
-                <div>
-                  <span>{message.userName}</span>
-                </div>
+                <p>{message}</p>
               </div>
             ))}
           </div>

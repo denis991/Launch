@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { getUserThunk } from '../../../redux/actions/userActions';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {useParams} from 'react-router-dom';
+import {getUserThunk} from '../../../redux/actions/userActions';
 import ButtonAccount from '../../UI/ButtonAccount/ButtonAccount';
 
-function User() {
+function User({socket}) {
   const dispatch = useDispatch();
-  const { id } = useParams();
+  const {id} = useParams();
   const user = useSelector((state) => state.statsUser);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function User() {
             {' '}
             {user.user.surname}
           </h1>
-          <p className="text-center" />
+          <p className="text-center"/>
           <div className="d-flex justify-content-center mt-4">
             <div className="d-flex flex-column mx-3 text-center">
               <div className="h3 text-black-50">{user.user.CVComms.length}</div>
@@ -31,7 +31,7 @@ function User() {
           </div>
         </div>
       )}
-      <ButtonAccount userPage={user?.user} roomId={user.user?.id} />
+      <ButtonAccount socket={socket} userPage={user?.user} roomId={user.user?.id}/>
     </>
   );
 }

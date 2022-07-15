@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { Button } from 'reactstrap';
+import React, {useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {Link} from 'react-router-dom';
+import {Button} from 'reactstrap';
 import axios from 'axios';
 // import { getVacanciesThunk } from '../../../redux/actions/vacancyActions';
 import AnswersUser from '../AnswersUser/AnswersUser';
 import CvsUser from '../CvsUser/CvsUser';
 import ResumeUser from '../ResumeUser/ResumeUser';
 
-import socket from '../Socket/socket';
-import { JOINED, SET_DATA, SET_USERS } from '../../../redux/types/chatTypes';
-import { addMessage } from '../../../redux/actions/chatActions';
+import {JOINED, SET_DATA, SET_USERS} from '../../../redux/types/chatTypes';
 import CommentsUser from '../СommentsUser/СommentsUser';
 
-function ButtonAccount({ userPage, roomId }) {
+function ButtonAccount({userPage, roomId}) {
   const sessionUser = useSelector((state) => state.user);
+
   const [comp, setComp] = useState(1);
   const [userName, setUserName] = useState(sessionUser.name);
   console.log(sessionUser, userName);
@@ -26,9 +25,7 @@ function ButtonAccount({ userPage, roomId }) {
       type: JOINED,
       payload: obj,
     });
-    socket.emit('ROOM:JOIN', obj);
-    const { data } = await axios.get(`${process.env.REACT_APP_SOKIT_HTTP}/rooms/${obj.roomId}`);
-    console.log(obj.roomId, '-----------------------------------------------------');
+    const {data} = await axios.get(`${process.env.REACT_APP_SOKIT_HTTP}/rooms/${obj.roomId}`);
     dispatch({
       type: SET_DATA,
       payload: data,
@@ -41,16 +38,6 @@ function ButtonAccount({ userPage, roomId }) {
       payload: users,
     });
   };
-
-  useEffect(() => {
-    socket.on('ROOM:SET_USERS', setUsers);
-    socket.on('ROOM:NEW_MESSAGE', (data) => {
-      console.log(data, 'ROOM:NEW_MESSAGE');
-      dispatch(addMessage(data));
-    });
-  }, [socket]);
-
-  window.socket = socket;
   // TODO-==========================================================
   const onEnter = async () => {
     if (!roomId || !userName) {
@@ -118,19 +105,19 @@ function ButtonAccount({ userPage, roomId }) {
       <div>
         {(comp === 1)
         && (
-          <ResumeUser userPage={userPage} />
+          <ResumeUser userPage={userPage}/>
         )}
         {(comp === 2)
         && (
-          <CvsUser userPage={userPage} />
+          <CvsUser userPage={userPage}/>
         )}
         {(comp === 3)
         && (
-          <CommentsUser userPage={userPage} />
+          <CommentsUser userPage={userPage}/>
         )}
         {(comp === 4)
         && (
-          <AnswersUser userPage={userPage} />
+          <AnswersUser userPage={userPage}/>
         )}
       </div>
     </div>

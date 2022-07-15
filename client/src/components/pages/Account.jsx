@@ -1,12 +1,9 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { userCheckAuthThunk } from '../../redux/actions/AuthAction';
+import React, {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import ButtonAccount from '../UI/ButtonAccount/ButtonAccount';
-import { getInfoAccountUserThunk } from '../../redux/actions/accountActions';
+import {getInfoAccountUserThunk} from '../../redux/actions/accountActions';
 
-function Account() {
+function Account({socket}) {
   const [usersAccountId, setUsersAccountId] = useState({});
   // setstateTextProf = (vacancy) => {};
   const [resumeId, setResumeId] = useState([]);
@@ -30,7 +27,7 @@ function Account() {
           {' '}
           {userAccountInfo?.surname}
         </h1>
-        <p className="text-center" />
+        <p className="text-center"/>
         <div className="d-flex justify-content-center mt-4">
           <div className="d-flex flex-column mx-3 text-center">
             <div className="h3 text-black-50">{userAccountInfo?.CVComms.length}</div>
@@ -39,7 +36,7 @@ function Account() {
         </div>
       </div>
 
-      <ButtonAccount userPage={userPage} roomId={userPage?.id} />
+      <ButtonAccount userPage={userPage} socket={socket} roomId={userPage?.id}/>
       {stateTextProf && stateTextProf.map((item) => (
         <div className="px-3 py-4 mb-3 bg-light rounded" key={item.id}>
 

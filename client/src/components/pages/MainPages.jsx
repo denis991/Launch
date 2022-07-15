@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default */
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import Vacancies from './Vacancies/Vacancies';
 import AddCV from './Forms/AddCV/AddCV';
 import Error from './Error/Error';
@@ -20,37 +20,37 @@ import Reloc from '../Relocation/Reloc';
 import User from './User/User';
 import Chat from '../UI/Socket/components/Chat';
 
-function MainPages() {
+function MainPages({socket}) {
   return (
     <Routes>
-      <Route path="/" element={<Vacancies />} />
-      <Route path="/vacancies/:id" element={<VacancyUser />} />
+      <Route path="/" element={<Vacancies/>}/>
+      <Route path="/vacancies/:id" element={<VacancyUser/>}/>
       <Route
         path="/auth"
         element={(
           <AuthRoute>
-            <UserForm />
+            <UserForm/>
           </AuthRoute>
         )}
       />
-      <Route path="/users" element={<Users />} />
-      <Route path="/users/:id" element={<User />} />
-      <Route path="/cvs" element={<CVsLists />} />
-      <Route path="/cvs/:id" element={<CvUser />} />
-      <Route path="/account" element={<Account />} />
-      <Route path="/account/vacancies/new" element={<AddVacancy />} />
-      <Route path="/account/cvs" element={<p>account/resumes</p>} />
-      <Route path="/account/vacancies" element={<p>account/vacancies</p>} />
-      <Route path="/account/cvs/:id" element={<p>account/resumes/:id</p>} />
-      <Route path="/account/vacancies/:id" element={<p>account/vacancies/:id</p>} />
-      <Route path="/account/profile/edit" element={<ProfilEdit />} />
-      <Route path="/account/cvs/new" element={<AddCV />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/news" element={<News />} />
+      <Route path="/users" element={<Users/>}/>
+      <Route path="/users/:id" element={<User socket={socket}/>}/>
+      <Route path="/cvs" element={<CVsLists/>}/>
+      <Route path="/cvs/:id" element={<CvUser/>}/>
+      <Route path="/account" element={<Account socket={socket}/>}/>
+      <Route path="/account/vacancies/new" element={<AddVacancy/>}/>
+      <Route path="/account/cvs" element={<p>account/resumes</p>}/>
+      <Route path="/account/vacancies" element={<p>account/vacancies</p>}/>
+      <Route path="/account/cvs/:id" element={<p>account/resumes/:id</p>}/>
+      <Route path="/account/vacancies/:id" element={<p>account/vacancies/:id</p>}/>
+      <Route path="/account/profile/edit" element={<ProfilEdit/>}/>
+      <Route path="/account/cvs/new" element={<AddCV/>}/>
+      <Route path="/about" element={<About/>}/>
+      <Route path="/news" element={<News/>}/>
       {/* <Route path="/relocation" element={<Relocation />} /> */}
-      <Route path="/relocation" element={<Reloc />} />
-      <Route path="/chat" element={<Chat />} />
-      <Route path="/*" element={<Error />} />
+      <Route path="/relocation" element={<Reloc/>}/>
+      <Route path="/chat" element={<Chat socket={socket}/>}/>
+      <Route path="/*" element={<Error/>}/>
     </Routes>
   );
 }
