@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import socket from '../socket';
-import chatCSS from './Chat.module.css';
+import styles from './Chat.module.css';
 import { addMessage } from '../../../../redux/actions/chatActions';
 
 function Chat() {
@@ -28,9 +28,9 @@ function Chat() {
   }, [messages]);
 
   return (
-    <div className={chatCSS.wrapper}>
-      <div className="chat">
-        <div className="chat-users">
+    <div className={styles.wrapper}>
+      <div className={styles.chat}>
+        <div className={styles.chatusers}>
           Комната:
           {' '}
           <b>{roomId}</b>
@@ -46,10 +46,10 @@ function Chat() {
             ))}
           </ul>
         </div>
-        <div className="chat-messages">
-          <div ref={messagesRef} className="messages">
+        <div className={styles.chatmessages}>
+          <div ref={messagesRef} className={styles.messages}>
             {messages.map((message) => (
-              <div className="message">
+              <div className={styles.message}>
                 <p>{message.text}</p>
                 <div>
                   <span>{message.userName}</span>
@@ -61,7 +61,7 @@ function Chat() {
             <textarea
               value={messageValue}
               onChange={(e) => setMessageValue(e.target.value)}
-              className="form-control"
+              className={styles.formcontrol}
               rows="3"
             />
             <button onClick={onSendMessage} type="button" className="btn btn-primary">

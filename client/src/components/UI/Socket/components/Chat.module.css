@@ -41,14 +41,14 @@
   overflow: hidden;
 }
 
-.chat-users {
+.chatusers {
   border-right: 1px solid rgba(159, 183, 197, 0.1);
   padding: 20px;
   width: 200px;
   background-color: #f6f9fa;
 }
 
-.chat-messages {
+.chatmessages {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -81,13 +81,13 @@
   font-size: 14px;
 }
 
-.chat-users ul {
+.chatusers ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.chat-users ul li {
+.chatusers ul li {
   margin-top: 10px;
   border-radius: 3px;
   background-color: #fff;
@@ -96,13 +96,13 @@
   font-weight: 500;
 }
 
-.chat-messages form {
+.chatmessages form {
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.chat-messages form textarea {
+.chatmessages form textarea {
   width: 100%;
   margin-bottom: 10px;
 }
