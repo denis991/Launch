@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import socket from '../socket';
 import styles from './Chat.module.css';
-import { addMessage } from '../../../../redux/actions/chatActions';
 
 function Chat() {
   const [messageValue, setMessageValue] = React.useState('');
@@ -13,13 +12,14 @@ function Chat() {
     users, messages, userName, roomId
   } = useSelector((s) => s.chat);
 
+  const memoMessagesMap = useMemo(() => [...new Set(messages)], [messages]);
+
   const onSendMessage = () => {
     socket.emit('ROOM:NEW_MESSAGE', {
       userName,
       roomId,
       text: messageValue,
     });
-    dispatch(addMessage({ userName, text: messageValue }));
     setMessageValue('');
   };
 
@@ -48,7 +48,7 @@ function Chat() {
         </div>
         <div className={styles.chatmessages}>
           <div ref={messagesRef} className={styles.messages}>
-            {messages.map((message) => (
+            {memoMessagesMap && memoMessagesMap.map((message) => (
               <div className={styles.message}>
                 <p>{message.text}</p>
                 <div>
