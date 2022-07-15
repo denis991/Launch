@@ -23,8 +23,9 @@
 #active:checked ~ .wrapper{
   clip-path: circle(75%);
 }
+
 .menu-btn{
-  position: absolute;
+  position: fixed;
   z-index: 3;
   right: 20px;
   /* left: 20px; */
@@ -64,6 +65,9 @@ i {
   margin: 15px 0;
 }
 .wrapper ul li a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: none;
   text-decoration: none;
   font-size: 30px;
@@ -94,6 +98,7 @@ i {
 }
 .wrapper ul li a:hover:after{
   transform: scaleY(1);
+  
 }
 .wrapper ul li a:hover{
   color: #fff;

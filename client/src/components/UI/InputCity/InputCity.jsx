@@ -3,7 +3,7 @@ import React from 'react';
 function InputCity({ setCity, city }) {
   return (
     <div className="d-flex flex-column justify-content-start string optional web_vacancies_search_form_city">
-      <div className="input-group">
+      <div style={{ border: 'solid 2px black' }} className="input-group">
 
         <select className="form-control select optional" name="web_vacancies_search_form[level]" id="web_vacancies_search_form_level" value={city} onChange={(e) => setCity(e.target.value)}>
           <option value="">Город</option>

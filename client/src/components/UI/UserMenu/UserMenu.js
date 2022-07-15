@@ -3,19 +3,20 @@ import './UserMenu.css';
 import { Link } from 'react-router-dom';
 
 function MenuNavbar(props) {
-  const [visible, setVisible] = useState(false);
+  const [open, setOpen] = useState();
+  const closeHandler = () => setOpen(false);
   return (
     <div>
-      <input className="menu-icon my" type="checkbox" id="menu-icon" name="menu-icon" />
+      <input onClick={() => setOpen(true)} checked={open} className="menu-icon my" type="checkbox" id="menu-icon" name="menu-icon" />
       <label htmlFor="menu-icon" />
       <nav className="nav1">
         <ul className="pt-5">
 
-          <li><Link onClick={() => setVisible(!visible)} to="/">Vacancies</Link></li>
-          <li><Link onClick={() => setVisible(!visible)} to="/users">Rating</Link></li>
-          <li><Link onClick={() => setVisible(!visible)} to="/cvs">Resume</Link></li>
-          <li><Link onClick={() => setVisible(!visible)} to="/news">News</Link></li>
-          <li><Link onClick={() => setVisible(!visible)} to="/relocation">Relocation</Link></li>
+          <li><Link onClick={closeHandler} to="/">Вакансии</Link></li>
+          <li><Link onClick={closeHandler} to="/users">Рейтинг</Link></li>
+          <li><Link onClick={closeHandler} to="/cvs">Резюме</Link></li>
+          <li><Link onClick={closeHandler} to="/news">Новости</Link></li>
+          <li><Link onClick={closeHandler} to="/relocation">Релокация</Link></li>
         </ul>
       </nav>
     </div>
