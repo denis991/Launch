@@ -67,42 +67,82 @@ function ButtonAccount({ userPage, roomId }) {
   return (
     <div>
       <ul className="nav nav-pills justify-content-center" role="navigation">
-        <li className="nav-item active">
-          <a className="nav-link px-3" data-bs-toggle="tab" href="#resume" onClick={() => setComp(1)}>Резюме</a>
-        </li>
-        <li className="nav-item">
-          <a
-            className="nav-link px-3"
-            data-bs-toggle="tab"
-            href="#answers"
-            onClick={() => setComp(2)}
-          >
-            Вакансии
-            {' '}
+        <li
+          className="nav-item active"
+          style={{ marginRight: '0.5%' }}
+        >
+          <Button
+            color="primary"
+            outline
 
-          </a>
-        </li>
-        <li className="nav-itemЗ">
-          <a
-            className="nav-link px-3"
-            data-bs-toggle="tab"
-            href="#comments"
-            onClick={() => setComp(3)}
           >
-            Комментарии
+            <a
+              className="nav-link px-3"
+              data-bs-toggle="tab"
+              href="#resume"
+              onClick={() => setComp(1)}
+            >
+              Резюме
 
-          </a>
+            </a>
+          </Button>
         </li>
-        <li className="nav-itemЗ">
-          <a
-            className="nav-link px-3"
-            data-bs-toggle="tab"
-            href="#comments"
-            onClick={() => setComp(4)}
+        <li
+          className="nav-item"
+          style={{ marginRight: '0.5%' }}
+        >
+          <Button
+            color="primary"
+            outline
           >
-            Ответы
 
-          </a>
+            <a
+              className="nav-link px-3"
+              data-bs-toggle="tab"
+              href="#answers"
+              onClick={() => setComp(2)}
+            >
+              Вакансии
+
+            </a>
+          </Button>
+        </li>
+        <li
+          className="nav-itemЗ"
+          style={{ marginRight: '0.5%' }}
+        >
+          <Button
+            color="primary"
+            outline
+          >
+            <a
+              className="nav-link px-3"
+              data-bs-toggle="tab"
+              href="#comments"
+              onClick={() => setComp(3)}
+            >
+              Комментарии
+            </a>
+          </Button>
+        </li>
+        <li
+          className="nav-itemЗ"
+          style={{ marginRight: '0.5%' }}
+        >
+          <Button
+            color="primary"
+            outline
+          >
+            <a
+              className="nav-link px-3"
+              data-bs-toggle="tab"
+              href="#comments"
+              onClick={() => setComp(4)}
+            >
+              Ответы
+
+            </a>
+          </Button>
         </li>
 
         <Button color="success" outline disabled={isLoading} onClick={onEnter}>
