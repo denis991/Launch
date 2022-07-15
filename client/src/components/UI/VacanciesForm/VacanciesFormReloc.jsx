@@ -15,7 +15,7 @@ function VacanciesFormReloc({
 
       <form type="submit" className="simple_form row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-2 g-lg-3" id="new_web_vacancies_search_form" action="/" acceptCharset="UTF-8" method="get">
 
-        <InputLevel levelVacancies={levelVacancies} setLevelVacancies={setLevelVacancies} />
+        {/* <InputLevel levelVacancies={levelVacancies} setLevelVacancies={setLevelVacancies} /> */}
 
         <InputCountry setCountry={setCountry} country={country} />
         <InputLang langProg={langProg} setLangProg={setLangProg} />
