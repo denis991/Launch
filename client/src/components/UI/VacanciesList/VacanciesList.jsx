@@ -12,7 +12,7 @@ function VacanciesList({ filterVacancies, adVacancies }) {
       <div className="card-body">
         <div>
           { filterVacancies?.map((el) => (
-            <Card key={el.id}>
+            <Card style={{ marginTop: '10px', border: 'solid 2px black' }} key={el.id}>
               <CardBody>
                 <Link to={`/vacancies/${el.id}`}>
 

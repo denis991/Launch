@@ -13,7 +13,7 @@ function InputLang({ langProg, setLangProg }) {
   }, []);
   return (
     <div className="d-flex flex-column justify-content-start select optional web_vacancies_search_form_direction">
-      <div className="input-group">
+      <div style={{ border: 'solid 2px black' }} className="input-group">
 
         <select className="form-control select optional" id="web_vacancies_search_form_direction" value={langProg} onChange={(e) => setLangProg(e.target.value)}>
           <option value="">Язык программирования</option>

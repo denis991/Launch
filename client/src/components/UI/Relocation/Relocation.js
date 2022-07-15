@@ -25,14 +25,14 @@ function Relocation({ country, langProg, levelVacancies }) {
       return true;
     }
     return false;
-  }), [country, langProg]);
+  }), [country, langProg, relocation]);
 
   return (
 
     <div className="card mb-3 border-0">
       <div className="card-body">
         <div>
-          {memoRelocation ? memoRelocation.map((el) => (
+          {memoRelocation ? memoRelocation?.map((el) => (
             <Card key={el.id}>
               <CardBody>
                 <a href={el.url}>

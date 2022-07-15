@@ -24,7 +24,7 @@ function VacanciesForm({
           className="btn btn-primary me-2 flex-grow-1" data-disable-with="Найти">
             Найти
           </Button> */}
-          <Link className="btn btn-outline-secondary" to="/">Сбросить</Link>
+          <Link style={{ border: 'solid 2px black' }} className="btn btn-outline-secondary" to="/">Сбросить</Link>
 
         </div>
       </form>
