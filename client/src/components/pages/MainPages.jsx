@@ -19,6 +19,7 @@ import Reloc from '../Relocation/Reloc';
 // import Relocation from './Relocation';
 import User from './User/User';
 import Chat from '../UI/Socket/components/Chat';
+import Loading from './loading';
 
 function MainPages() {
   return (
@@ -47,6 +48,7 @@ function MainPages() {
       <Route path="/account/cvs/new" element={<AddCV />} />
       <Route path="/about" element={<About />} />
       <Route path="/news" element={<News />} />
+      <Route path="/loading" element={<Loading />} />
       {/* <Route path="/relocation" element={<Relocation />} /> */}
       <Route path="/relocation" element={<Reloc />} />
       <Route path="/chat" element={<Chat />} />
