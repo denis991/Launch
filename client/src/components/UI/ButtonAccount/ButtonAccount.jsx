@@ -20,6 +20,7 @@ function ButtonAccount({ userPage, roomId }) {
   console.log(sessionUser, userName);
   const dispatch = useDispatch();
   const [isLoading, setLoading] = useState(false);
+  // this.state = { name: '' };кудато надо втавить чтобы небыло ошибки
 
   const onLogin = async (obj) => {
     dispatch({
@@ -145,7 +146,7 @@ function ButtonAccount({ userPage, roomId }) {
           </Button>
         </li>
 
-        <Button color="success" outline disabled={isLoading} onClick={onEnter}>
+        <Button color="success" outline disabled={isLoading} onClick={onEnter} defaultValue="">
           <Link
             data-bs-toggle="tab"
             to="/chat"

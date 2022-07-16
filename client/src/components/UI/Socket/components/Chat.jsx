@@ -47,9 +47,10 @@ function Chat() {
           </ul>
         </div>
         <div className={styles.chatmessages}>
+
           <div ref={messagesRef} className={styles.messages}>
             {memoMessagesMap && memoMessagesMap.map((message) => (
-              <div className={styles.message}>
+              <div className={styles.message} key={message.id + Math.random()}>
                 <p>{message.text}</p>
                 <div>
                   <span>{message.userName}</span>
@@ -68,9 +69,9 @@ function Chat() {
               Отправить
             </button>
           </form>
+
         </div>
       </div>
-
     </div>
   );
 }
