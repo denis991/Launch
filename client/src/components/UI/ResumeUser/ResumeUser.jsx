@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
+  Button,
   Card, CardBody, CardSubtitle, CardText, CardTitle
 } from 'reactstrap';
 import { getCVsThunk } from '../../../redux/actions/cvsActions';
+import ButtonDelete from '../ButtonDelete/ButtonDelete';
 
 function ResumeUser({ userPage }) {
   const dispatch = useDispatch();
@@ -23,6 +25,8 @@ function ResumeUser({ userPage }) {
   );
   if (cvs === undefined) { cvs = []; }
   // console.log(cvs, 'cvs<----');
+
+  const [userIdGood, setUserIdGood] = useState(getCvs.user_id === userPage.id);
 
   return (
     <>
@@ -49,6 +53,9 @@ function ResumeUser({ userPage }) {
                       {cv?.body}
                     </CardText>
                   </CardBody>
+                  {userIdGood && (
+                    <ButtonDelete />
+                  )}
                 </Card>
               ))
             ) : (
