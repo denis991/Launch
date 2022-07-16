@@ -7,7 +7,7 @@ const cvsReducer = (state = [], action) => {
     case GET_CVS:
       return [...state, payload];
     case DELETE_CV:
-      return state.filter((el) => payload.id !== el.id);
+      return state.filter((el) => payload !== el.id);
 
     default:
       return state;
@@ -15,3 +15,4 @@ const cvsReducer = (state = [], action) => {
 };
 
 export default cvsReducer;
+// payload.id

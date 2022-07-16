@@ -6,7 +6,7 @@ import {
   Card, CardBody, CardSubtitle, CardText, CardTitle
 } from 'reactstrap';
 import { getCVsThunk } from '../../../redux/actions/cvsActions';
-import ButtonDelete from '../ButtonDelete/ButtonDelete';
+import ButDelCV from '../ButDelCV/ButDelCV';
 
 function ResumeUser({ userPage }) {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ function ResumeUser({ userPage }) {
   // const [resUs, setResUs] = useState({ });
   // const userPage = useSelector((state) => state.user); // вырезанный кусок делаем дрилинг
   const getCvs = useSelector((state) => state.cvs[0]);
-  // console.log(user, getCvs, 'user<----');
+  // console.log(userPage, 'userPages<--', getCvs, 'user<----');
 
   let cvs = getCvs?.filter(
     (el) => (userPage?.id
@@ -25,9 +25,7 @@ function ResumeUser({ userPage }) {
   );
   if (cvs === undefined) { cvs = []; }
   // console.log(cvs, 'cvs<----');
-
-  const [userIdGood, setUserIdGood] = useState(getCvs.user_id === userPage.id);
-
+  // const [userIdGood, setUserIdGood] = useState(cvs.user_id === userPage.id);
   return (
     <>
       <h5 className="text-center">ваши резюме</h5>
@@ -52,10 +50,8 @@ function ResumeUser({ userPage }) {
                     <CardText>
                       {cv?.body}
                     </CardText>
+                    {cv.user_id === userPage.id ? (<ButDelCV id={cv.id} />) : null}
                   </CardBody>
-                  {userIdGood && (
-                    <ButtonDelete />
-                  )}
                 </Card>
               ))
             ) : (
