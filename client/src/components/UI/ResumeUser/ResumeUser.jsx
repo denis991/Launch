@@ -9,6 +9,7 @@ import { getCVsThunk } from '../../../redux/actions/cvsActions';
 import ButDelCV from '../ButDelCV/ButDelCV';
 
 function ResumeUser({ userPage }) {
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCVsThunk());
@@ -50,7 +51,7 @@ function ResumeUser({ userPage }) {
                     <CardText>
                       {cv?.body}
                     </CardText>
-                    {cv.user_id === userPage.id ? (<ButDelCV id={cv.id} />) : null}
+                    {cv.user_id === user.id ? (<ButDelCV id={cv.id} />) : null}
                   </CardBody>
                 </Card>
               ))
