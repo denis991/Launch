@@ -1,4 +1,5 @@
 const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Users extends Model {
     /**
@@ -6,7 +7,9 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({ Vacancies, CVs, CVComms, UserComms, Notifications, Rooms, Messages }) {
+    static associate({
+      Vacancies, CVs, CVComms, UserComms, Notifications, Rooms, Messages
+    }) {
       this.hasMany(Vacancies, { foreignKey: 'user_id' });
       this.hasMany(CVs, { foreignKey: 'user_id' });
       this.hasMany(CVComms, { foreignKey: 'user_id' });
