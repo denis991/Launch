@@ -1,0 +1,95 @@
+`.no-svg .icon {
+  background-image: url(https://cs.pikabu.ru/apps/app-404/1.0.0/images/sprite-svg-fallback_96dpi.png);
+  background-size:0 0
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2),(min-resolution: 192dpi),(min-resolution: 2dppx) {
+  .no-svg .icon {
+      background-image:url(https://cs.pikabu.ru/apps/app-404/1.0.0/images/sprite-svg-fallback_192dpi.png)
+  }
+}
+
+body {
+  display: table;
+  width: 100%;
+  height: 100vh;
+  align-content: center;
+  margin: 0;
+  font-family: "-apple-system", BlinkMacSystemFont, Arial, sans-serif;
+  font-size:18px
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+      font-size:14px
+  }
+}
+
+html {
+  color:#404040
+}
+
+html a {
+  color:#6c9b45
+}
+
+html[data-theme-dark] {
+  background-color: #22272b;
+  color:#bfbfbf
+}
+
+html[data-theme-dark] a {
+  color:#6c9b45
+}
+
+a {
+  text-decoration:none
+}
+
+a:hover {
+  text-decoration:underline
+}
+
+.app-404 {
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0 auto;
+  text-align:center
+}
+
+.app-404__svg-player {
+  max-width: 40vw;
+  transform: translate3d(0, 0, 0);
+  margin:auto
+}
+
+@media only screen and (max-width: 600px) {
+  .app-404__svg-player {
+      max-width:90vw
+  }
+}
+
+.app-404__svg {
+  transform-style:preserve-3d
+}
+
+.app-404__fallback {
+  width:100%
+}
+
+.app-404__information {
+  margin-top:15px
+}
+
+.app-404__information p {
+  margin:5px 0
+}
+
+.app-404__information p:first-child {
+  font-size: 2em;
+  font-weight:700
+}
+
+.app-404__information p:last-child {
+  font-size: 1em
+}
