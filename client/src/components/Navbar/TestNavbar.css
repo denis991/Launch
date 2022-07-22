@@ -1,0 +1,17 @@
+.header {
+  height: 100px;
+}
+.reg {
+  position: relative;
+  left: 80%;
+  top: 30px;
+  text-decoration: none;
+  color: black;
+}
+.logoRocket {
+  position: absolute;
+  left: 47%;
+  top: 1%;
+
+}
+
