@@ -8,7 +8,7 @@ for their team.
 In addition we added comments section so 'newborn' programmers can upgrade their data and skills. They can communicate with fellow coders to enhance their CVs
 or even conduct test interviews. This can be done also through chat section.
 
-Though Launch is primarily aimed at russian-speakers it also contains section with vacancies abroad to relocate. 
+Though Launch is primarily aimed at russian-speakers it also contains section with vacancies abroad to relocate.
 
 There is also news for programmers to be up to date with the current events.
 
