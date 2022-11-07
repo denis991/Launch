@@ -13,3 +13,10 @@ Though Launch is primarily aimed at russian-speakers it also contains section wi
 There is also news for programmers to be up to date with the current events.
 
 This is our final project for Moscow Elbrus Bootcamp. Please enjoy it.
+
+Team:
+Nikita Artamonov - Teamlead/Fullstack
+Denis Gutsulyak - Fullstack
+Evgeniy Tabunov - Frontend
+Vladislav Rudnitskiy - Frontend
+Roman Kulikov - Fullstack
