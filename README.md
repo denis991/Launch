@@ -28,20 +28,17 @@ Roman Kulikov - Fullstack
 
 ## launch menu navigation
 <br/>
-
-![Image alt](./menu.png)
-
+  <img src="./menu.png" alt="menu" width="50%" />
 <br/>
 
-### launch profile user.
+## launch profile user.
 
 <br/>
-
-![Image alt](./profile.png)
-
+  <img src="./profile.png" alt="profile" width="50%" />
 <br/>
 
-
+## socket.io
+![Image alt](./socket_io.png)
 
 ## Getting Started
 ``` bash
@@ -49,10 +46,8 @@ cd socket && npm i & cd ../server && npm i & cd ../client && npm i & cd ..
 
 
 
-
 // start server
 cd socket && npm start & cd ../server && npm run dev & cd ../client && npm run start & cd ..
-
 
 
 login: admin@admin.ru
